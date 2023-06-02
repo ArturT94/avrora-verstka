@@ -1,0 +1,232 @@
+.order-count-wrapper {
+}
+.order-count {
+}
+
+.order-count__cross {
+   top: 20px;
+   right: 20px;
+}
+
+.order-count__title {
+   margin-bottom: 36px;
+   text-align: center;
+
+   /* Tablet Small*/
+   @media (max-width: 899px) {
+      max-width: unset;
+   }
+
+   /* Mobile*/
+   @media (max-width: 599px) {
+      max-width: 246px;
+   }
+}
+
+.order-count__search-wrapper {
+   position: relative;
+}
+
+.order-count__search {
+   position: relative;
+   z-index: 2;
+   margin-bottom: 20px;
+   width: 100%;
+   height: 40px;
+   padding: 0 12px;
+
+   background: $white-color;
+   border: 1px solid $light-gray;
+   border-radius: 6px;
+
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 1.5;
+   color: $black-color;
+
+   &::placeholder {
+      color: $gray-color;
+   }
+}
+
+.order-count__hint {
+   opacity: 0;
+   z-index: -1;
+
+   &.active {
+      opacity: 1;
+      z-index: 1;
+   }
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   padding-top: 47px;
+   padding: 47px 12px 19px;
+
+   background: $white-color;
+   border: 1px solid $light-gray;
+   border-radius: 6px;
+   transition: opacity 0.2s ease;
+}
+.order-count__hint-item {
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 1.5;
+   color: $gray-color;
+}
+
+.order-count__row {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-bottom: 28px;
+
+   /* Mobile Small */
+   @media (max-width: 389px) {
+      flex-wrap: wrap;
+      row-gap: 20px;
+   }
+}
+.order-count__count {
+   display: flex;
+   align-items: center;
+   column-gap: 39px;
+   padding: 8px;
+
+   background: $white-color;
+   border: 1px solid $light-gray;
+   border-radius: 6px;
+   filter: drop-shadow(0px 1px 2px rgba(56, 56, 56, 0.08));
+}
+.order-count__plus {
+   cursor: pointer;
+   svg {
+      width: 24px;
+      height: 24px;
+
+      path {
+         fill: $black-color;
+      }
+   }
+}
+.order-count__quantity {
+   font-weight: 400;
+   font-size: 16px;
+   color: $black-color;
+}
+.order-count__minus {
+   cursor: pointer;
+
+   svg {
+      width: 24px;
+      height: 24px;
+
+      path {
+         fill: $black-color;
+      }
+   }
+}
+.order-count__label {
+   display: flex;
+   align-items: center;
+   column-gap: 10px;
+}
+.real-checkbox {
+   position: absolute;
+   width: 0;
+   height: 0;
+   opacity: 0;
+   z-index: -1;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+
+   &:checked + .custom-checkbox {
+      background: $gradient-color;
+      border: none;
+      transition: background 0.2s ease-out;
+
+      &:before {
+         width: 14px;
+         height: 12px;
+         transition: width 0.2s ease-out, height 0.2s ease-out;
+      }
+   }
+}
+.custom-checkbox {
+   position: relative;
+   width: 20px;
+   height: 20px;
+   border: 2px solid #bdbdbd;
+   border-radius: 5px;
+   background: transparent;
+   transition: background 0.2s ease-out;
+
+   &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      width: 0;
+      height: 0;
+      background: url("../img/icons/checkmark-checkbox.svg") center / cover no-repeat;
+
+      transition: width 0.2s ease-out, height 0.2s ease-out;
+   }
+}
+.order-count__label-text {
+   font-weight: 400;
+   font-size: 14px;
+   color: $black-color;
+}
+.order-count__list {
+   display: flex;
+   flex-direction: column;
+   row-gap: 12px;
+}
+.order-count__item {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 10px 12px 10px 4px;
+   height: 40px;
+   cursor: pointer;
+
+   background: $white-color;
+   border: 1px solid $light-gray;
+   border-radius: 6px;
+}
+.order-count__item-row {
+   display: flex;
+   align-items: center;
+   column-gap: 8px;
+}
+.order-count__item-img {
+   padding-right: 4px;
+   position: relative;
+
+   img {
+      width: 40px;
+      height: 20px;
+   }
+
+   &:after {
+      content: "";
+      position: absolute;
+      top: -10px;
+      right: 0;
+      width: 1px;
+      height: 40px;
+      border-right: 1px solid $light-gray;
+   }
+}
+.order-count__item-name {
+}
+.order-count__price {
+   font-weight: 400;
+   font-size: 12px;
+   color: $primary-color;
+}

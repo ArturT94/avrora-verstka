@@ -1,0 +1,52 @@
+.filter-var {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-left: auto;
+   padding: 12px 20px;
+   margin-bottom: 40px;
+
+   background: $white-color;
+   border: 1px solid #dee2e7;
+   border-radius: 6px;
+
+   /* Tablet Small*/
+   @media (max-width: 899px) {
+      display: none;
+   }
+}
+
+.filter-var__quantity {
+   font-weight: 400;
+   font-size: 16px;
+   color: $black-color;
+}
+
+.filter-var__row {
+   display: flex;
+   align-items: center;
+   column-gap: 21px;
+}
+
+.filter-var__sizes {
+   display: flex;
+   align-items: center;
+   padding: 3px;
+   background: #dee2e7;
+   border-radius: 6px;
+}
+
+.filter-var__sizes-btn {
+   padding: 9px 8px;
+   background-color: transparent;
+
+   svg {
+      width: 18px;
+      height: 16px;
+   }
+
+   &.active {
+      background: $white-color;
+      border-radius: 6px;
+   }
+}
