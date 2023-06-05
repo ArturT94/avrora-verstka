@@ -1,11 +1,8 @@
 .product-action {
-   display: none;
-
-   &.active {
-      display: flex;
-      align-items: center;
-      column-gap: 50px;
-   }
+   display: flex;
+   align-items: center;
+   column-gap: 50px;
+   padding: 20px;
 
    background: #005ade;
    border-radius: 8px;
@@ -21,6 +18,12 @@
       height: 100%;
       background: #237cff;
       clip-path: polygon(0 0, 73% 0, 100% 100%, 0 100%);
+   }
+
+   /* Mobile Small */
+   @media (max-width: 389px) {
+      flex-direction: column;
+      row-gap: 10px;
    }
 }
 .product-action__content {
@@ -40,4 +43,6 @@
 }
 .product-action__btn {
    padding: 0 16px;
+
+   z-index: 1;
 }

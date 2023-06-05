@@ -1,6 +1,11 @@
 .review-popup-wrapper {
 }
 .review-popup {
+   /* Descktop */
+   @media (max-width: 1899px) {
+      height: 90vh;
+      overflow-y: scroll;
+   }
 }
 .review-popup__cross {
    top: 20px;

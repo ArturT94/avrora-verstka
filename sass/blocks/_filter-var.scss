@@ -31,22 +31,65 @@
 .filter-var__sizes {
    display: flex;
    align-items: center;
-   padding: 3px;
    background: #dee2e7;
    border-radius: 6px;
+   height: 40px;
+   width: 76px;
+   padding: 3px;
+
+   .wide-grid {
+      display: none;
+   }
+
+   .wide-list {
+      display: none;
+   }
+
+   &.active {
+      .wide-grid {
+         display: block;
+         width: 24px;
+         height: 24px;
+      }
+
+      .thin-grid {
+         display: none;
+      }
+
+      .wide-list {
+         display: block;
+         width: 24px;
+         height: 24px;
+      }
+
+      .thin-list {
+         display: none;
+      }
+   }
 }
 
 .filter-var__sizes-btn {
-   padding: 9px 8px;
-   background-color: transparent;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-shrink: 0;
+   flex-grow: 1;
+   height: 100%;
 
-   svg {
-      width: 18px;
-      height: 16px;
-   }
+   background-color: transparent;
 
    &.active {
       background: $white-color;
       border-radius: 6px;
    }
+}
+
+.thin-grid {
+   width: 16px;
+   height: 16px;
+}
+
+.thin-list {
+   width: 18px;
+   height: 16px;
 }

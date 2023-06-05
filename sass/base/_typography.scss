@@ -18,6 +18,22 @@
    font-weight: 600;
    font-size: 32px;
    color: $black-color;
+   position: relative;
+
+   &:after {
+      content: "";
+      position: absolute;
+      bottom: -40%;
+      left: 0;
+      width: 200px;
+      height: 8px;
+      background: $primary-color;
+
+      /* Mobile*/
+      @media (max-width: 599px) {
+         bottom: -70%;
+      }
+   }
 
    /* Tablet Small*/
    @media (max-width: 899px) {

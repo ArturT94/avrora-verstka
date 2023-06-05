@@ -30,8 +30,12 @@
 }
 
 .product__action {
+   display: none;
    margin-top: 61px;
-   padding: 20px;
+
+   &.active {
+      display: flex;
+   }
 }
 
 .product__aside {
@@ -463,52 +467,10 @@
    color: $gray-color;
 }
 
-// Product Accesories
+// accesories
 
 .product__accessories {
    margin-bottom: 60px;
-   padding: 20px 24px;
-   background: $white-color;
-   border: 1px solid #dee2e7;
-   border-radius: 6px;
-
-   /* Tablet Small*/
-   @media (max-width: 899px) {
-      background-color: transparent;
-      border: unset;
-      padding: unset;
-   }
-}
-.product__accessories-title {
-   margin-bottom: 16px;
-   font-weight: 600;
-   font-size: 20px;
-   line-height: 1.4;
-   letter-spacing: -0.2px;
-   color: $black-color;
-}
-.product__accessories-row {
-   display: flex;
-   align-items: start;
-   column-gap: 18px;
-   flex-wrap: wrap;
-
-   /* Tablet Small*/
-   @media (max-width: 1210px) {
-      display: none;
-   }
-}
-
-.product__accessories-slider {
-   display: none;
-
-   /* Tablet Small*/
-   @media (max-width: 1210px) {
-      display: block;
-   }
-}
-
-.product__accessories-card {
 }
 
 // Product Reviews

@@ -248,6 +248,7 @@
       align-items: center;
       column-gap: 18px;
       max-width: 289px;
+      @include transition;
 
       &:hover,
       &:focus,
@@ -271,6 +272,7 @@
 
       path {
          fill: $gray-color;
+         @include transition;
       }
    }
 }
@@ -278,4 +280,5 @@
    font-weight: 600;
    font-size: 16px;
    color: $gray-color;
+   @include transition;
 }

@@ -42,11 +42,15 @@
 @import "./blocks/order";
 @import "./blocks/form-success";
 @import "./blocks/order-count";
+@import "./blocks/counter";
 @import "./blocks/legal-face";
 @import "./blocks/score-info";
 @import "./blocks/action-info";
 @import "./blocks/review-popup";
 @import "./blocks/review-filter";
+@import "./blocks/basket-card";
+@import "./blocks/order-card";
+@import "./blocks/order-detail";
 
 // Sections
 @import "./sections/header";
@@ -62,3 +66,7 @@
 @import "./sections/footer";
 @import "./sections/catalog";
 @import "./sections/product";
+@import "./sections/accessories-section";
+@import "./sections/basket";
+@import "./sections/ordering";
+@import "./sections/news-catalog";

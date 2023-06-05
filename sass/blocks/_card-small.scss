@@ -15,6 +15,19 @@
    @media (max-width: 899px) {
       display: none !important;
    }
+
+   .card__new {
+      height: 23px;
+      padding: 0 12px;
+
+      span {
+         font-weight: 700;
+         font-size: 12px;
+         line-height: 1.25;
+         letter-spacing: unset;
+         color: $white-color;
+      }
+   }
 }
 .card-small__img {
    width: 184px;

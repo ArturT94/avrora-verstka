@@ -1,5 +1,10 @@
 .accessories-card {
    width: 172px;
+
+   /* Mobile Small */
+   @media (max-width: 389px) {
+      width: 100%;
+   }
 }
 .accessories-card__img {
    width: 100%;

@@ -324,6 +324,9 @@ $(document).ready(function () {
                   dropdownList.classList.remove("active");
                });
             });
+
+            const dropDownFilter = document.querySelector(".filter-var__sizes");
+            dropDownFilter.classList.toggle("active");
          });
 
          document.addEventListener("click", function (e) {
@@ -403,7 +406,7 @@ $(document).ready(function () {
       prdocutPromotion.forEach(function (prdocutPromotion) {
          const btnPromotion = prdocutPromotion.querySelectorAll("[data-promotion]");
          const promItem = prdocutPromotion.querySelectorAll("[data-prom-item]");
-         const productAction = document.querySelector(".product-action");
+         const productAction = document.querySelector(".product__action");
          const productContent = document.querySelector(".product__content");
 
          btnPromotion.forEach(function (item) {
@@ -542,8 +545,6 @@ $(document).ready(function () {
       // Order Count
       const orderCountWrapper = document.querySelector(".order-count-wrapper");
       const countBtn = document.querySelectorAll(".shipping-info__btn");
-      const plusCount = document.querySelector(".order-count__plus");
-      const minusCount = document.querySelector(".order-count__minus");
 
       countBtn.forEach((el) => {
          el.addEventListener("click", () => {
@@ -566,22 +567,29 @@ $(document).ready(function () {
          countHint.classList.remove("active");
       });
 
-      plusCount.addEventListener("click", () => {
-         const countQuantity = document.querySelector(".order-count__quantity");
-         const quantity = +countQuantity.innerText;
+      // Counter
+      const counter = document.querySelectorAll(".counter");
 
-         if (quantity >= 0) {
-            countQuantity.innerText = quantity + 1;
-         }
-      });
+      counter.forEach(function (counter) {
+         let plusCount = counter.querySelector(".counter__plus");
+         let minusCount = counter.querySelector(".counter__minus");
+         plusCount.addEventListener("click", () => {
+            let countQuantity = counter.querySelector(".counter__quantity");
+            let quantity = +countQuantity.innerText;
 
-      minusCount.addEventListener("click", () => {
-         const countQuantity = document.querySelector(".order-count__quantity");
-         const quantity = +countQuantity.innerText;
+            if (quantity >= 1) {
+               countQuantity.innerText = quantity + 1;
+            }
+         });
 
-         if (quantity > 0) {
-            countQuantity.innerText = quantity - 1;
-         }
+         minusCount.addEventListener("click", () => {
+            let countQuantity = counter.querySelector(".counter__quantity");
+            let quantity = +countQuantity.innerText;
+
+            if (quantity > 1) {
+               countQuantity.innerText = quantity - 1;
+            }
+         });
       });
 
       // Legal Face
@@ -877,6 +885,74 @@ $(document).ready(function () {
          el.addEventListener("click", () => {
             revFilterBtn.innerHTML = el.innerHTML;
          });
+      });
+   }
+
+   if (window.location.toString().indexOf("basket.html") > 0) {
+      // Counter
+      const counter = document.querySelectorAll(".counter");
+
+      counter.forEach(function (counter) {
+         let plusCount = counter.querySelector(".counter__plus");
+         let minusCount = counter.querySelector(".counter__minus");
+         plusCount.addEventListener("click", () => {
+            let countQuantity = counter.querySelector(".counter__quantity");
+            let quantity = +countQuantity.innerText;
+
+            if (quantity >= 1) {
+               countQuantity.innerText = quantity + 1;
+            }
+         });
+
+         minusCount.addEventListener("click", () => {
+            let countQuantity = counter.querySelector(".counter__quantity");
+            let quantity = +countQuantity.innerText;
+
+            if (quantity > 1) {
+               countQuantity.innerText = quantity - 1;
+            }
+         });
+      });
+
+      const accessoriesSlider = $("#accessoriesSlider");
+      accessoriesSlider.owlCarousel({
+         dots: false,
+         nav: false,
+         loop: true,
+
+         responsive: {
+            0: {
+               items: 2,
+               margin: 20,
+            },
+            600: {
+               items: 3,
+               margin: 0,
+            },
+            900: {
+               items: 4,
+            },
+         },
+      });
+      const accessoriesSlider2 = $("#accessoriesSlider-2");
+      accessoriesSlider2.owlCarousel({
+         dots: false,
+         nav: false,
+         loop: true,
+
+         responsive: {
+            0: {
+               items: 2,
+               margin: 20,
+            },
+            600: {
+               items: 3,
+               margin: 0,
+            },
+            900: {
+               items: 4,
+            },
+         },
       });
    }
 });

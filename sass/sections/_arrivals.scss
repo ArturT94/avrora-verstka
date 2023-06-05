@@ -17,29 +17,11 @@
    display: flex;
    justify-content: space-between;
    align-items: end;
-   margin-bottom: 54px;
+   margin-bottom: 58px;
 
    /* Mobile*/
    @media (max-width: 599px) {
       margin-bottom: 30px;
-   }
-}
-
-.arrivals__title {
-   position: relative;
-   &:after {
-      content: "";
-      position: absolute;
-      bottom: -35%;
-      left: 0;
-      width: 200px;
-      height: 8px;
-      background: $primary-color;
-
-      /* Mobile*/
-      @media (max-width: 599px) {
-         bottom: -70%;
-      }
    }
 }
 

@@ -24,24 +24,6 @@
    }
 }
 
-.most-view__title {
-   position: relative;
-   &:after {
-      content: "";
-      position: absolute;
-      bottom: -35%;
-      left: 0;
-      width: 200px;
-      height: 8px;
-      background: $primary-color;
-
-      /* Mobile*/
-      @media (max-width: 599px) {
-         bottom: -70%;
-      }
-   }
-}
-
 .most-view__row {
    display: flex;
    flex-wrap: wrap;

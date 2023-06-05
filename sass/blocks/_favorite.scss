@@ -21,22 +21,22 @@
       @include transition;
    }
 
-   &:hover,
-   &:active {
-      span {
-         color: $primary-color;
-      }
+   // &:hover,
+   // &:active {
+   //    span {
+   //       color: $primary-color;
+   //    }
 
-      svg > path {
-         fill: $primary-color;
-      }
-   }
+   //    svg > path {
+   //       fill: $primary-color;
+   //    }
+   // }
 
-   &:focus {
-      span {
-         color: $primary-color;
-      }
-   }
+   // &:focus {
+   //    span {
+   //       color: $primary-color;
+   //    }
+   // }
 
    &.active {
       span {
