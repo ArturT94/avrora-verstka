@@ -476,24 +476,24 @@
 						<span>Вернуться в корзину</span>
 					</a>
 				</div>
-				<div class="ordering__row">
-					<div class="ordering__form-wrapper">
-						<form action="#!" class="ordering__form">
+				<div class="ordering__form-wrapper">
+					<form action="#!" class="ordering__row" id="ordering-form">
+						<div class="ordering__form">
 							<fieldset class="ordering__data">
 								<legend class="ordering__data-title h3">Персональные данные</legend>
 								<div class="ordering-personal">
-									<div class="ordering-personal__content">
+									<label class="ordering-personal__content">
 										<h4 class="ordering-personal__title">ФИО</h4>
 										<input type="text" name="name" class="ordering-personal__input">
-									</div>
-									<div class="ordering-personal__content">
+									</label>
+									<label class="ordering-personal__content">
 										<h4 class="ordering-personal__title">Телефон</h4>
 										<input type="tel" name="tel" class="ordering-personal__input">
-									</div>
-									<div class="ordering-personal__content">
+									</label>
+									<label class="ordering-personal__content">
 										<h4 class="ordering-personal__title">E-mail</h4>
 										<input type="email" name="email" class="ordering-personal__input">
-									</div>
+									</label>
 								</div>
 							</fieldset>
 							<fieldset class="ordering__data">
@@ -602,74 +602,74 @@
 							<fieldset class="ordering__data">
 								<legend class="ordering__data-title h3">Детали доставки</legend>
 								<div class="ordering-details">
-									<div class="ordering-details__content">
+									<label class="ordering-details__content">
 										<h4 class="ordering-details__title">Улица</h4>
 										<input type="text" name="street" class="ordering-details__input">
-									</div>
-									<div class="ordering-details__content">
+									</label>
+									<label class="ordering-details__content">
 										<h4 class="ordering-details__title">Дом</h4>
 										<input type="text" name="home" class="ordering-details__input">
-									</div>
-									<div class="ordering-details__content">
+									</label>
+									<label class="ordering-details__content">
 										<h4 class="ordering-details__title">Кв/Офис</h4>
 										<input type="text" name="apartment" class="ordering-details__input">
-									</div>
-									<div class="ordering-details__content">
+									</label>
+									<label class="ordering-details__content">
 										<h4 class="ordering-details__title">Индекс</h4>
 										<input type="text" name="index" class="ordering-details__input">
-									</div>
-									<div class="ordering-details__content">
+									</label>
+									<label class="ordering-details__content">
 										<h4 class="ordering-details__title">Регион</h4>
 										<input type="text" name="region" class="ordering-details__input">
-									</div>
-									<div class="ordering-details__content">
+									</label>
+									<label class="ordering-details__content">
 										<h4 class="ordering-details__title">Город</h4>
 										<input type="text" name="town" class="ordering-details__input">
-									</div>
+									</label>
 								</div>
 							</fieldset>
-						</form>
-					</div>
-					<div class="order-detail">
-						<h4 class="order-detail__title">Детали заказа</h4>
-						<div class="order-detail__cards">
-							<div class="order-detail__card detail-card">
-								<div class="detail-card-img">
-									<img src="/img/main/basket/01.png" alt="01">
-								</div>
-								<div class="detail-card__info">
-									<h4 class="detail-card__title">Сварочный полуавтомат AuroraPRO Overman 200</h4>
-									<span class="detail-card__price">56 400 р.</span>
-								</div>
-							</div>
-							<div class="order-detail__card detail-card">
-								<div class="detail-card-img">
-									<img src="/img/main/basket/01.png" alt="01">
-								</div>
-								<div class="detail-card__info">
-									<h4 class="detail-card__title">Сварочный полуавтомат AuroraPRO Overman 200</h4>
-									<span class="detail-card__price">56 400 р.</span>
-								</div>
-							</div>
 						</div>
-						<ul class="order-detail__list">
-							<li class="order-detail__item">
-								<span class="order-detail__name">Подитог:</span>
-								<span class="order-detail__cost">56 410 р.</span>
-							</li>
-							<li class="order-detail__item">
-								<span class="order-detail__name">Доставка:</span>
-								<span class="order-detail__cost order-detail__cost--accent">+ 1000 р.</span>
-							</li>
-							<li class="order-detail__item">
-								<span class="order-detail__name order-detail__name--bold">Итог:</span>
-								<span class="order-detail__cost order-detail__cost--bold">56 410 р.</span>
-							</li>
-						</ul>
-						<button class="btn-pay order-detail__btn">
-							<span>Оплатить</span>
-						</button>
-					</div>
+						<div class="order-detail">
+							<h4 class="order-detail__title">Детали заказа</h4>
+							<div class="order-detail__cards">
+								<div class="order-detail__card detail-card">
+									<div class="detail-card-img">
+										<img src="/img/main/basket/01.png" alt="01">
+									</div>
+									<div class="detail-card__info">
+										<h4 class="detail-card__title">Сварочный полуавтомат AuroraPRO Overman 200</h4>
+										<span class="detail-card__price">56 400 р.</span>
+									</div>
+								</div>
+								<div class="order-detail__card detail-card">
+									<div class="detail-card-img">
+										<img src="/img/main/basket/01.png" alt="01">
+									</div>
+									<div class="detail-card__info">
+										<h4 class="detail-card__title">Сварочный полуавтомат AuroraPRO Overman 200</h4>
+										<span class="detail-card__price">56 400 р.</span>
+									</div>
+								</div>
+							</div>
+							<ul class="order-detail__list">
+								<li class="order-detail__item">
+									<span class="order-detail__name">Подитог:</span>
+									<span class="order-detail__cost">56 410 р.</span>
+								</li>
+								<li class="order-detail__item">
+									<span class="order-detail__name">Доставка:</span>
+									<span class="order-detail__cost order-detail__cost--accent">+ 1000 р.</span>
+								</li>
+								<li class="order-detail__item">
+									<span class="order-detail__name order-detail__name--bold">Итог:</span>
+									<span class="order-detail__cost order-detail__cost--bold">56 410 р.</span>
+								</li>
+							</ul>
+							<button class="btn-pay order-detail__btn">
+								<span>Оплатить</span>
+							</button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</section>

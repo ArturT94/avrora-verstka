@@ -6022,7 +6022,7 @@ label.error {
 
 .order-detail {
   max-width: 450px;
-  padding: 20px 20px 49px;
+  padding: 20px 20px 39px;
   background: #ffffff;
   border: 1px solid #dee2e7;
   border-radius: 6px;
@@ -9237,7 +9237,7 @@ label.error {
   }
 }
 
-.ordering__form-wrapper {
+.ordering__form {
   max-width: 610px;
 }
 
@@ -9305,6 +9305,14 @@ label.error {
   background: #ffffff;
   border: 1px solid #dee2e7;
   border-radius: 6px;
+}
+
+.ordering-error {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #eb001b;
+  font-size: 16px;
 }
 
 .ordering-pay {
@@ -9595,7 +9603,12 @@ label.error {
 }
 
 .ordering__data-title--shipping {
-  margin-bottom: 7px;
+  /* Mobile*/
+}
+@media (max-width: 599px) {
+  .ordering__data-title--shipping {
+    margin-bottom: 7px;
+  }
 }
 
 .ordering-details {

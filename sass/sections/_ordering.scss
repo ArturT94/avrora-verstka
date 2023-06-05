@@ -81,9 +81,9 @@
    }
 }
 .ordering__form-wrapper {
-   max-width: 610px;
 }
 .ordering__form {
+   max-width: 610px;
 }
 .ordering__data {
    &:not(:last-of-type) {
@@ -136,6 +136,15 @@
    background: $white-color;
    border: 1px solid $light-gray;
    border-radius: 6px;
+}
+
+.ordering-error {
+   position: absolute;
+   top: 0;
+   right: 0;
+
+   color: $red-color;
+   font-size: 16px;
 }
 
 // Order Pay
@@ -365,7 +374,10 @@
 }
 
 .ordering__data-title--shipping {
-   margin-bottom: 7px;
+   /* Mobile*/
+   @media (max-width: 599px) {
+      margin-bottom: 7px;
+   }
 }
 
 // Ordering Details

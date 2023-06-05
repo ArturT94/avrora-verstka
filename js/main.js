@@ -513,7 +513,7 @@ $(document).ready(function () {
          },
          messages: {
             tel: {
-               required: "Введите телефон",
+               required: "*",
             },
          },
          submitHandler: function (form) {
@@ -670,19 +670,19 @@ $(document).ready(function () {
          },
          messages: {
             name: {
-               required: "Введите ФИО",
+               required: "*",
             },
             tel: {
-               required: "Введите телефон",
+               required: "*",
             },
             email: {
-               required: "Введите E-mail",
+               required: "*",
             },
             link: {
-               required: "Вставьте ссылку",
+               required: "*",
             },
             message: {
-               required: "Введите комментарий",
+               required: "*",
             },
          },
          submitHandler: function (form) {
