@@ -5,17 +5,19 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>Корзина</title>
+	<title>Новость</title>
 	<meta name="description" content="Aurora, Офицальный дилер Aurora">
 	<meta name="keywords" content="Офицальный дилер Aurora">
 
 	<!-- Styles -->
 	<link rel="stylesheet" href="./css/main.css">
 
-
 	<!-- Owl carousel -->
 	<link rel="stylesheet" href="./libs/owl-carousel/assets/owl.carousel.min.css">
 	<link rel="stylesheet" href="./libs/owl-carousel/assets/owl.theme.default.min.css">
+
+	<!-- Swiper -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
 
 
 	<!-- Favicons -->
@@ -32,7 +34,6 @@
 </head>
 
 <body>
-
 	<header class="header">
 		<div class="container">
 			<div class="header__row">
@@ -51,7 +52,7 @@
 						</svg>
 						<span>Войти</span>
 					</a>
-					<a href="#!" class="header__user-item header__user-item--basket">
+					<a href="./basket.html" class="header__user-item header__user-item--basket">
 						<svg>
 							<path
 								d="M10.75 22.5C11.7165 22.5 12.5 21.7165 12.5 20.75C12.5 19.7835 11.7165 19 10.75 19C9.7835 19 9 19.7835 9 20.75C9 21.7165 9.7835 22.5 10.75 22.5Z" />
@@ -63,6 +64,7 @@
 								d="M12.25 13C12.25 12.5858 12.5858 12.25 13 12.25H21C21.4142 12.25 21.75 12.5858 21.75 13C21.75 13.4142 21.4142 13.75 21 13.75H13C12.5858 13.75 12.25 13.4142 12.25 13Z" />
 						</svg>
 						<span>Корзина</span>
+						<span class="header__user-item--count">3</span>
 					</a>
 					<a href="#!" class="header__user-item header__user-item--like">
 						<svg>
@@ -466,431 +468,343 @@
 			</div>
 		</div>
 	</div>
-
-	<main class="main">
-		<section class="basket">
+	<main class="main main__news-detail">
+		<nav class="page-nav page-nav--details">
 			<div class="container">
-				<div class="basket__content basket__content--yes active">
-					<h2 class="basket__title">Моя корзина <span>(1)</span></h2>
-					<div class="basket__row">
-						<div class="basket-card">
-							<div class="basket-card__top">
-								<div class="basket-card__content">
-									<a href="./product.html" class="basket-card__img">
-										<img src="./img/main/basket/01.png" alt="01">
-									</a>
-									<div class="basket-card__info">
-										<h3 class="basket-card__title"><a href="./product.html">Сварочный полуавтомат AuroraPRO
-												Overman 200</a></h3>
-										<h4 class="basket-card__subtitle">Модель AuroraPRO Overman 200</h4>
-										<button class="btn-remove btn-remove--active">
-											<span>Убрать</span>
-										</button>
-									</div>
+				<ul class="page-nav__list">
+					<li class="page-nav__item">
+						<a href="./index.html">Главная</a>
+					</li>
+					<li class="page-nav__item">
+						<a href="./all-news.html">Новости</a>
+					</li>
+					<li class="page-nav__item">
+						<a href="./news-detail.html">Aurora Polo 175 - новый полуавтомат в обойме AURORA</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<section class="news-detail">
+			<div class="container">
+				<div class="news-detail__top">
+					<h2 class="h2 news-detail__title">Aurora Polo 175 - новый полуавтомат в обойме AURORA</h2>
+					<div class="news-detail__stats">
+						<div class="news-detail__stats-row">
+							<svg>
+								<path
+									d="M7.99934 14.6667C4.70379 14.6232 2.04278 11.9622 1.99934 8.66668C2.04278 5.37113 4.70379 2.71011 7.99934 2.66668C11.2949 2.71011 13.9559 5.37113 13.9993 8.66668C13.9559 11.9622 11.2949 14.6232 7.99934 14.6667ZM7.99934 4.00001C5.43612 4.03376 3.36642 6.10346 3.33268 8.66668C3.36642 11.2299 5.43612 13.2996 7.99934 13.3333C10.5626 13.2996 12.6323 11.2299 12.666 8.66668C12.6323 6.10346 10.5626 4.03376 7.99934 4.00001ZM11.3327 9.33334H7.33268V5.33334H8.66601V8.00001H11.3327V9.33334ZM13.5273 4.47201L11.5213 2.47201L12.4607 1.52734L14.4673 3.52734L13.5273 4.47134V4.47201ZM2.47068 4.47201L1.52734 3.52734L3.52134 1.52734L4.46468 2.47201L2.47201 4.47201H2.47068Z" />
+							</svg>
+							<span>22 April 2021</span>
+						</div>
+						<div class="news-detail__stats-row">
+							<svg>
+								<path
+									d="M15.8333 13.8337H1.5V0.833659C1.5 0.741992 1.425 0.666992 1.33333 0.666992H0.166667C0.075 0.666992 0 0.741992 0 0.833659V15.167C0 15.2587 0.075 15.3337 0.166667 15.3337H15.8333C15.925 15.3337 16 15.2587 16 15.167V14.0003C16 13.9087 15.925 13.8337 15.8333 13.8337ZM3 12.5003H14.1667C14.2583 12.5003 14.3333 12.4253 14.3333 12.3337V3.25033C14.3333 3.10033 14.1521 3.02741 14.0479 3.13158L9.66667 7.51283L7.05417 4.92949C7.02284 4.89848 6.98054 4.88108 6.93646 4.88108C6.89238 4.88108 6.85007 4.89848 6.81875 4.92949L2.88125 8.87949C2.86596 8.89481 2.85385 8.91301 2.84563 8.93303C2.8374 8.95306 2.83322 8.97451 2.83333 8.99616V12.3337C2.83333 12.4253 2.90833 12.5003 3 12.5003Z" />
+							</svg>
+							<span>10 comments</span>
+						</div>
+					</div>
+				</div>
+				<div class="news-detail__row">
+					<div class="news-detail__descr">
+						<p>
+							Группа компаний АВРОРА с гордостью представляет новый полуавтомат - Aurora POLO 175
+						</p>
+						<p>
+							Новинка 2023 модельного года, аппарат начального уровня от известного производителя
+							профессиональной сварочного оборудования AuroraPRO. POLO - предназначен для полуавтоматической
+							сварки в среде защитного газа MIG-MAG, для работы с порошковой самозащитной проволокой в режиме NO
+							GAS, а также для сварки покрытыми электродами ММА.
+						</p>
+						<p>
+							Главная особенность аппарата цифровой микроконтроллер Tiangong, собственной разработки RILAND.
+							("Небесный дворец" - тёзка Китайской орбитальной станции). Процессор контролирует корректный подбор
+							параметров сварки из заложенных в память программ, а так же обеспечивает быструю обратную связь
+							источника.
+						</p>
+						<p>
+							Основные достоинства нового полуавтомата Aurora Polo 175:
+						</p>
+						<ol class="news-detail__list">
+							<li>
+								синергетическое управление "одной кнопкой"
+							</li>
+							<li>
+								регулировка индуктивности для настройки желаемой жесткости дуги, глубины провара и формы валика
+							</li>
+							<li>
+								универсальная опорная ось позволяет использовать как 5 кг катушки проволоки D200, так и
+								маленькие бобины D100, весом 1 кг
+							</li>
+							<li>
+								клеммы смены полярности внутри корпуса
+							</li>
+							<li>
+								защита от перегрева, перенапряжения и низкого напряжения сети
+							</li>
+							<li>
+								силовой блок на базе технологии IGBT нового поколения
+							</li>
+						</ol>
+					</div>
+					<div class="news-detail__slider news-slider">
+						<div class="news-slider__block">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<img src="./img/main/news-detail/01.jpg" alt="01">
 								</div>
-								<div class="basket-card__count-wrapper">
-									<button class="btn-remove btn-remove--hidden">
-										<span>Убрать</span>
-									</button>
-									<div class="basket-card__count">
-										<h3 class="basket-card__title">56 400 р.</h3>
-										<div class="counter">
-											<div class="counter__plus">
-												<svg>
-													<path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+								<div class="swiper-slide">
+									<img src="./img/main/news-detail/02.jpg" alt="02">
+								</div>
+								<div class="swiper-slide">
+									<img src="./img/main/news-detail/03.jpg" alt="03">
+								</div>
+								<div class="swiper-slide">
+									<img src="./img/main/news-detail/04.jpg" alt="04">
+								</div>
+								<div class="swiper-slide">
+									<img src="./img/main/news-detail/05.jpg" alt="05">
+								</div>
+							</div>
+						</div>
+						<div class="news-slider__nav">
+							<div class="news-slider__item">
+								<img src="./img/main/news-detail/01-small.jpg" alt="01">
+							</div>
+							<div class="news-slider__item">
+								<img src="./img/main/news-detail/02-small.jpg" alt="02">
+							</div>
+							<div class="news-slider__item">
+								<img src="./img/main/news-detail/03-small.jpg" alt="03">
+							</div>
+							<div class="news-slider__item">
+								<img src="./img/main/news-detail/04-small.jpg" alt="04">
+							</div>
+						</div>
+						<button class="news-slider__arrow news-slider__prev">
+							<svg>
+								<path
+									d="M0.777723 7.77723L10.2433 7.77724L5.8955 12.125L6.99995 13.2217L13.2222 6.99946L6.99995 0.777235L5.90328 1.8739L10.2433 6.22168L0.777723 6.22168L0.777723 7.77723Z" />
+							</svg>
+						</button>
+						<button class="news-slider__arrow news-slider__next">
+							<svg>
+								<path
+									d="M0.777723 7.77723L10.2433 7.77724L5.8955 12.125L6.99995 13.2217L13.2222 6.99946L6.99995 0.777235L5.90328 1.8739L10.2433 6.22168L0.777723 6.22168L0.777723 7.77723Z" />
+							</svg>
+						</button>
+					</div>
+				</div>
+				<div class="news-detail__text">
+					<p>Включение и выключение источника производится энкодером настройки тока. В крайнем левом положении
+						регулятора - аппарат выключен. Переключение режимов MIG/MMA осуществляется кнопкой под крышкой отсека
+						подающего механизма.
+						Ждём появления новых полуавтоматов у дилеров до конца текущего месяца. Пока источники в пути,
+						предлагаем посмотреть фотоотчёт о процессе сборки, тестирования и отправки инверторов в Россию.</p>
+				</div>
+			</div>
+		</section>
+		<section class="comments">
+			<div class="container">
+				<h2 class="h2 comments__title">Комментарии</h2>
+				<div class="comments__form-wrapper">
+					<form action="#!" class="comments__form" id="comments-form">
+						<div class="comments__input-wrapper">
+							<input type="text" name="name" class="comments__input" placeholder="Ваше имя">
+						</div>
+						<div class="comments__textarea-wrapper">
+							<textarea name="comment" class="comments__textarea" placeholder="Комментарий"></textarea>
+						</div>
+						<button class="btn comments__btn">
+							<span>Отправить</span>
+						</button>
+					</form>
+					<div id="answer-comment"></div>
+				</div>
+				<div class="comments__comments">
+					<div class="comments__card comment-card">
+						<div class="comments__card-top">
+							<h4 class="comment-card__title">Влад Михайлушкин</h4>
+							<div class="comment-card__grade">
+								<div class="comment-card__like">
+									<span class="comment-card__like-qual">1</span>
+									<svg class="comment-card__like-svg">
+										<path
+											d="M8 20H17C17.83 20 18.54 19.5 18.84 18.78L21.86 11.73C21.95 11.5 22 11.26 22 11V9C22 7.9 21.1 7 20 7H13.69L14.64 2.43L14.67 2.11C14.67 1.7 14.5 1.32 14.23 1.05L13.17 0L6.58 6.59C6.22 6.95 6 7.45 6 8V18C6 19.1 6.9 20 8 20ZM8 8L12.34 3.66L11 9H20V11L17 18H8V8ZM0 8H4V20H0V8Z" />
+									</svg>
+								</div>
+								<div class="comment-card__dislike">
+									<span class="comment-card__dislike-qual">0</span>
+									<svg class="comment-card__dislike-svg">
+										<path
+											d="M14 0H5C4.17 0 3.46 0.5 3.16 1.22L0.14 8.27C0.05 8.5 0 8.74 0 9V11C0 12.1 0.9 13 2 13H8.31L7.36 17.57L7.33 17.89C7.33 18.3 7.5 18.68 7.77 18.95L8.83 20L15.42 13.41C15.78 13.05 16 12.55 16 12V2C16 0.9 15.1 0 14 0ZM14 12L9.66 16.34L11 11H2V9L5 2H14V12ZM18 0H22V12H18V0Z" />
+									</svg>
+								</div>
+							</div>
+						</div>
+						<div class="comment-card__descr">
+							<p><span class="comment-card__descr-accent">Комментарий:</span> Здесь и доставка, и скидки, и
+								акции,
+								и распродажа. В магазине Маркет Аврора представлен широкий
+								ассортимент техники и электроники, а также товаров для дома, сада и огорода. Очень удобно, что
+								не нужно посещать кучу ресурсов, а приобрести можно все в одном месте! Для себя заказал здесь
+								товар и для работы сварочный аппарат и для дачи тепловентилятор и мотоблок. Решил заранее
+								прикупиться по доступной цене. Вся техника рабочая, сколько прослужит не могу загадывать, но
+								сборка отличная.
+							</p>
+						</div>
+						<div class="comment-card__grade comment-card__grade--card">
+							<div class="comment-card__like">
+								<span class="comment-card__like-qual">1</span>
+								<svg class="comment-card__like-svg">
+									<path
+										d="M8 20H17C17.83 20 18.54 19.5 18.84 18.78L21.86 11.73C21.95 11.5 22 11.26 22 11V9C22 7.9 21.1 7 20 7H13.69L14.64 2.43L14.67 2.11C14.67 1.7 14.5 1.32 14.23 1.05L13.17 0L6.58 6.59C6.22 6.95 6 7.45 6 8V18C6 19.1 6.9 20 8 20ZM8 8L12.34 3.66L11 9H20V11L17 18H8V8ZM0 8H4V20H0V8Z" />
+								</svg>
+							</div>
+							<div class="comment-card__dislike">
+								<span class="comment-card__dislike-qual">0</span>
+								<svg class="comment-card__dislike-svg">
+									<path
+										d="M14 0H5C4.17 0 3.46 0.5 3.16 1.22L0.14 8.27C0.05 8.5 0 8.74 0 9V11C0 12.1 0.9 13 2 13H8.31L7.36 17.57L7.33 17.89C7.33 18.3 7.5 18.68 7.77 18.95L8.83 20L15.42 13.41C15.78 13.05 16 12.55 16 12V2C16 0.9 15.1 0 14 0ZM14 12L9.66 16.34L11 11H2V9L5 2H14V12ZM18 0H22V12H18V0Z" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="comment-card comment-card--sec">
+						<div class="comments__card-top">
+							<h4 class="comment-card__title">Влад Михайлушкин</h4>
+							<div class="comment-card__grade">
+								<div class="comment-card__like">
+									<span class="comment-card__like-qual">1</span>
+									<svg class="comment-card__like-svg">
+										<path
+											d="M8 20H17C17.83 20 18.54 19.5 18.84 18.78L21.86 11.73C21.95 11.5 22 11.26 22 11V9C22 7.9 21.1 7 20 7H13.69L14.64 2.43L14.67 2.11C14.67 1.7 14.5 1.32 14.23 1.05L13.17 0L6.58 6.59C6.22 6.95 6 7.45 6 8V18C6 19.1 6.9 20 8 20ZM8 8L12.34 3.66L11 9H20V11L17 18H8V8ZM0 8H4V20H0V8Z" />
+									</svg>
+								</div>
+								<div class="comment-card__dislike">
+									<span class="comment-card__dislike-qual">0</span>
+									<svg class="comment-card__dislike-svg">
+										<path
+											d="M14 0H5C4.17 0 3.46 0.5 3.16 1.22L0.14 8.27C0.05 8.5 0 8.74 0 9V11C0 12.1 0.9 13 2 13H8.31L7.36 17.57L7.33 17.89C7.33 18.3 7.5 18.68 7.77 18.95L8.83 20L15.42 13.41C15.78 13.05 16 12.55 16 12V2C16 0.9 15.1 0 14 0ZM14 12L9.66 16.34L11 11H2V9L5 2H14V12ZM18 0H22V12H18V0Z" />
+									</svg>
+								</div>
+							</div>
+						</div>
+						<div class="comment-card__descr">
+							<p>
+								<span class="comment-card__descr-accent">Комментарий:</span> И нет сомнений, что акционеры
+								крупнейших компаний формируют глобальную экономическую сеть
+							</p>
+						</div>
+						<div class="comment-card__grade comment-card__grade--card">
+							<div class="comment-card__like">
+								<span class="comment-card__like-qual">1</span>
+								<svg class="comment-card__like-svg">
+									<path
+										d="M8 20H17C17.83 20 18.54 19.5 18.84 18.78L21.86 11.73C21.95 11.5 22 11.26 22 11V9C22 7.9 21.1 7 20 7H13.69L14.64 2.43L14.67 2.11C14.67 1.7 14.5 1.32 14.23 1.05L13.17 0L6.58 6.59C6.22 6.95 6 7.45 6 8V18C6 19.1 6.9 20 8 20ZM8 8L12.34 3.66L11 9H20V11L17 18H8V8ZM0 8H4V20H0V8Z" />
+								</svg>
+							</div>
+							<div class="comment-card__dislike">
+								<span class="comment-card__dislike-qual">0</span>
+								<svg class="comment-card__dislike-svg">
+									<path
+										d="M14 0H5C4.17 0 3.46 0.5 3.16 1.22L0.14 8.27C0.05 8.5 0 8.74 0 9V11C0 12.1 0.9 13 2 13H8.31L7.36 17.57L7.33 17.89C7.33 18.3 7.5 18.68 7.77 18.95L8.83 20L15.42 13.41C15.78 13.05 16 12.55 16 12V2C16 0.9 15.1 0 14 0ZM14 12L9.66 16.34L11 11H2V9L5 2H14V12ZM18 0H22V12H18V0Z" />
+								</svg>
+							</div>
+						</div>
+					</div>
+
+					<div class="comments__slider" id="comments-slider">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="comment-card">
+									<div class="comments__card-top">
+										<h4 class="comment-card__title">Влад Михайлушкин</h4>
+										<div class="comment-card__grade">
+											<div class="comment-card__like">
+												<span class="comment-card__like-qual">1</span>
+												<svg class="comment-card__like-svg">
+													<path
+														d="M8 20H17C17.83 20 18.54 19.5 18.84 18.78L21.86 11.73C21.95 11.5 22 11.26 22 11V9C22 7.9 21.1 7 20 7H13.69L14.64 2.43L14.67 2.11C14.67 1.7 14.5 1.32 14.23 1.05L13.17 0L6.58 6.59C6.22 6.95 6 7.45 6 8V18C6 19.1 6.9 20 8 20ZM8 8L12.34 3.66L11 9H20V11L17 18H8V8ZM0 8H4V20H0V8Z" />
 												</svg>
 											</div>
-											<span class="counter__quantity">1</span>
-											<div class="counter__minus">
-												<svg>
-													<path d="M19 13H5V11H19V13Z" />
+											<div class="comment-card__dislike">
+												<span class="comment-card__dislike-qual">0</span>
+												<svg class="comment-card__dislike-svg">
+													<path
+														d="M14 0H5C4.17 0 3.46 0.5 3.16 1.22L0.14 8.27C0.05 8.5 0 8.74 0 9V11C0 12.1 0.9 13 2 13H8.31L7.36 17.57L7.33 17.89C7.33 18.3 7.5 18.68 7.77 18.95L8.83 20L15.42 13.41C15.78 13.05 16 12.55 16 12V2C16 0.9 15.1 0 14 0ZM14 12L9.66 16.34L11 11H2V9L5 2H14V12ZM18 0H22V12H18V0Z" />
 												</svg>
 											</div>
 										</div>
 									</div>
-								</div>
-
-							</div>
-							<div class="basket-card__bottom">
-								<a href="./index.html" class="btn-back">
-									<svg>
-										<path
-											d="M18.3333 10.0837H7.17746L12.3016 4.95949L11 3.66699L3.66663 11.0003L11 18.3337L12.2925 17.0412L7.17746 11.917H18.3333V10.0837Z" />
-									</svg>
-									<span>Вернуться на главную</span>
-								</a>
-								<button class="btn-click" data-remove-all>
-									<span>Убрать всё</span>
-								</button>
-							</div>
-						</div>
-						<div class="order-card basket-card__order">
-							<ul class="order-card__list">
-								<li class="order-card__item">
-									<span class="order-card__name">Подитог:</span>
-									<span class="order-card__price">56 400 р.</span>
-								</li>
-								<li class="order-card__item">
-									<span class="order-card__name">Доставка:</span>
-									<span class="order-card__price order-card__price--accent">+ 10 р.</span>
-								</li>
-							</ul>
-							<ul class="order-card__list">
-								<li class="order-card__item">
-									<span class="order-card__name order-card__name--summary">Итог:</span>
-									<span class="order-card__price order-card__price--summary">56 410 р.</span>
-								</li>
-								<li class="order-card__item">
-									<span class="order-card__name">Кэшбек:</span>
-									<span class="order-card__price order-card__price--accent">+ 3 300 р.</span>
-								</li>
-							</ul>
-							<a href="./ordering.html" class="btn-pay basket-card__btn">
-								<span>Оформить заказ</span>
-							</a>
-							<div class="order-card__row">
-								<div class="order-card__card">
-									<img src="./img/icons/basket/card-1.svg" alt="card payment">
-								</div>
-								<div class="order-card__card">
-									<img src="./img/icons/basket/card-2.svg" alt="card mir">
-								</div>
-								<div class="order-card__card">
-									<img src="./img/icons/basket/card-3.svg" alt="card visa">
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="accessories-section basket__accessories">
-						<div class="accessories-section-title">Дополнительные аксессуары</div>
-						<div class="accessories-section-row">
-							<div class="accessories-section-card accessories-card">
-								<img src="./img/main/product-card/accessories/01.png" alt="01" class="accessories-card__img">
-								<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-								<div class="accessories-card__cost">
-									<span class="accessories-card__price">4 200 р.</span>
-									<button class="btn-buy accessories-card__btn">
-										<span class="btn__active-text">В корзину</span>
-										<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
+									<div class="comment-card__descr">
+										<p><span class="comment-card__descr-accent">Комментарий:</span> Здесь и доставка, и
+											скидки, и
+											акции,
+											и распродажа. В магазине Маркет Аврора представлен широкий
+											ассортимент техники и электроники, а также товаров для дома, сада и огорода. Очень
+											удобно,
+											что
+											не нужно посещать кучу ресурсов, а приобрести можно все в одном месте! Для себя заказал
+											здесь
+											товар и для работы сварочный аппарат и для дачи тепловентилятор и мотоблок. Решил
+											заранее
+											прикупиться по доступной цене. Вся техника рабочая, сколько прослужит не могу
+											загадывать,
+											но
+											сборка отличная.
+										</p>
+									</div>
+									<button class="comment-card__btn read-more-btn" data-read-more>
+										Читать полностью
 									</button>
 								</div>
 							</div>
-							<div class="accessories-section-card accessories-card">
-								<img src="./img/main/product-card/accessories/02.png" alt="02" class="accessories-card__img">
-								<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-								<div class="accessories-card__cost">
-									<span class="accessories-card__price">4 200 р.</span>
-									<button class="btn-buy accessories-card__btn">
-										<span class="btn__active-text">В корзину</span>
-										<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-									</button>
-								</div>
-							</div>
-							<div class="accessories-section-card accessories-card">
-								<img src="./img/main/product-card/accessories/03.png" alt="03" class="accessories-card__img">
-								<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-								<div class="accessories-card__cost">
-									<span class="accessories-card__price">4 200 р.</span>
-									<button class="btn-buy accessories-card__btn">
-										<span class="btn__active-text">В корзину</span>
-										<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-									</button>
-								</div>
-							</div>
-							<div class="accessories-section-card accessories-card">
-								<img src="./img/main/product-card/accessories/04.png" alt="04" class="accessories-card__img">
-								<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-								<div class="accessories-card__cost">
-									<span class="accessories-card__price">4 200 р.</span>
-									<button class="btn-buy accessories-card__btn">
-										<span class="btn__active-text">В корзину</span>
-										<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-									</button>
-								</div>
-							</div>
-							<div class="accessories-section-card accessories-card">
-								<img src="./img/main/product-card/accessories/05.png" alt="05" class="accessories-card__img">
-								<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-								<div class="accessories-card__cost">
-									<span class="accessories-card__price">4 200 р.</span>
-									<button class="btn-buy accessories-card__btn">
-										<span class="btn__active-text">В корзину</span>
-										<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-									</button>
-								</div>
-							</div>
-							<div class="accessories-section-card accessories-card">
-								<img src="./img/main/product-card/accessories/06.png" alt="06" class="accessories-card__img">
-								<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-								<div class="accessories-card__cost">
-									<span class="accessories-card__price">4 200 р.</span>
-									<button class="btn-buy accessories-card__btn">
-										<span class="btn__active-text">В корзину</span>
-										<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
+							<div class="swiper-slide">
+								<div class="comment-card">
+									<div class="comments__card-top">
+										<h4 class="comment-card__title">Влад Михайлушкин</h4>
+										<div class="comment-card__grade">
+											<div class="comment-card__like">
+												<span class="comment-card__like-qual">1</span>
+												<svg class="comment-card__like-svg">
+													<path
+														d="M8 20H17C17.83 20 18.54 19.5 18.84 18.78L21.86 11.73C21.95 11.5 22 11.26 22 11V9C22 7.9 21.1 7 20 7H13.69L14.64 2.43L14.67 2.11C14.67 1.7 14.5 1.32 14.23 1.05L13.17 0L6.58 6.59C6.22 6.95 6 7.45 6 8V18C6 19.1 6.9 20 8 20ZM8 8L12.34 3.66L11 9H20V11L17 18H8V8ZM0 8H4V20H0V8Z" />
+												</svg>
+											</div>
+											<div class="comment-card__dislike">
+												<span class="comment-card__dislike-qual">0</span>
+												<svg class="comment-card__dislike-svg">
+													<path
+														d="M14 0H5C4.17 0 3.46 0.5 3.16 1.22L0.14 8.27C0.05 8.5 0 8.74 0 9V11C0 12.1 0.9 13 2 13H8.31L7.36 17.57L7.33 17.89C7.33 18.3 7.5 18.68 7.77 18.95L8.83 20L15.42 13.41C15.78 13.05 16 12.55 16 12V2C16 0.9 15.1 0 14 0ZM14 12L9.66 16.34L11 11H2V9L5 2H14V12ZM18 0H22V12H18V0Z" />
+												</svg>
+											</div>
+										</div>
+									</div>
+									<div class="comment-card__descr">
+										<p><span class="comment-card__descr-accent">Комментарий:</span> Здесь и доставка, и
+											скидки, и
+											акции,
+											и распродажа. В магазине Маркет Аврора представлен широкий
+											ассортимент техники и электроники, а также товаров для дома, сада и огорода. Очень
+											удобно,
+											что
+											не нужно посещать кучу ресурсов, а приобрести можно все в одном месте! Для себя заказал
+											здесь
+											товар и для работы сварочный аппарат и для дачи тепловентилятор и мотоблок. Решил
+											заранее
+											прикупиться по доступной цене. Вся техника рабочая, сколько прослужит не могу
+											загадывать,
+											но
+											сборка отличная.
+										</p>
+									</div>
+									<button class="comment-card__btn read-more-btn" data-read-more>
+										Читать полностью
 									</button>
 								</div>
 							</div>
 						</div>
-						<div class="accessories-section-slider">
-							<div class="owl-carousel owl-theme" id="accessoriesSlider">
-								<div class="accessories-section-card accessories-card">
-									<div class="accessories-card__img">
-										<img src="./img/main/product-card/accessories/01.png" alt="01">
-									</div>
-									<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-									<div class="accessories-card__cost">
-										<span class="accessories-card__price">4 200 р.</span>
-										<button class="btn-buy accessories-card__btn">
-											<span class="btn__active-text">В корзину</span>
-											<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-										</button>
-									</div>
-								</div>
-								<div class="accessories-section-card accessories-card">
-									<div class="accessories-card__img">
-										<img src="./img/main/product-card/accessories/02.png" alt="02">
-									</div>
-									<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-									<div class="accessories-card__cost">
-										<span class="accessories-card__price">4 200 р.</span>
-										<button class="btn-buy accessories-card__btn">
-											<span class="btn__active-text">В корзину</span>
-											<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-										</button>
-									</div>
-								</div>
-								<div class="accessories-section-card accessories-card">
-									<div class="accessories-card__img">
-										<img src="./img/main/product-card/accessories/03.png" alt="03">
-									</div>
-									<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-									<div class="accessories-card__cost">
-										<span class="accessories-card__price">4 200 р.</span>
-										<button class="btn-buy accessories-card__btn">
-											<span class="btn__active-text">В корзину</span>
-											<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-										</button>
-									</div>
-								</div>
-								<div class="accessories-section-card accessories-card">
-									<div class="accessories-card__img">
-										<img src="./img/main/product-card/accessories/04.png" alt="04">
-									</div>
-									<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-									<div class="accessories-card__cost">
-										<span class="accessories-card__price">4 200 р.</span>
-										<button class="btn-buy accessories-card__btn">
-											<span class="btn__active-text">В корзину</span>
-											<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-										</button>
-									</div>
-								</div>
-								<div class="accessories-section-card accessories-card">
-									<div class="accessories-card__img">
-										<img src="./img/main/product-card/accessories/05.png" alt="05">
-									</div>
-									<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-									<div class="accessories-card__cost">
-										<span class="accessories-card__price">4 200 р.</span>
-										<button class="btn-buy accessories-card__btn">
-											<span class="btn__active-text">В корзину</span>
-											<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-										</button>
-									</div>
-								</div>
-								<div class="accessories-section-card accessories-card">
-									<div class="accessories-card__img">
-										<img src="./img/main/product-card/accessories/06.png" alt="06">
-									</div>
-									<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-									<div class="accessories-card__cost">
-										<span class="accessories-card__price">4 200 р.</span>
-										<button class="btn-buy accessories-card__btn">
-											<span class="btn__active-text">В корзину</span>
-											<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="basket__content basket__content--no">
-					<div class="basket__row">
-						<h2 class="basket__title">Моя корзина</h2>
-						<h2 class="basket__title">Нет товаров в корзине</h2>
-						<a href="./index.html" class="btn-back">
-							<svg>
-								<path
-									d="M18.3333 10.0837H7.17746L12.3016 4.95949L11 3.66699L3.66663 11.0003L11 18.3337L12.2925 17.0412L7.17746 11.917H18.3333V10.0837Z" />
-							</svg>
-							<span>Вернуться на главную</span>
-						</a>
-					</div>
-					<div class="accessories-section basket__accessories">
-						<div class="accessories-section-title">Дополнительные аксессуары</div>
-						<div class="accessories-section-row">
-							<div class="accessories-section-card accessories-card">
-								<img src="./img/main/product-card/accessories/01.png" alt="01" class="accessories-card__img">
-								<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-								<div class="accessories-card__cost">
-									<span class="accessories-card__price">4 200 р.</span>
-									<button class="btn-buy accessories-card__btn">
-										<span class="btn__active-text">В корзину</span>
-										<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-									</button>
-								</div>
-							</div>
-							<div class="accessories-section-card accessories-card">
-								<img src="./img/main/product-card/accessories/02.png" alt="02" class="accessories-card__img">
-								<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-								<div class="accessories-card__cost">
-									<span class="accessories-card__price">4 200 р.</span>
-									<button class="btn-buy accessories-card__btn">
-										<span class="btn__active-text">В корзину</span>
-										<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-									</button>
-								</div>
-							</div>
-							<div class="accessories-section-card accessories-card">
-								<img src="./img/main/product-card/accessories/03.png" alt="03" class="accessories-card__img">
-								<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-								<div class="accessories-card__cost">
-									<span class="accessories-card__price">4 200 р.</span>
-									<button class="btn-buy accessories-card__btn">
-										<span class="btn__active-text">В корзину</span>
-										<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-									</button>
-								</div>
-							</div>
-							<div class="accessories-section-card accessories-card">
-								<img src="./img/main/product-card/accessories/04.png" alt="04" class="accessories-card__img">
-								<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-								<div class="accessories-card__cost">
-									<span class="accessories-card__price">4 200 р.</span>
-									<button class="btn-buy accessories-card__btn">
-										<span class="btn__active-text">В корзину</span>
-										<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-									</button>
-								</div>
-							</div>
-							<div class="accessories-section-card accessories-card">
-								<img src="./img/main/product-card/accessories/05.png" alt="05" class="accessories-card__img">
-								<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-								<div class="accessories-card__cost">
-									<span class="accessories-card__price">4 200 р.</span>
-									<button class="btn-buy accessories-card__btn">
-										<span class="btn__active-text">В корзину</span>
-										<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-									</button>
-								</div>
-							</div>
-							<div class="accessories-section-card accessories-card">
-								<img src="./img/main/product-card/accessories/06.png" alt="06" class="accessories-card__img">
-								<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-								<div class="accessories-card__cost">
-									<span class="accessories-card__price">4 200 р.</span>
-									<button class="btn-buy accessories-card__btn">
-										<span class="btn__active-text">В корзину</span>
-										<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-									</button>
-								</div>
-							</div>
-						</div>
-						<div class="accessories-section-slider">
-							<div class="owl-carousel owl-theme" id="accessoriesSlider-2">
-								<div class="accessories-section-card accessories-card">
-									<div class="accessories-card__img">
-										<img src="./img/main/product-card/accessories/01.png" alt="01">
-									</div>
-									<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-									<div class="accessories-card__cost">
-										<span class="accessories-card__price">4 200 р.</span>
-										<button class="btn-buy accessories-card__btn">
-											<span class="btn__active-text">В корзину</span>
-											<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-										</button>
-									</div>
-								</div>
-								<div class="accessories-section-card accessories-card">
-									<div class="accessories-card__img">
-										<img src="./img/main/product-card/accessories/02.png" alt="02">
-									</div>
-									<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-									<div class="accessories-card__cost">
-										<span class="accessories-card__price">4 200 р.</span>
-										<button class="btn-buy accessories-card__btn">
-											<span class="btn__active-text">В корзину</span>
-											<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-										</button>
-									</div>
-								</div>
-								<div class="accessories-section-card accessories-card">
-									<div class="accessories-card__img">
-										<img src="./img/main/product-card/accessories/03.png" alt="03">
-									</div>
-									<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-									<div class="accessories-card__cost">
-										<span class="accessories-card__price">4 200 р.</span>
-										<button class="btn-buy accessories-card__btn">
-											<span class="btn__active-text">В корзину</span>
-											<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-										</button>
-									</div>
-								</div>
-								<div class="accessories-section-card accessories-card">
-									<div class="accessories-card__img">
-										<img src="./img/main/product-card/accessories/04.png" alt="04">
-									</div>
-									<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-									<div class="accessories-card__cost">
-										<span class="accessories-card__price">4 200 р.</span>
-										<button class="btn-buy accessories-card__btn">
-											<span class="btn__active-text">В корзину</span>
-											<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-										</button>
-									</div>
-								</div>
-								<div class="accessories-section-card accessories-card">
-									<div class="accessories-card__img">
-										<img src="./img/main/product-card/accessories/05.png" alt="05">
-									</div>
-									<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-									<div class="accessories-card__cost">
-										<span class="accessories-card__price">4 200 р.</span>
-										<button class="btn-buy accessories-card__btn">
-											<span class="btn__active-text">В корзину</span>
-											<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-										</button>
-									</div>
-								</div>
-								<div class="accessories-section-card accessories-card">
-									<div class="accessories-card__img">
-										<img src="./img/main/product-card/accessories/06.png" alt="06">
-									</div>
-									<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-									<div class="accessories-card__cost">
-										<span class="accessories-card__price">4 200 р.</span>
-										<button class="btn-buy accessories-card__btn">
-											<span class="btn__active-text">В корзину</span>
-											<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="basket__action product-action">
-						<div class="product-action__content">
-							<h3 class="product-action__title">Акция</h3>
-							<div class="product-action__descr">
-								<p>
-									При покупке сварочного аппарата выбери маску хамелеон или пусковое устройство из нашего
-									каталога. Список подарков можете уточнить у консультанта по телефону или в чате.
-								</p>
-							</div>
-						</div>
-						<a href="tel:+74994309942" class="product-action__btn promotion-btn active">Позвонить</a>
 					</div>
 				</div>
 			</div>
@@ -1211,7 +1125,7 @@
 				<a href="./all-news.html">Новости</a>
 			</li>
 			<li class="mob-nav__sec-item">
-				<a href="">Доставка</a>
+				<a href="#!">Доставка</a>
 			</li>
 			<li class="mob-nav__sec-item">
 				<a href="./payment.html">Оплата</a>
@@ -1289,13 +1203,18 @@
 	</div>
 
 
+	<div class="overlay"></div>
+
+
 	<!-- JQuery -->
 	<script src="./libs/jquery/jquery-3.7.0.min.js"></script>
-	<!-- Owl-carousel -->
+
 	<script src="./libs/owl-carousel/owl.carousel.min.js"></script>
 
-	<script src="https://api-maps.yandex.ru/2.1/?apikey=4773cd47-f0b3-4877-a98d-075d60a7011a&lang=ru_RU">
-	</script>
+	<script src="./libs/jquery-validate/jquery.validate.min.js"></script>
+
+	<!-- Swiper -->
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
 	<!-- Main js -->
 	<script src="./js/main.js"></script>

@@ -1,4 +1,4 @@
-.news-catalog {
+.all-news {
    padding: 68px 0 171px;
 
    /* Tablet Small*/
@@ -33,7 +33,7 @@
    }
 }
 
-.news-catalog__title {
+.all-news__title {
    margin-bottom: 72px;
 
    &::after {
@@ -55,7 +55,7 @@
    }
 }
 
-.news-catalog__row {
+.all-news__row {
    display: flex;
    flex-wrap: wrap;
    column-gap: 56px;

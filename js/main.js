@@ -17,63 +17,7 @@ $(document).ready(function () {
          nav: false,
          loop: true,
       });
-
-      if (window.location.toString().indexOf("product.html") > 0) {
-         const docSlider = $("#documentationSlider");
-         docSlider.owlCarousel({
-            items: 1,
-            dots: false,
-            nav: false,
-            loop: true,
-
-            responsive: {
-               0: {
-                  items: 2,
-                  margin: 30,
-               },
-               600: {
-                  items: 2.5,
-                  margin: 0,
-               },
-               900: {
-                  items: 3,
-               },
-            },
-         });
-
-         const accessoriesSlider = $("#accessoriesSlider");
-         accessoriesSlider.owlCarousel({
-            dots: false,
-            nav: false,
-            loop: true,
-
-            responsive: {
-               0: {
-                  items: 2,
-                  margin: 20,
-               },
-               600: {
-                  items: 3,
-                  margin: 0,
-               },
-               900: {
-                  items: 4,
-               },
-            },
-         });
-
-         const reviewsSlider = $("#reviewsSlider");
-         reviewsSlider.owlCarousel({
-            items: 1,
-            dots: false,
-            nav: false,
-            loop: true,
-            center: true,
-            margin: 30,
-         });
-      }
    });
-
    // Проверка страницы сайта index
    if (window.location.toString().indexOf("index.html") > 0) {
       const mapCross = document.querySelector(".map__cross");
@@ -108,7 +52,7 @@ $(document).ready(function () {
       });
    });
 
-   // Кнопка купит
+   // Кнопка купить
    const btnBuy = document.querySelectorAll(".btn-buy");
    btnBuy.forEach(function (item) {
       item.addEventListener("click", function () {
@@ -400,6 +344,61 @@ $(document).ready(function () {
 
       showMore();
 
+      jQuery(function ($) {
+         const docSlider = $("#documentationSlider");
+         docSlider.owlCarousel({
+            items: 1,
+            dots: false,
+            nav: false,
+            loop: true,
+
+            responsive: {
+               0: {
+                  items: 2,
+                  margin: 30,
+               },
+               600: {
+                  items: 2.5,
+                  margin: 0,
+               },
+               900: {
+                  items: 3,
+               },
+            },
+         });
+
+         const accessoriesSlider = $("#accessoriesSlider");
+         accessoriesSlider.owlCarousel({
+            dots: false,
+            nav: false,
+            loop: true,
+
+            responsive: {
+               0: {
+                  items: 2,
+                  margin: 20,
+               },
+               600: {
+                  items: 3,
+                  margin: 0,
+               },
+               900: {
+                  items: 4,
+               },
+            },
+         });
+
+         const reviewsSlider = $("#reviewsSlider");
+         reviewsSlider.owlCarousel({
+            items: 1,
+            dots: false,
+            nav: false,
+            loop: true,
+            center: true,
+            margin: 30,
+         });
+      });
+
       // Card Cashback/Gift variants
 
       const prdocutPromotion = document.querySelectorAll(".product-card__promotion");
@@ -501,8 +500,29 @@ $(document).ready(function () {
          });
       });
 
-      $("#order-tel").mask("+7 (999) 99-99-999");
-      $("#action-tel").mask("+7 (999) 99-99-999");
+      const ordertel = document.querySelector("#order-tel");
+      const actionTel = document.querySelector("#action-tel");
+
+      intlTelInput(ordertel, {
+         initialCountry: "auto",
+         geoIpLookup: function (success, failure) {
+            $.get("https://ipinfo.io", function () {}, "jsonp").always(function (resp) {
+               let countryCode = resp && resp.country ? resp.country : "";
+               success(countryCode);
+            });
+         },
+         utilsScript: "../libs/intelinput/js/utils.js",
+      });
+      intlTelInput(actionTel, {
+         initialCountry: "auto",
+         geoIpLookup: function (success, failure) {
+            $.get("https://ipinfo.io", function () {}, "jsonp").always(function (resp) {
+               let countryCode = resp && resp.country ? resp.country : "";
+               success(countryCode);
+            });
+         },
+         utilsScript: "../libs/intelinput/js/utils.js",
+      });
 
       //FORM VALIDATE
       $(".order").validate({
@@ -834,7 +854,7 @@ $(document).ready(function () {
       }
 
       // read more review
-      const readMoreBtn = document.querySelectorAll(".review-card__btn");
+      const readMoreBtn = document.querySelectorAll("[data-read-more]");
       readMoreBtn.forEach((el) => {
          el.addEventListener("click", () => {
             const comment = el.previousElementSibling;
@@ -954,5 +974,271 @@ $(document).ready(function () {
             },
          },
       });
+   }
+
+   if (window.location.toString().indexOf("ordering.html") > 0) {
+      const orderingTel = document.querySelector("#oredering-tel");
+
+      intlTelInput(orderingTel, {
+         initialCountry: "auto",
+         geoIpLookup: function (success, failure) {
+            $.get("https://ipinfo.io", function () {}, "jsonp").always(function (resp) {
+               let countryCode = resp && resp.country ? resp.country : "";
+               success(countryCode);
+            });
+         },
+         utilsScript: "../libs/intelinput/js/utils.js",
+      });
+
+      //FORM VALIDATE
+      $("#ordering-form").validate({
+         rules: {
+            name: {
+               required: true,
+            },
+            tel: {
+               required: true,
+            },
+            email: {
+               required: true,
+            },
+            street: {
+               required: true,
+            },
+            home: {
+               required: true,
+            },
+            apartment: {
+               required: true,
+            },
+            index: {
+               required: true,
+            },
+            region: {
+               required: true,
+            },
+            town: {
+               required: true,
+            },
+         },
+         messages: {
+            name: {
+               required: "*",
+            },
+            tel: {
+               required: "*",
+            },
+            email: {
+               required: "*",
+            },
+            street: {
+               required: "*",
+            },
+            home: {
+               required: "*",
+            },
+            apartment: {
+               required: "*",
+            },
+            index: {
+               required: "*",
+            },
+            region: {
+               required: "*",
+            },
+            town: {
+               required: "*",
+            },
+         },
+      });
+   }
+
+   if (window.location.toString().indexOf("news-detail.html") > 0) {
+      const swiperNews = new Swiper(".news-slider__block", {
+         slidesPerView: 1,
+         loop: true,
+      });
+
+      const maxItems = 5;
+      const sliderNavItems = document.querySelectorAll(".news-slider__item");
+      const sliderNav = document.querySelector(".news-slider__nav");
+
+      sliderNavItems.forEach((el, index) => {
+         el.setAttribute("data-index", index);
+
+         el.addEventListener("click", (e) => {
+            const index = parseInt(e.currentTarget.dataset.index);
+            swiperNews.slideTo(index + 1);
+         });
+      });
+
+      const showMore = () => {
+         let childrenLength = sliderNav.children.length;
+
+         if (childrenLength > maxItems) {
+            document
+               .querySelectorAll(`.news-slider__item:nth-child(n+${maxItems + 1})`)
+               .forEach((el) => {
+                  el.style.display = "none";
+               });
+         }
+      };
+      showMore();
+
+      const sliderPrev = document.querySelector(".news-slider__prev");
+      const sliderNext = document.querySelector(".news-slider__next");
+
+      sliderPrev.addEventListener("click", function () {
+         swiperNews.slidePrev();
+      });
+      sliderNext.addEventListener("click", function () {
+         swiperNews.slideNext();
+      });
+
+      //FORM VALIDATE
+      $("#comments-form").validate({
+         rules: {
+            name: {
+               required: true,
+            },
+            comment: {
+               required: true,
+            },
+         },
+         messages: {
+            name: {
+               required: "*",
+            },
+            comment: {
+               required: "*",
+            },
+         },
+         submitHandler: function (form) {
+            ajaxFormSubmitComment();
+         },
+      });
+
+      // Функция AJAX запрса на сервер
+
+      function ajaxFormSubmitComment() {
+         let string = $(".comments-form").serialize(); // Соханяем данные введенные в форму в строку.
+
+         //Формируем ajax запрос
+         $.ajax({
+            type: "POST", // Тип запроса - POST
+            url: "php/mail.php", // Куда отправляем запрос
+            data: string, // Какие даные отправляем, в данном случае отправляем переменную string
+
+            // Функция если все прошло успешно
+            // success: function (html) {
+            //    $(".comments-form").slideUp(1);
+            //    $("#answer-comment").html(html);
+            // },
+         });
+         // Чтобы по Submit больше ничего не выполнялось - делаем возврат false чтобы прервать цепчку срабатывания остальных функций
+         return false;
+      }
+
+      const navSlider = new Swiper("#navSlider", {
+         slidesPerView: 1,
+         loop: true,
+      });
+
+      const commentSlider = new Swiper("#comments-slider", {
+         slidesPerView: 1,
+         loop: true,
+      });
+
+      const readMoreBtn = document.querySelectorAll("[data-read-more]");
+      readMoreBtn.forEach((el) => {
+         el.addEventListener("click", () => {
+            const comment = el.previousElementSibling;
+
+            if (el.innerText === "Читать полностью") {
+               el.innerText = "Скрыть";
+               comment.style.cssText = `-webkit-line-clamp: unset`;
+            } else {
+               el.innerText = "Читать полностью";
+               comment.style.cssText = `-webkit-line-clamp: 5`;
+            }
+         });
+      });
+   }
+
+   if (window.location.toString().indexOf("contacts.html") > 0) {
+      const contactTel = document.querySelector("#contact-tel");
+
+      intlTelInput(contactTel, {
+         initialCountry: "auto",
+         geoIpLookup: function (success, failure) {
+            $.get("https://ipinfo.io", function () {}, "jsonp").always(function (resp) {
+               let countryCode = resp && resp.country ? resp.country : "";
+               success(countryCode);
+            });
+         },
+         utilsScript: "../libs/intelinput/js/utils.js",
+      });
+      // contactTel.addEventListener("input", function () {
+      //    const a = 7;
+
+      //    console.log(+this.value);
+      //    $("#contact-tel").mask(`+${a} (999) 99-99-999`);
+      // });
+
+      //FORM VALIDATE
+      $("#contacts-form").validate({
+         rules: {
+            name: {
+               required: true,
+            },
+            tel: {
+               required: true,
+            },
+            email: {
+               required: true,
+            },
+            comment: {
+               required: true,
+            },
+         },
+         messages: {
+            name: {
+               required: "*",
+            },
+            tel: {
+               required: "*",
+            },
+            email: {
+               required: "*",
+            },
+            comment: {
+               required: "*",
+            },
+         },
+         submitHandler: function (form) {
+            ajaxFormSubmitAction();
+         },
+      });
+
+      // Функция AJAX запрса на сервер
+
+      function ajaxFormSubmitAction() {
+         let string = $("#contacts-form").serialize(); // Соханяем данные введенные в форму в строку.
+
+         //Формируем ajax запрос
+         $.ajax({
+            type: "POST", // Тип запроса - POST
+            url: "php/mail.php", // Куда отправляем запрос
+            data: string, // Какие даные отправляем, в данном случае отправляем переменную string
+
+            // Функция если все прошло успешно
+            success: function (html) {
+               $("#contacts-form").slideUp(1);
+               $("#answer-contacts").html(html);
+            },
+         });
+         // Чтобы по Submit больше ничего не выполнялось - делаем возврат false чтобы прервать цепчку срабатывания остальных функций
+         return false;
+      }
    }
 });

@@ -11,6 +11,11 @@
    border: 1px solid $light-gray;
    border-radius: 6px;
 
+   /* Tablet Big */
+   @media (max-width: 1199px) {
+      padding: 30px;
+   }
+
    /* Tablet Small*/
    @media (max-width: 899px) {
       width: 390px;
@@ -20,6 +25,20 @@
    /* Mobile Small */
    @media (max-width: 409px) {
       width: 100%;
+   }
+
+   /* Mobile Small */
+   @media (max-width: 389px) {
+      padding: 10px;
+
+      .form-succes__row {
+         flex-direction: column;
+         justify-content: center;
+      }
+
+      .form-succes__intro {
+         text-align: center;
+      }
    }
 }
 .form-succes__row {

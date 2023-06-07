@@ -63,7 +63,12 @@
    max-width: 667px;
    width: 100%;
    height: 42px;
-   margin-right: 57px;
+   margin-right: auto;
+
+   /* Tablet Big */
+   @media (max-width: 1199px) {
+      margin-right: 40px;
+   }
 
    /* Tablet Small*/
    @media (max-width: 899px) {

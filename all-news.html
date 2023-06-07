@@ -5,17 +5,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>Корзина</title>
+	<title>Все новости</title>
 	<meta name="description" content="Aurora, Офицальный дилер Aurora">
 	<meta name="keywords" content="Офицальный дилер Aurora">
 
 	<!-- Styles -->
 	<link rel="stylesheet" href="./css/main.css">
-
-
-	<!-- Owl carousel -->
-	<link rel="stylesheet" href="./libs/owl-carousel/assets/owl.carousel.min.css">
-	<link rel="stylesheet" href="./libs/owl-carousel/assets/owl.theme.default.min.css">
 
 
 	<!-- Favicons -->
@@ -32,7 +27,6 @@
 </head>
 
 <body>
-
 	<header class="header">
 		<div class="container">
 			<div class="header__row">
@@ -51,7 +45,7 @@
 						</svg>
 						<span>Войти</span>
 					</a>
-					<a href="#!" class="header__user-item header__user-item--basket">
+					<a href="./basket.html" class="header__user-item header__user-item--basket">
 						<svg>
 							<path
 								d="M10.75 22.5C11.7165 22.5 12.5 21.7165 12.5 20.75C12.5 19.7835 11.7165 19 10.75 19C9.7835 19 9 19.7835 9 20.75C9 21.7165 9.7835 22.5 10.75 22.5Z" />
@@ -63,6 +57,7 @@
 								d="M12.25 13C12.25 12.5858 12.5858 12.25 13 12.25H21C21.4142 12.25 21.75 12.5858 21.75 13C21.75 13.4142 21.4142 13.75 21 13.75H13C12.5858 13.75 12.25 13.4142 12.25 13Z" />
 						</svg>
 						<span>Корзина</span>
+						<span class="header__user-item--count">3</span>
 					</a>
 					<a href="#!" class="header__user-item header__user-item--like">
 						<svg>
@@ -466,434 +461,215 @@
 			</div>
 		</div>
 	</div>
-
 	<main class="main">
-		<section class="basket">
+		<nav class="page-nav page-nav--news">
 			<div class="container">
-				<div class="basket__content basket__content--yes active">
-					<h2 class="basket__title">Моя корзина <span>(1)</span></h2>
-					<div class="basket__row">
-						<div class="basket-card">
-							<div class="basket-card__top">
-								<div class="basket-card__content">
-									<a href="./product.html" class="basket-card__img">
-										<img src="./img/main/basket/01.png" alt="01">
-									</a>
-									<div class="basket-card__info">
-										<h3 class="basket-card__title"><a href="./product.html">Сварочный полуавтомат AuroraPRO
-												Overman 200</a></h3>
-										<h4 class="basket-card__subtitle">Модель AuroraPRO Overman 200</h4>
-										<button class="btn-remove btn-remove--active">
-											<span>Убрать</span>
-										</button>
-									</div>
+				<ul class="page-nav__list">
+					<li class="page-nav__item">
+						<a href="./index.html">Главная</a>
+					</li>
+					<li class="page-nav__item">
+						<a href="./all-news.html">Новости</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<section class="all-news">
+			<div class="container">
+				<h2 class="h2 all-news__title">Новости</h2>
+				<div class="all-news__row">
+					<a href="./news-detail.html">
+						<object type="owo/uwu">
+							<div class="news-card">
+								<p class="card__new"><span>Новое</span></p>
+								<div class="news-card__img">
+									<img src="./img/main/cards-news/01.png" alt="01">
 								</div>
-								<div class="basket-card__count-wrapper">
-									<button class="btn-remove btn-remove--hidden">
-										<span>Убрать</span>
-									</button>
-									<div class="basket-card__count">
-										<h3 class="basket-card__title">56 400 р.</h3>
-										<div class="counter">
-											<div class="counter__plus">
-												<svg>
-													<path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
-												</svg>
-											</div>
-											<span class="counter__quantity">1</span>
-											<div class="counter__minus">
-												<svg>
-													<path d="M19 13H5V11H19V13Z" />
-												</svg>
-											</div>
+								<div class="news-card__info">
+									<div class="news-card__data">
+										<div class="news-card__time">
+											<img src="./img/icons/alarm-card.svg" alt="alarm">
+											<span>22 April 2021</span>
+										</div>
+										<div class="news-card__comments">
+											<img src="./img/icons/graphic.svg" alt="graphic">
+											<span>10 comments</span>
 										</div>
 									</div>
-								</div>
-
-							</div>
-							<div class="basket-card__bottom">
-								<a href="./index.html" class="btn-back">
-									<svg>
-										<path
-											d="M18.3333 10.0837H7.17746L12.3016 4.95949L11 3.66699L3.66663 11.0003L11 18.3337L12.2925 17.0412L7.17746 11.917H18.3333V10.0837Z" />
-									</svg>
-									<span>Вернуться на главную</span>
-								</a>
-								<button class="btn-click" data-remove-all>
-									<span>Убрать всё</span>
-								</button>
-							</div>
-						</div>
-						<div class="order-card basket-card__order">
-							<ul class="order-card__list">
-								<li class="order-card__item">
-									<span class="order-card__name">Подитог:</span>
-									<span class="order-card__price">56 400 р.</span>
-								</li>
-								<li class="order-card__item">
-									<span class="order-card__name">Доставка:</span>
-									<span class="order-card__price order-card__price--accent">+ 10 р.</span>
-								</li>
-							</ul>
-							<ul class="order-card__list">
-								<li class="order-card__item">
-									<span class="order-card__name order-card__name--summary">Итог:</span>
-									<span class="order-card__price order-card__price--summary">56 410 р.</span>
-								</li>
-								<li class="order-card__item">
-									<span class="order-card__name">Кэшбек:</span>
-									<span class="order-card__price order-card__price--accent">+ 3 300 р.</span>
-								</li>
-							</ul>
-							<a href="./ordering.html" class="btn-pay basket-card__btn">
-								<span>Оформить заказ</span>
-							</a>
-							<div class="order-card__row">
-								<div class="order-card__card">
-									<img src="./img/icons/basket/card-1.svg" alt="card payment">
-								</div>
-								<div class="order-card__card">
-									<img src="./img/icons/basket/card-2.svg" alt="card mir">
-								</div>
-								<div class="order-card__card">
-									<img src="./img/icons/basket/card-3.svg" alt="card visa">
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="accessories-section basket__accessories">
-						<div class="accessories-section-title">Дополнительные аксессуары</div>
-						<div class="accessories-section-row">
-							<div class="accessories-section-card accessories-card">
-								<img src="./img/main/product-card/accessories/01.png" alt="01" class="accessories-card__img">
-								<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-								<div class="accessories-card__cost">
-									<span class="accessories-card__price">4 200 р.</span>
-									<button class="btn-buy accessories-card__btn">
-										<span class="btn__active-text">В корзину</span>
-										<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-									</button>
-								</div>
-							</div>
-							<div class="accessories-section-card accessories-card">
-								<img src="./img/main/product-card/accessories/02.png" alt="02" class="accessories-card__img">
-								<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-								<div class="accessories-card__cost">
-									<span class="accessories-card__price">4 200 р.</span>
-									<button class="btn-buy accessories-card__btn">
-										<span class="btn__active-text">В корзину</span>
-										<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-									</button>
-								</div>
-							</div>
-							<div class="accessories-section-card accessories-card">
-								<img src="./img/main/product-card/accessories/03.png" alt="03" class="accessories-card__img">
-								<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-								<div class="accessories-card__cost">
-									<span class="accessories-card__price">4 200 р.</span>
-									<button class="btn-buy accessories-card__btn">
-										<span class="btn__active-text">В корзину</span>
-										<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-									</button>
-								</div>
-							</div>
-							<div class="accessories-section-card accessories-card">
-								<img src="./img/main/product-card/accessories/04.png" alt="04" class="accessories-card__img">
-								<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-								<div class="accessories-card__cost">
-									<span class="accessories-card__price">4 200 р.</span>
-									<button class="btn-buy accessories-card__btn">
-										<span class="btn__active-text">В корзину</span>
-										<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-									</button>
-								</div>
-							</div>
-							<div class="accessories-section-card accessories-card">
-								<img src="./img/main/product-card/accessories/05.png" alt="05" class="accessories-card__img">
-								<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-								<div class="accessories-card__cost">
-									<span class="accessories-card__price">4 200 р.</span>
-									<button class="btn-buy accessories-card__btn">
-										<span class="btn__active-text">В корзину</span>
-										<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-									</button>
-								</div>
-							</div>
-							<div class="accessories-section-card accessories-card">
-								<img src="./img/main/product-card/accessories/06.png" alt="06" class="accessories-card__img">
-								<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-								<div class="accessories-card__cost">
-									<span class="accessories-card__price">4 200 р.</span>
-									<button class="btn-buy accessories-card__btn">
-										<span class="btn__active-text">В корзину</span>
-										<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-									</button>
-								</div>
-							</div>
-						</div>
-						<div class="accessories-section-slider">
-							<div class="owl-carousel owl-theme" id="accessoriesSlider">
-								<div class="accessories-section-card accessories-card">
-									<div class="accessories-card__img">
-										<img src="./img/main/product-card/accessories/01.png" alt="01">
+									<h3 class="news-card__title">AURORA POLO 175 - НОВЫЙ ПОЛУАВТОМАТ В ОБОЙМЕ AURORA</h3>
+									<div class="news-card__descr">
+										<p>
+											Aurora Polo 175 - новый полуавтомат в обойме AURORA Группа компаний АВРОРА...
+										</p>
 									</div>
-									<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-									<div class="accessories-card__cost">
-										<span class="accessories-card__price">4 200 р.</span>
-										<button class="btn-buy accessories-card__btn">
-											<span class="btn__active-text">В корзину</span>
-											<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-										</button>
-									</div>
-								</div>
-								<div class="accessories-section-card accessories-card">
-									<div class="accessories-card__img">
-										<img src="./img/main/product-card/accessories/02.png" alt="02">
-									</div>
-									<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-									<div class="accessories-card__cost">
-										<span class="accessories-card__price">4 200 р.</span>
-										<button class="btn-buy accessories-card__btn">
-											<span class="btn__active-text">В корзину</span>
-											<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-										</button>
-									</div>
-								</div>
-								<div class="accessories-section-card accessories-card">
-									<div class="accessories-card__img">
-										<img src="./img/main/product-card/accessories/03.png" alt="03">
-									</div>
-									<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-									<div class="accessories-card__cost">
-										<span class="accessories-card__price">4 200 р.</span>
-										<button class="btn-buy accessories-card__btn">
-											<span class="btn__active-text">В корзину</span>
-											<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-										</button>
-									</div>
-								</div>
-								<div class="accessories-section-card accessories-card">
-									<div class="accessories-card__img">
-										<img src="./img/main/product-card/accessories/04.png" alt="04">
-									</div>
-									<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-									<div class="accessories-card__cost">
-										<span class="accessories-card__price">4 200 р.</span>
-										<button class="btn-buy accessories-card__btn">
-											<span class="btn__active-text">В корзину</span>
-											<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-										</button>
-									</div>
-								</div>
-								<div class="accessories-section-card accessories-card">
-									<div class="accessories-card__img">
-										<img src="./img/main/product-card/accessories/05.png" alt="05">
-									</div>
-									<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-									<div class="accessories-card__cost">
-										<span class="accessories-card__price">4 200 р.</span>
-										<button class="btn-buy accessories-card__btn">
-											<span class="btn__active-text">В корзину</span>
-											<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-										</button>
-									</div>
-								</div>
-								<div class="accessories-section-card accessories-card">
-									<div class="accessories-card__img">
-										<img src="./img/main/product-card/accessories/06.png" alt="06">
-									</div>
-									<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-									<div class="accessories-card__cost">
-										<span class="accessories-card__price">4 200 р.</span>
-										<button class="btn-buy accessories-card__btn">
-											<span class="btn__active-text">В корзину</span>
-											<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-										</button>
+									<div class="news-card__link">
+										<span>Читать далее</span>
+										<img src="./img/icons/arrow-next-1.svg" alt="arrow-next">
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-				</div>
-				<div class="basket__content basket__content--no">
-					<div class="basket__row">
-						<h2 class="basket__title">Моя корзина</h2>
-						<h2 class="basket__title">Нет товаров в корзине</h2>
-						<a href="./index.html" class="btn-back">
-							<svg>
-								<path
-									d="M18.3333 10.0837H7.17746L12.3016 4.95949L11 3.66699L3.66663 11.0003L11 18.3337L12.2925 17.0412L7.17746 11.917H18.3333V10.0837Z" />
-							</svg>
-							<span>Вернуться на главную</span>
-						</a>
-					</div>
-					<div class="accessories-section basket__accessories">
-						<div class="accessories-section-title">Дополнительные аксессуары</div>
-						<div class="accessories-section-row">
-							<div class="accessories-section-card accessories-card">
-								<img src="./img/main/product-card/accessories/01.png" alt="01" class="accessories-card__img">
-								<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-								<div class="accessories-card__cost">
-									<span class="accessories-card__price">4 200 р.</span>
-									<button class="btn-buy accessories-card__btn">
-										<span class="btn__active-text">В корзину</span>
-										<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-									</button>
+						</object>
+					</a>
+					<a href="./news-detail.html">
+						<object type="owo/uwu">
+							<div class="news-card">
+								<p class="card__new"><span>Новое</span></p>
+								<div class="news-card__img">
+									<img src="./img/main/cards-news/02.png" alt="02">
 								</div>
-							</div>
-							<div class="accessories-section-card accessories-card">
-								<img src="./img/main/product-card/accessories/02.png" alt="02" class="accessories-card__img">
-								<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-								<div class="accessories-card__cost">
-									<span class="accessories-card__price">4 200 р.</span>
-									<button class="btn-buy accessories-card__btn">
-										<span class="btn__active-text">В корзину</span>
-										<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-									</button>
-								</div>
-							</div>
-							<div class="accessories-section-card accessories-card">
-								<img src="./img/main/product-card/accessories/03.png" alt="03" class="accessories-card__img">
-								<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-								<div class="accessories-card__cost">
-									<span class="accessories-card__price">4 200 р.</span>
-									<button class="btn-buy accessories-card__btn">
-										<span class="btn__active-text">В корзину</span>
-										<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-									</button>
-								</div>
-							</div>
-							<div class="accessories-section-card accessories-card">
-								<img src="./img/main/product-card/accessories/04.png" alt="04" class="accessories-card__img">
-								<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-								<div class="accessories-card__cost">
-									<span class="accessories-card__price">4 200 р.</span>
-									<button class="btn-buy accessories-card__btn">
-										<span class="btn__active-text">В корзину</span>
-										<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-									</button>
-								</div>
-							</div>
-							<div class="accessories-section-card accessories-card">
-								<img src="./img/main/product-card/accessories/05.png" alt="05" class="accessories-card__img">
-								<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-								<div class="accessories-card__cost">
-									<span class="accessories-card__price">4 200 р.</span>
-									<button class="btn-buy accessories-card__btn">
-										<span class="btn__active-text">В корзину</span>
-										<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-									</button>
-								</div>
-							</div>
-							<div class="accessories-section-card accessories-card">
-								<img src="./img/main/product-card/accessories/06.png" alt="06" class="accessories-card__img">
-								<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-								<div class="accessories-card__cost">
-									<span class="accessories-card__price">4 200 р.</span>
-									<button class="btn-buy accessories-card__btn">
-										<span class="btn__active-text">В корзину</span>
-										<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-									</button>
-								</div>
-							</div>
-						</div>
-						<div class="accessories-section-slider">
-							<div class="owl-carousel owl-theme" id="accessoriesSlider-2">
-								<div class="accessories-section-card accessories-card">
-									<div class="accessories-card__img">
-										<img src="./img/main/product-card/accessories/01.png" alt="01">
+								<div class="news-card__info">
+									<div class="news-card__data">
+										<div class="news-card__time">
+											<img src="./img/icons/alarm-card.svg" alt="alarm">
+											<span>22 April 2021</span>
+										</div>
+										<div class="news-card__comments">
+											<img src="./img/icons/graphic.svg" alt="graphic">
+											<span>10 comments</span>
+										</div>
 									</div>
-									<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-									<div class="accessories-card__cost">
-										<span class="accessories-card__price">4 200 р.</span>
-										<button class="btn-buy accessories-card__btn">
-											<span class="btn__active-text">В корзину</span>
-											<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-										</button>
+									<h3 class="news-card__title">AURORA POLO 175 - НОВЫЙ ПОЛУАВТОМАТ В ОБОЙМЕ AURORA</h3>
+									<div class="news-card__descr">
+										<p>
+											Aurora Polo 175 - новый полуавтомат в обойме AURORA Группа компаний АВРОРА...
+										</p>
 									</div>
-								</div>
-								<div class="accessories-section-card accessories-card">
-									<div class="accessories-card__img">
-										<img src="./img/main/product-card/accessories/02.png" alt="02">
-									</div>
-									<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-									<div class="accessories-card__cost">
-										<span class="accessories-card__price">4 200 р.</span>
-										<button class="btn-buy accessories-card__btn">
-											<span class="btn__active-text">В корзину</span>
-											<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-										</button>
-									</div>
-								</div>
-								<div class="accessories-section-card accessories-card">
-									<div class="accessories-card__img">
-										<img src="./img/main/product-card/accessories/03.png" alt="03">
-									</div>
-									<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-									<div class="accessories-card__cost">
-										<span class="accessories-card__price">4 200 р.</span>
-										<button class="btn-buy accessories-card__btn">
-											<span class="btn__active-text">В корзину</span>
-											<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-										</button>
-									</div>
-								</div>
-								<div class="accessories-section-card accessories-card">
-									<div class="accessories-card__img">
-										<img src="./img/main/product-card/accessories/04.png" alt="04">
-									</div>
-									<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-									<div class="accessories-card__cost">
-										<span class="accessories-card__price">4 200 р.</span>
-										<button class="btn-buy accessories-card__btn">
-											<span class="btn__active-text">В корзину</span>
-											<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-										</button>
-									</div>
-								</div>
-								<div class="accessories-section-card accessories-card">
-									<div class="accessories-card__img">
-										<img src="./img/main/product-card/accessories/05.png" alt="05">
-									</div>
-									<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-									<div class="accessories-card__cost">
-										<span class="accessories-card__price">4 200 р.</span>
-										<button class="btn-buy accessories-card__btn">
-											<span class="btn__active-text">В корзину</span>
-											<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-										</button>
-									</div>
-								</div>
-								<div class="accessories-section-card accessories-card">
-									<div class="accessories-card__img">
-										<img src="./img/main/product-card/accessories/06.png" alt="06">
-									</div>
-									<h4 class="accessories-card__title">Горелка MIG 15 AIR COOL 180A(60%) EURO 3m</h4>
-									<div class="accessories-card__cost">
-										<span class="accessories-card__price">4 200 р.</span>
-										<button class="btn-buy accessories-card__btn">
-											<span class="btn__active-text">В корзину</span>
-											<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
-										</button>
+									<div class="news-card__link">
+										<span>Читать далее</span>
+										<img src="./img/icons/arrow-next-1.svg" alt="arrow-next">
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-					<div class="basket__action product-action">
-						<div class="product-action__content">
-							<h3 class="product-action__title">Акция</h3>
-							<div class="product-action__descr">
-								<p>
-									При покупке сварочного аппарата выбери маску хамелеон или пусковое устройство из нашего
-									каталога. Список подарков можете уточнить у консультанта по телефону или в чате.
-								</p>
+						</object>
+					</a>
+					<a href="./news-detail.html">
+						<object type="owo/uwu">
+							<div class="news-card">
+								<p class="card__new card__new--hide"><span>Новое</span></p>
+								<div class="news-card__img">
+									<img src="./img/main/cards-news/03.png" alt="03">
+								</div>
+								<div class="news-card__info">
+									<div class="news-card__data">
+										<div class="news-card__time">
+											<img src="./img/icons/alarm-card.svg" alt="alarm">
+											<span>22 April 2021</span>
+										</div>
+										<div class="news-card__comments">
+											<img src="./img/icons/graphic.svg" alt="graphic">
+											<span>10 comments</span>
+										</div>
+									</div>
+									<h3 class="news-card__title">AURORA POLO 175 - НОВЫЙ ПОЛУАВТОМАТ В ОБОЙМЕ AURORA</h3>
+									<div class="news-card__descr">
+										<p>
+											Aurora Polo 175 - новый полуавтомат в обойме AURORA Группа компаний АВРОРА...
+										</p>
+									</div>
+									<div class="news-card__link">
+										<span>Читать далее</span>
+										<img src="./img/icons/arrow-next-1.svg" alt="arrow-next">
+									</div>
+								</div>
 							</div>
-						</div>
-						<a href="tel:+74994309942" class="product-action__btn promotion-btn active">Позвонить</a>
-					</div>
+						</object>
+					</a>
+					<a href="./news-detail.html">
+						<object type="owo/uwu">
+							<div class="news-card">
+								<div class="news-card__img">
+									<img src="./img/main/cards-news/04.png" alt="04">
+								</div>
+								<div class="news-card__info">
+									<div class="news-card__data">
+										<div class="news-card__time">
+											<img src="./img/icons/alarm-card.svg" alt="alarm">
+											<span>22 April 2021</span>
+										</div>
+										<div class="news-card__comments">
+											<img src="./img/icons/graphic.svg" alt="graphic">
+											<span>10 comments</span>
+										</div>
+									</div>
+									<h3 class="news-card__title">AURORA POLO 175 - НОВЫЙ ПОЛУАВТОМАТ В ОБОЙМЕ AURORA</h3>
+									<div class="news-card__descr">
+										<p>
+											Aurora Polo 175 - новый полуавтомат в обойме AURORA Группа компаний АВРОРА...
+										</p>
+									</div>
+									<div class="news-card__link">
+										<span>Читать далее</span>
+										<img src="./img/icons/arrow-next-1.svg" alt="arrow-next">
+									</div>
+								</div>
+							</div>
+						</object>
+					</a>
+					<a href="./news-detail.html">
+						<object type="owo/uwu">
+							<div class="news-card">
+								<div class="news-card__img">
+									<img src="./img/main/cards-news/02.png" alt="02">
+								</div>
+								<div class="news-card__info">
+									<div class="news-card__data">
+										<div class="news-card__time">
+											<img src="./img/icons/alarm-card.svg" alt="alarm">
+											<span>22 April 2021</span>
+										</div>
+										<div class="news-card__comments">
+											<img src="./img/icons/graphic.svg" alt="graphic">
+											<span>10 comments</span>
+										</div>
+									</div>
+									<h3 class="news-card__title">AURORA POLO 175 - НОВЫЙ ПОЛУАВТОМАТ В ОБОЙМЕ AURORA</h3>
+									<div class="news-card__descr">
+										<p>
+											Aurora Polo 175 - новый полуавтомат в обойме AURORA Группа компаний АВРОРА...
+										</p>
+									</div>
+									<div class="news-card__link">
+										<span>Читать далее</span>
+										<img src="./img/icons/arrow-next-1.svg" alt="arrow-next">
+									</div>
+								</div>
+							</div>
+						</object>
+					</a>
+					<a href="./news-detail.html">
+						<object type="owo/uwu">
+							<div class="news-card">
+								<div class="news-card__img">
+									<img src="./img/main/cards-news/03.png" alt="03">
+								</div>
+								<div class="news-card__info">
+									<div class="news-card__data">
+										<div class="news-card__time">
+											<img src="./img/icons/alarm-card.svg" alt="alarm">
+											<span>22 April 2021</span>
+										</div>
+										<div class="news-card__comments">
+											<img src="./img/icons/graphic.svg" alt="graphic">
+											<span>10 comments</span>
+										</div>
+									</div>
+									<h3 class="news-card__title">AURORA POLO 175 - НОВЫЙ ПОЛУАВТОМАТ В ОБОЙМЕ AURORA</h3>
+									<div class="news-card__descr">
+										<p>
+											Aurora Polo 175 - новый полуавтомат в обойме AURORA Группа компаний АВРОРА...
+										</p>
+									</div>
+									<div class="news-card__link">
+										<span>Читать далее</span>
+										<img src="./img/icons/arrow-next-1.svg" alt="arrow-next">
+									</div>
+								</div>
+							</div>
+						</object>
+					</a>
 				</div>
 			</div>
+
 		</section>
 	</main>
 
@@ -1211,7 +987,7 @@
 				<a href="./all-news.html">Новости</a>
 			</li>
 			<li class="mob-nav__sec-item">
-				<a href="">Доставка</a>
+				<a href="#!">Доставка</a>
 			</li>
 			<li class="mob-nav__sec-item">
 				<a href="./payment.html">Оплата</a>
@@ -1288,14 +1064,13 @@
 		</ul>
 	</div>
 
+	<div class="overlay"></div>
+
 
 	<!-- JQuery -->
 	<script src="./libs/jquery/jquery-3.7.0.min.js"></script>
 	<!-- Owl-carousel -->
 	<script src="./libs/owl-carousel/owl.carousel.min.js"></script>
-
-	<script src="https://api-maps.yandex.ru/2.1/?apikey=4773cd47-f0b3-4877-a98d-075d60a7011a&lang=ru_RU">
-	</script>
 
 	<!-- Main js -->
 	<script src="./js/main.js"></script>

@@ -194,5 +194,6 @@
    /* Mobile Small */
    @media (max-width: 389px) {
       width: 100%;
+      flex-shrink: 1;
    }
 }

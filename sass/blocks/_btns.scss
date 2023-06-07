@@ -18,6 +18,7 @@
 
    span {
       z-index: 3;
+      color: $white-color;
    }
 
    &:after {
@@ -193,6 +194,7 @@
    display: flex;
    align-items: center;
    justify-content: center;
+   flex-shrink: 0;
 
    background: #ffffff;
    border: 1px solid #dee2e7;

@@ -38,6 +38,14 @@
    @media (max-width: 409px) {
       width: 100%;
    }
+
+   .iti__flag-container {
+      left: auto !important;
+      right: 0 !important  ;
+   }
+   .iti__country-list {
+      right: 0 !important;
+   }
 }
 
 .order__cross {
