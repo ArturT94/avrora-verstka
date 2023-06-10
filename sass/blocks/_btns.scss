@@ -427,8 +427,17 @@
       @include transition;
    }
 
-   &:hover,
-   &:focus {
+   &:hover {
+      background: #69a6ff;
+      span {
+         -webkit-background-clip: unset;
+         -webkit-text-fill-color: unset;
+         background: unset;
+         color: $white-color;
+      }
+   }
+
+   &:active {
       background: $primary-color;
       span {
          -webkit-background-clip: unset;

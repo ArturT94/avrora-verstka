@@ -435,7 +435,7 @@
 							<a href="./all-news.html" class="nav__list-item-link">Новости</a>
 						</li>
 						<li class="nav__list-item">
-							<a href="" class="nav__list-item-link">Доставка</a>
+							<a href="./shipping.html" class="nav__list-item-link">Доставка</a>
 						</li>
 						<li class="nav__list-item">
 							<a href="./payment.html" class="nav__list-item-link">Оплата</a>
@@ -482,15 +482,21 @@
 								<div class="ordering-personal">
 									<label class="ordering-personal__content">
 										<span class="ordering-personal__title">ФИО</span>
-										<input type="text" name="name" class="ordering-personal__input">
+										<span class="ordering-personal__input-wrapper">
+											<input type="text" name="name" class="ordering-personal__input">
+										</span>
 									</label>
 									<label class="ordering-personal__content">
 										<span class="ordering-personal__title">Телефон</span>
-										<input type="tel" name="tel" class="ordering-personal__input" id="oredering-tel">
+										<span class="ordering-personal__input-wrapper">
+											<input type="tel" name="tel" class="ordering-personal__input" id="oredering-tel">
+										</span>
 									</label>
 									<label class="ordering-personal__content">
 										<span class="ordering-personal__title">E-mail</span>
-										<input type="email" name="email" class="ordering-personal__input">
+										<span class="ordering-personal__input-wrapper">
+											<input type="email" name="email" class="ordering-personal__input">
+										</span>
 									</label>
 								</div>
 							</fieldset>
@@ -524,7 +530,7 @@
 										<input type="radio" name="radio-pay" class="radio-real">
 										<span class="radio-custom ordering-pay__radio"></span>
 									</label>
-									<label class="ordering-pay__label">
+									<label class="ordering-pay__label active">
 										<span class="ordering-pay__content ">
 											<span class="ordering-pay__svg">
 												<img src="./img/icons/ordering/card-pay-2.svg" alt="card-pay-2">
@@ -582,7 +588,7 @@
 										<input type="radio" name="radio-shipping" class="radio-real">
 										<span class="radio-custom ordering-shipping__radio"></span>
 									</label>
-									<label class="ordering-shipping__label">
+									<label class="ordering-shipping__label active">
 										<span class="ordering-shipping__content">
 											<span class="ordering-shipping__svg ordering-shipping__svg-4">
 												<img src="./img/icons/ordering/cdek.svg" alt="cdek">
@@ -602,27 +608,39 @@
 								<div class="ordering-details">
 									<label class="ordering-details__content">
 										<span class="ordering-details__title">Улица</span>
-										<input type="text" name="street" class="ordering-details__input">
+										<span class="ordering-personal__input-wrapper">
+											<input type="text" name="street" class="ordering-details__input">
+										</span>
 									</label>
 									<label class="ordering-details__content">
 										<span class="ordering-details__title">Дом</span>
-										<input type="text" name="home" class="ordering-details__input">
+										<span class="ordering-personal__input-wrapper">
+											<input type="text" name="home" class="ordering-details__input">
+										</span>
 									</label>
 									<label class="ordering-details__content">
 										<span class="ordering-details__title">Кв/Офис</span>
-										<input type="text" name="apartment" class="ordering-details__input">
+										<span class="ordering-personal__input-wrapper">
+											<input type="text" name="apartment" class="ordering-details__input">
+										</span>
 									</label>
 									<label class="ordering-details__content">
 										<span class="ordering-details__title">Индекс</span>
-										<input type="text" name="index" class="ordering-details__input">
+										<span class="ordering-personal__input-wrapper">
+											<input type="text" name="index" class="ordering-details__input">
+										</span>
 									</label>
 									<label class="ordering-details__content">
 										<span class="ordering-details__title">Регион</span>
-										<input type="text" name="region" class="ordering-details__input">
+										<span class="ordering-personal__input-wrapper">
+											<input type="text" name="region" class="ordering-details__input">
+										</span>
 									</label>
 									<label class="ordering-details__content">
 										<span class="ordering-details__title">Город</span>
-										<input type="text" name="town" class="ordering-details__input">
+										<span class="ordering-personal__input-wrapper">
+											<input type="text" name="town" class="ordering-details__input">
+										</span>
 									</label>
 								</div>
 							</fieldset>
@@ -686,7 +704,7 @@
 								<h4 class="footer__h4">Личный кабинет</h4>
 							</li>
 							<li class="footer__item">
-								<a href="#!">Личный кабинет</a>
+								<a href="./profile.html">Личный кабинет</a>
 							</li>
 							<li class="footer__item">
 								<a href="#!">История заказов</a>
@@ -712,7 +730,7 @@
 								<a href="./payment.html">Оплата</a>
 							</li>
 							<li class="footer__item">
-								<a href="#!">Доставка</a>
+								<a href="./shipping.html">Доставка</a>
 							</li>
 						</ul>
 					</div>
@@ -722,7 +740,7 @@
 						<h4 class="footer__h4">Служба поддержки</h4>
 					</li>
 					<li class="footer__item">
-						<a href="#!">Возврат товара</a>
+						<a href="./returns.html">Возврат товара</a>
 					</li>
 					<li class="footer__item">
 						<a href="#!">Связаться с нами</a>
@@ -755,7 +773,7 @@
 								<a href="./payment.html">Оплата</a>
 							</li>
 							<li class="footer__mob-sub-item">
-								<a href="#!">Доставка</a>
+								<a href="./shipping.html">Доставка</a>
 							</li>
 						</ul>
 					</li>
@@ -769,7 +787,7 @@
 
 						<ul class="footer__mob-sub-list">
 							<li class="footer__mob-sub-item">
-								<a href="#!">Личный кабинет</a>
+								<a href="./profile.html">Личный кабинет</a>
 							</li>
 							<li class="footer__mob-sub-item">
 								<a href="#!">История заказов</a>
@@ -792,7 +810,7 @@
 
 						<ul class="footer__mob-sub-list">
 							<li class="footer__mob-sub-item">
-								<a href="#!">Возврат товара</a>
+								<a href="./returns.html">Возврат товара</a>
 							</li>
 							<li class="footer__mob-sub-item">
 								<a href="#!">Связаться с нами</a>
@@ -987,7 +1005,7 @@
 				<a href="./all-news.html">Новости</a>
 			</li>
 			<li class="mob-nav__sec-item">
-				<a href="#!">Доставка</a>
+				<a href="./shipping.html">Доставка</a>
 			</li>
 			<li class="mob-nav__sec-item">
 				<a href="./payment.html">Оплата</a>

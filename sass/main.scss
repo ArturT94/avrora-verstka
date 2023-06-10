@@ -49,8 +49,17 @@
 @import "./blocks/review-popup";
 @import "./blocks/review-filter";
 @import "./blocks/basket-card";
+@import "./blocks/radio";
 @import "./blocks/order-card";
 @import "./blocks/order-detail";
+@import "./blocks/quantity-counter";
+@import "./blocks/info-box";
+@import "./blocks/order-history";
+@import "./blocks/peronal-data";
+@import "./blocks/adress-book";
+@import "./blocks/adress-popup";
+@import "./blocks/personal-popup";
+@import "./blocks/subscribe-popup";
 
 // Sections
 @import "./sections/header";
@@ -74,3 +83,6 @@
 @import "./sections/comments";
 @import "./sections/contacts";
 @import "./sections/payment";
+@import "./sections/shipping";
+@import "./sections/returns";
+@import "./sections/profile";

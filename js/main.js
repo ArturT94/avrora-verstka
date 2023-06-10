@@ -990,6 +990,25 @@ $(document).ready(function () {
          utilsScript: "../libs/intelinput/js/utils.js",
       });
 
+      const orderingPayBtn = document.querySelectorAll(".ordering-pay__label");
+      orderingPayBtn.forEach(function (item) {
+         item.addEventListener("click", function () {
+            orderingPayBtn.forEach(function (item2) {
+               item2.classList.remove("active");
+            });
+            item.classList.add("active");
+         });
+      });
+      const orderingShipBtn = document.querySelectorAll(".ordering-shipping__label");
+      orderingShipBtn.forEach(function (item) {
+         item.addEventListener("click", function () {
+            orderingShipBtn.forEach(function (item2) {
+               item2.classList.remove("active");
+            });
+            item.classList.add("active");
+         });
+      });
+
       //FORM VALIDATE
       $("#ordering-form").validate({
          rules: {
@@ -1240,5 +1259,265 @@ $(document).ready(function () {
          // Чтобы по Submit больше ничего не выполнялось - делаем возврат false чтобы прервать цепчку срабатывания остальных функций
          return false;
       }
+   }
+
+   if (window.location.toString().indexOf("returns.html") > 0) {
+      const radioBtn = document.querySelectorAll(".radio-btn");
+      radioBtn.forEach(function (item) {
+         item.addEventListener("click", function () {
+            radioBtn.forEach(function (item2) {
+               item2.classList.remove("active");
+            });
+            item.classList.add("active");
+         });
+      });
+
+      const returnsTel = document.querySelector("#returns-tel");
+      intlTelInput(returnsTel, {
+         initialCountry: "auto",
+         geoIpLookup: function (success, failure) {
+            $.get("https://ipinfo.io", function () {}, "jsonp").always(function (resp) {
+               let countryCode = resp && resp.country ? resp.country : "";
+               success(countryCode);
+            });
+         },
+         utilsScript: "../libs/intelinput/js/utils.js",
+      });
+
+      new AirDatepicker("#airdatepicker");
+
+      const quantityCounter = document.querySelectorAll(".quantity-counter");
+      quantityCounter.forEach(function (quantityCounter) {
+         const quantityArrLeft = quantityCounter.querySelector(".quantity-counter__arrow--left");
+         const quantityArrRight = quantityCounter.querySelector(".quantity-counter__arrow--right");
+
+         quantityArrLeft.addEventListener("click", function () {
+            const quantityNumVal =
+               +quantityCounter.querySelector(".quantity-counter__num").innerText;
+            if (quantityNumVal > 1) {
+               const quantityNum = quantityCounter.querySelector(".quantity-counter__num");
+               quantityNum.innerText = quantityNumVal - 1;
+            }
+         });
+         quantityArrRight.addEventListener("click", function () {
+            const quantityNumVal =
+               +quantityCounter.querySelector(".quantity-counter__num").innerText;
+            if (quantityNumVal >= 1) {
+               const quantityNum = quantityCounter.querySelector(".quantity-counter__num");
+               quantityNum.innerText = quantityNumVal + 1;
+            }
+         });
+      });
+
+      //FORM VALIDATE
+      $("#returns-form").validate({
+         rules: {
+            name: {
+               required: true,
+            },
+            tel: {
+               required: true,
+            },
+            email: {
+               required: true,
+            },
+            date: {
+               required: true,
+            },
+            numOrder: {
+               required: true,
+            },
+            naming: {
+               required: true,
+            },
+            model: {
+               required: true,
+            },
+            radioUnzip: {
+               required: true,
+            },
+            comment: {
+               required: true,
+            },
+         },
+         messages: {
+            name: {
+               required: "*",
+            },
+            tel: {
+               required: "*",
+            },
+            email: {
+               required: "*",
+            },
+            date: {
+               required: "*",
+            },
+            numOrder: {
+               required: "*",
+            },
+            naming: {
+               required: "*",
+            },
+            model: {
+               required: "*",
+            },
+            radioUnzip: {
+               required: "*",
+            },
+            comment: {
+               required: "*",
+            },
+         },
+         submitHandler: function (form) {
+            ajaxFormSubmitReturns();
+         },
+      });
+
+      // Функция AJAX запрса на сервер
+
+      function ajaxFormSubmitReturns() {
+         let string = $("#returns-form").serialize(); // Соханяем данные введенные в форму в строку.
+
+         //Формируем ajax запрос
+         $.ajax({
+            type: "POST", // Тип запроса - POST
+            url: "php/mail.php", // Куда отправляем запрос
+            data: string, // Какие даные отправляем, в данном случае отправляем переменную string
+
+            // Функция если все прошло успешно
+            success: function (html) {
+               $("#returns-form").slideUp(1);
+               $("#returns-answer").html(html);
+            },
+         });
+         // Чтобы по Submit больше ничего не выполнялось - делаем возврат false чтобы прервать цепчку срабатывания остальных функций
+         return false;
+      }
+   }
+
+   if (window.location.toString().indexOf("profile.html") > 0) {
+      const orderingPayBtn = document.querySelectorAll(".ordering-pay__label");
+      orderingPayBtn.forEach(function (item) {
+         item.addEventListener("click", function () {
+            orderingPayBtn.forEach(function (item2) {
+               item2.classList.remove("active");
+            });
+            item.classList.add("active");
+         });
+      });
+
+      const orderingShipBtn = document.querySelectorAll(".ordering-shipping__label");
+      orderingShipBtn.forEach(function (item) {
+         item.addEventListener("click", function () {
+            orderingShipBtn.forEach(function (item2) {
+               item2.classList.remove("active");
+            });
+            item.classList.add("active");
+         });
+      });
+
+      const adressBox = document.querySelectorAll("[data-adress]");
+      const addAdrssBtn = document.querySelectorAll("[data-add-adress]");
+      const delAdressBtn = document.querySelectorAll("[data-del-adress]");
+      const adressPopup = document.querySelector(".adress-popup");
+      const adressPopupCross = document.querySelector(".adress-popup__cross");
+
+      delAdressBtn.forEach(function (item) {
+         item.addEventListener("click", function () {
+            const parentAdress = item.parentNode;
+            parentAdress.classList.add("none");
+         });
+      });
+
+      addAdrssBtn.forEach(function (item) {
+         item.addEventListener("click", function () {
+            overlay.classList.add("active");
+            adressPopup.classList.add("active");
+         });
+      });
+
+      adressPopupCross.addEventListener("click", function () {
+         overlay.classList.remove("active");
+         adressPopup.classList.remove("active");
+      });
+      overlay.addEventListener("click", function () {
+         overlay.classList.remove("active");
+         adressPopup.classList.remove("active");
+      });
+
+      const changeInfoBtn = document.querySelectorAll("[data-change-personal]");
+      const personalPopup = document.querySelector(".personal-popup");
+      const personalPopupCross = document.querySelector(".personal-popup__cross");
+      changeInfoBtn.forEach(function (item) {
+         item.addEventListener("click", function () {
+            overlay.classList.add("active");
+            personalPopup.classList.add("active");
+         });
+      });
+      personalPopupCross.addEventListener("click", function () {
+         overlay.classList.remove("active");
+         personalPopup.classList.remove("active");
+      });
+      overlay.addEventListener("click", function () {
+         overlay.classList.remove("active");
+         personalPopup.classList.remove("active");
+      });
+
+      const personalTel = document.querySelector("#personalTel");
+
+      intlTelInput(personalTel, {
+         initialCountry: "auto",
+         geoIpLookup: function (success, failure) {
+            $.get("https://ipinfo.io", function () {}, "jsonp").always(function (resp) {
+               let countryCode = resp && resp.country ? resp.country : "";
+               success(countryCode);
+            });
+         },
+         utilsScript: "../libs/intelinput/js/utils.js",
+      });
+
+      //FORM VALIDATE
+      $("#personalForm").validate({
+         rules: {
+            name: {
+               required: true,
+            },
+            email: {
+               required: true,
+            },
+            tel: {
+               required: true,
+            },
+         },
+         messages: {
+            name: {
+               required: "*",
+            },
+            email: {
+               required: "*",
+            },
+            tel: {
+               required: "*",
+            },
+         },
+         submitHandler: function (form) {
+            personalInfoSave();
+         },
+      });
+
+      const subscrBtn = document.querySelectorAll("[data-subscribe-btn]");
+      const subscribePopup = document.querySelector(".subscribe-popup");
+
+      subscrBtn.forEach(function (item) {
+         item.addEventListener("click", function () {
+            overlay.classList.add("active");
+            subscribePopup.classList.add("active");
+         });
+      });
+      overlay.addEventListener("click", function () {
+         overlay.classList.remove("active");
+         subscribePopup.classList.remove("active");
+      });
    }
 });
