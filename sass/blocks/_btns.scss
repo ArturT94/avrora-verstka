@@ -221,14 +221,44 @@
       background-color: #e5f1ff;
    }
 
+   .btn__icon-like {
+      opacity: 1;
+      z-index: 1;
+      transition: opacity 0.2s ease-in-out;
+   }
+
+   .btn__icon-like-fill {
+      opacity: 0;
+      z-index: -1;
+      position: absolute;
+      width: 0;
+      height: 0;
+      transition: opacity 0.2s ease-in-out;
+      path {
+         fill: $primary-color;
+      }
+   }
+
    &.active {
-      background: transparent;
+      background-color: #e5f1ff;
       border: 1px solid $primary-color;
 
       svg {
          path {
             fill: $primary-color;
          }
+      }
+
+      .btn__icon-like {
+         opacity: 0;
+         z-index: -1;
+      }
+
+      .btn__icon-like-fill {
+         opacity: 1;
+         z-index: 1;
+         width: 24px;
+         height: 24px;
       }
    }
 }

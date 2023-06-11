@@ -60,6 +60,7 @@
 @import "./blocks/adress-popup";
 @import "./blocks/personal-popup";
 @import "./blocks/subscribe-popup";
+@import "./blocks/order-drop";
 
 // Sections
 @import "./sections/header";
@@ -86,3 +87,6 @@
 @import "./sections/shipping";
 @import "./sections/returns";
 @import "./sections/profile";
+@import "./sections/favorites";
+@import "./sections/all-orders";
+@import "./sections/order-details";

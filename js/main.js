@@ -511,7 +511,7 @@ $(document).ready(function () {
                success(countryCode);
             });
          },
-         utilsScript: "../libs/intelinput/js/utils.js",
+         // utilsScript: "../libs/intelinput/js/utils.js",
       });
       intlTelInput(actionTel, {
          initialCountry: "auto",
@@ -521,7 +521,7 @@ $(document).ready(function () {
                success(countryCode);
             });
          },
-         utilsScript: "../libs/intelinput/js/utils.js",
+         // utilsScript: "../libs/intelinput/js/utils.js",
       });
 
       //FORM VALIDATE
@@ -987,7 +987,7 @@ $(document).ready(function () {
                success(countryCode);
             });
          },
-         utilsScript: "../libs/intelinput/js/utils.js",
+         // utilsScript: "../libs/intelinput/js/utils.js",
       });
 
       const orderingPayBtn = document.querySelectorAll(".ordering-pay__label");
@@ -1195,7 +1195,7 @@ $(document).ready(function () {
                success(countryCode);
             });
          },
-         utilsScript: "../libs/intelinput/js/utils.js",
+         // utilsScript: "../libs/intelinput/js/utils.js",
       });
       // contactTel.addEventListener("input", function () {
       //    const a = 7;
@@ -1281,7 +1281,7 @@ $(document).ready(function () {
                success(countryCode);
             });
          },
-         utilsScript: "../libs/intelinput/js/utils.js",
+         // utilsScript: "../libs/intelinput/js/utils.js",
       });
 
       new AirDatepicker("#airdatepicker");
@@ -1474,7 +1474,7 @@ $(document).ready(function () {
                success(countryCode);
             });
          },
-         utilsScript: "../libs/intelinput/js/utils.js",
+         // utilsScript: "../libs/intelinput/js/utils.js",
       });
 
       //FORM VALIDATE
@@ -1518,6 +1518,49 @@ $(document).ready(function () {
       overlay.addEventListener("click", function () {
          overlay.classList.remove("active");
          subscribePopup.classList.remove("active");
+      });
+   }
+
+   if (window.location.toString().indexOf("all-orders.html") > 0) {
+      const orderTimeItem = document.querySelectorAll(".all-orders__time-item");
+      orderTimeItem.forEach(function (item) {
+         item.addEventListener("click", function () {
+            orderTimeItem.forEach(function (item2) {
+               item2.classList.remove("active");
+            });
+            item.classList.toggle("active");
+         });
+      });
+
+      const orderDropdown = document.querySelectorAll(".order-drop");
+      orderDropdown.forEach(function (orderDropdown) {
+         const orderdropBtn = orderDropdown.querySelector(".order-drop__btn");
+         const orderdropItem = orderDropdown.querySelectorAll(".order-drop__item");
+         orderdropBtn.addEventListener("click", function () {
+            orderDropdown.classList.toggle("active");
+         });
+
+         orderdropItem.forEach(function (orderdropItem) {
+            orderdropItem.addEventListener("click", function () {
+               const orderdropDate = orderDropdown.querySelector(".order-drop__date");
+               orderdropDate.innerText = orderdropItem.innerText;
+               orderDropdown.classList.remove("active");
+            });
+         });
+
+         document.addEventListener("click", function (e) {
+            if (e.target !== orderdropBtn) {
+               orderDropdown.classList.remove("active");
+               orderDropdown.classList.remove("active");
+            }
+         });
+
+         document.addEventListener("keydown", function (e) {
+            if (e.key === "Tab" || e.key === "Escape") {
+               orderDropdown.classList.remove("active");
+               orderDropdown.classList.remove("active");
+            }
+         });
       });
    }
 });
