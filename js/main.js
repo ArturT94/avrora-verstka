@@ -1563,4 +1563,125 @@ $(document).ready(function () {
          });
       });
    }
+
+   if (window.location.toString().indexOf("compare.html") > 0) {
+      const radioBtn = document.querySelectorAll(".radio-btn");
+      radioBtn.forEach(function (item) {
+         item.addEventListener("click", function () {
+            radioBtn.forEach(function (item2) {
+               item2.classList.remove("active");
+            });
+            item.classList.add("active");
+         });
+      });
+
+      const mixItems = document.querySelectorAll(".compare__mix-item");
+      mixItems.forEach(function (item) {
+         item.addEventListener("click", function () {
+            mixItems.forEach(function (items) {
+               items.classList.remove("active");
+            });
+            item.classList.add("active");
+         });
+      });
+
+      let descrSwiper = new Swiper(".compareSwiperDescr", {
+         slidesPerView: 1,
+         spaceBetween: 20,
+      });
+
+      let swiper = new Swiper(".compareSwiper", {
+         spaceBetween: 20,
+         pagination: true,
+
+         pagination: {
+            el: ".swiper-pagination",
+            type: "progressbar",
+         },
+         breakpoints: {
+            0: {
+               slidesPerView: 2,
+               slidesPerGroup: 2,
+               spaceBetween: 10,
+               pagination: false,
+            },
+            319: {
+               spaceBetween: 16,
+               slidesPerView: 2,
+               slidesPerGroup: 2,
+            },
+            599: {
+               slidesPerView: 2,
+               slidesPerGroup: 2,
+            },
+            965: {
+               slidesPerView: 2,
+            },
+            1340: {
+               slidesPerView: 3,
+               slidesPerGroup: 1,
+            },
+         },
+         thumbs: {
+            swiper: descrSwiper,
+         },
+      });
+
+      const swiperWrapperPag = document.querySelector(".swiper-wrapper__pag");
+      const slideElems = swiperWrapperPag.querySelectorAll(".swiper-slide");
+      const swiperPaginationHor = document.querySelector(
+         ".swiper-pagination.swiper-pagination-progressbar.swiper-pagination-horizontal"
+      );
+      if (slideElems.length > 2) {
+         swiperPaginationHor.classList.add("active");
+      }
+
+      let slides = document.querySelectorAll(".swiper-slide__mob");
+      let totalSlidesCount = slides.length;
+      slides.forEach(function (slide, i) {
+         let currentSlide = slide.querySelector(".current-slide");
+         let totalSlides = slide.querySelector(".total-slides");
+         currentSlide.innerText = i + 1;
+         totalSlides.innerText = totalSlidesCount;
+      });
+
+      let slidesDesc = document.querySelectorAll(".swiper-slide__desc");
+      let slidesDescTotalCount = slidesDesc.length;
+      slidesDesc.forEach(function (slide, i) {
+         let currentSlide = slide.querySelector(".current-slide");
+         let totalSlides = slide.querySelector(".total-slides");
+         currentSlide.innerText = i + 1;
+         totalSlides.innerText = slidesDescTotalCount;
+      });
+
+      const dropdown = document.querySelectorAll(".dropdown");
+      dropdown.forEach(function (dropdown) {
+         const dropBtn = dropdown.querySelector(".compare__drop");
+         dropBtn.addEventListener("click", function () {
+            dropdown.classList.toggle("active");
+         });
+
+         const dropItem = dropdown.querySelectorAll(".compare__drop-item");
+         dropItem.forEach((dropItem) => {
+            dropItem.addEventListener("click", () => {
+               dropBtn.innerText = dropItem.innerText;
+               dropdown.classList.remove("active");
+            });
+         });
+
+         document.addEventListener("click", function (e) {
+            if (e.target !== dropBtn) {
+               dropdown.classList.remove("active");
+               dropdown.classList.remove("active");
+            }
+         });
+
+         document.addEventListener("keydown", function (e) {
+            if (e.key === "Tab" || e.key === "Escape") {
+               dropdown.classList.remove("active");
+               dropdown.classList.remove("active");
+            }
+         });
+      });
+   }
 });

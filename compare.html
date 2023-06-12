@@ -5,16 +5,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>Контакты</title>
+	<title>Сравнение</title>
 	<meta name="description" content="Aurora, Офицальный дилер Aurora">
 	<meta name="keywords" content="Офицальный дилер Aurora">
 
 	<!-- Styles -->
 	<link rel="stylesheet" href="./css/main.css">
-
-	<!-- InterNational Input -->
-	<link rel="stylesheet" href="./libs/intelinput/css/intlTelInput.css">
-
+	<!-- Swiper -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
 
 	<!-- Favicons -->
 	<link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.png">
@@ -464,110 +462,686 @@
 		</div>
 	</div>
 	<main class="main">
-		<nav class="page-nav page-nav--contacts">
+		<nav class="page-nav page-nav--comparison">
 			<div class="container">
 				<ul class="page-nav__list">
 					<li class="page-nav__item">
 						<a href="./index.html">Главная</a>
 					</li>
 					<li class="page-nav__item">
-						<a href="./contacts.html">Связаться с нами</a>
+						<a href="./shipping.html">Сравнение</a>
 					</li>
 				</ul>
 			</div>
 		</nav>
-		<section class="contacts">
+		<section class="compare">
 			<div class="container">
-				<h2 class="h2 contacts__title">Контакты</h2>
-				<div class="contacts__row">
-					<div class="contact__form-wrapper active">
-						<form action="#!" class="contacts__form" id="contacts-form">
-							<fieldset class="contacts__form-fieldset">
-								<legend class="contacts__form-heading">Форма обратной связи</legend>
-								<label class="contacts__form-label">
-									<span class="contacts__form-title">ФИО</span>
-									<span class="contacts__form-box">
-										<input type="text" name="name" class="contacts__form-input">
+				<h2 class="compare__h2 h2">Сравнение</h2>
+
+				<div class="compare__row">
+					<div class="compare__col-1">
+						<h2 class="h2 compare__title">Сравнение</h2>
+						<div class="compare__settings">
+							<div class="compare__radios">
+								<label class="radio-btn active">
+									<span class="radio-btn__type">
+										Все характеристики
 									</span>
+									<input type="radio" name="radio-pay" class="radio-real" checked>
+									<span class="radio-custom"></span>
 								</label>
-								<label class="contacts__form-label">
-									<span class="contacts__form-title">Телефон</span>
-									<span class="contacts__form-box">
-										<input type="tel" name="tel" class="contacts__form-input" id="contact-tel">
+								<label class="radio-btn">
+									<span class="radio-btn__type">
+										Различия
 									</span>
+									<input type="radio" name="radio-pay" class="radio-real">
+									<span class="radio-custom"></span>
 								</label>
-								<label class="contacts__form-label">
-									<span class="contacts__form-title">E-mail</span>
-									<span class="contacts__form-box">
-										<input type="email" name="email" class="contacts__form-input">
-									</span>
-								</label>
-								<label class="contacts__form-label">
-									<span class="contacts__form-title">Комментарий</span>
-									<span class="contacts__form-box">
-										<textarea class="contacts__form-textarea" name="comment"></textarea>
-									</span>
-								</label>
-								<div class="contacts__form__btn">
-									<button class="btn ">
-										<span>Отправить</span>
-									</button>
+							</div>
+							<div class="compare__reset">
+								<svg>
+									<path
+										d="M6 19C6 20.1 6.9 21 8 21H16C17.1 21 18 20.1 18 19V7H6V19ZM8 9H16V19H8V9ZM15.5 4L14.5 3H9.5L8.5 4H5V6H19V4H15.5Z" />
+								</svg>
+								<span class="accent-color">Очистить сравнение</span>
+							</div>
+						</div>
+						<div class="compare__box">
+							<h3 class="h3 compare__box-title">Наличие и способы получения</h3>
+							<ul class="compare__list">
+								<li class="compare__item">Наличие товара</li>
+								<li class="compare__item">Доставка</li>
+								<li class="compare__item">Самовывоз</li>
+							</ul>
+						</div>
+						<div class="compare__box">
+							<h3 class="h3 compare__box-title">Характеристики</h3>
+							<ul class="compare__list">
+								<li class="compare__item">Потребляемый ток</li>
+								<li class="compare__item">Напряжение холостого хода</li>
+								<li class="compare__item">Сварочный ток</li>
+								<li class="compare__item">Класс изоляции</li>
+								<li class="compare__item">Степень защиты</li>
+								<li class="compare__item">Потребляемая мощность</li>
+								<li class="compare__item">Напряжение питания</li>
+								<li class="compare__item">Масса</li>
+								<li class="compare__item">Габариты (ДхШхВ)</li>
+								<li class="compare__item">Гарантия</li>
+							</ul>
+						</div>
+					</div>
+					<div class="compare__col-2">
+						<div class="compare__mix">
+							<p class="compare__mix-item active">Сварочные аппараты</p>
+							<p class="compare__mix-item">Компрессоры</p>
+							<p class="compare__mix-item">Культиваторы</p>
+						</div>
+						<div class="swiper compareSwiper">
+							<div class="swiper-wrapper swiper-wrapper__pag">
+								<div class="swiper-slide swiper-slide__desc">
+									<div class="compareSwiper__slide">
+										<div class="compare-card compare__card">
+											<div class="num-of-slide">
+												<span class="current-slide">0</span>/<span class="total-slides">0</span>
+											</div>
+											<div class="compare-card__img">
+												<img src="./img/main/compare/01.png" alt="01">
+											</div>
+											<h4 class="compare-card__title">Сварочный полуавтомат AuroraPRO Overman 200</h4>
+											<p class="compare-card__cost">42 300 р</p>
+											<div class="compare-card__btns">
+												<button class="btn-buy compare-card__btn">
+													<span class="btn__active-text">Купить</span>
+													<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
+												</button>
+												<button class="btn-click compare-card__btn">
+													<span>Убрать</span>
+												</button>
+											</div>
+										</div>
+										<ul class="compare-descr">
+											<li class="compare-descr__item">
+												<span class="green-color">В наличии</span>
+											</li>
+											<li class="compare-descr__item">
+												<span class="accent-color">Завтра</span>
+											</li>
+											<li class="compare-descr__item">Завтра</li>
+										</ul>
+										<ul class="compare-descr">
+											<li class="compare-descr__item">35 А</li>
+											<li class="compare-descr__item">42 В </li>
+											<li class="compare-descr__item">40 - 200 А</li>
+											<li class="compare-descr__item">F</li>
+											<li class="compare-descr__item">IP21</li>
+											<li class="compare-descr__item">5.6 кВт</li>
+											<li class="compare-descr__item">220 В</li>
+											<li class="compare-descr__item">15 кг</li>
+											<li class="compare-descr__item">482×197×466 мм</li>
+											<li class="compare-descr__item">
+												<span class="accent-color">24 месяца</span>
+											</li>
+										</ul>
+									</div>
 								</div>
-							</fieldset>
-						</form>
-						<div id="answer-contacts"></div>
+								<div class="swiper-slide swiper-slide__desc">
+									<div class="compareSwiper__slide">
+										<div class="compare-card compare__card">
+											<div class="num-of-slide">
+												<span class="current-slide">0</span>/<span class="total-slides">0</span>
+											</div>
+											<div class="compare-card__img">
+												<img src="./img/main/compare/01.png" alt="01">
+											</div>
+											<h4 class="compare-card__title">Сварочный полуавтомат AuroraPRO Overman 200</h4>
+											<p class="compare-card__cost">42 300 р</p>
+											<div class="compare-card__btns">
+												<button class="btn-buy compare-card__btn">
+													<span class="btn__active-text">Купить</span>
+													<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
+												</button>
+												<button class="btn-click compare-card__btn">
+													<span>Убрать</span>
+												</button>
+											</div>
+										</div>
+										<ul class="compare-descr">
+											<li class="compare-descr__item">
+												<span class="green-color">В наличии</span>
+											</li>
+											<li class="compare-descr__item">
+												<span class="accent-color">Завтра</span>
+											</li>
+											<li class="compare-descr__item">Завтра</li>
+										</ul>
+										<ul class="compare-descr">
+											<li class="compare-descr__item">35 А</li>
+											<li class="compare-descr__item">42 В </li>
+											<li class="compare-descr__item">40 - 200 А</li>
+											<li class="compare-descr__item">F</li>
+											<li class="compare-descr__item">IP21</li>
+											<li class="compare-descr__item">5.6 кВт</li>
+											<li class="compare-descr__item">220 В</li>
+											<li class="compare-descr__item">15 кг</li>
+											<li class="compare-descr__item">482×197×466 мм</li>
+											<li class="compare-descr__item">
+												<span class="accent-color">24 месяца</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="swiper-slide swiper-slide__desc">
+									<div class="compareSwiper__slide">
+										<div class="compare-card compare__card">
+											<div class="num-of-slide">
+												<span class="current-slide">0</span>/<span class="total-slides">0</span>
+											</div>
+											<div class="compare-card__img">
+												<img src="./img/main/compare/01.png" alt="01">
+											</div>
+											<h4 class="compare-card__title">Сварочный полуавтомат AuroraPRO Overman 200</h4>
+											<p class="compare-card__cost">42 300 р</p>
+											<div class="compare-card__btns">
+												<button class="btn-buy compare-card__btn">
+													<span class="btn__active-text">Купить</span>
+													<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
+												</button>
+												<button class="btn-click compare-card__btn">
+													<span>Убрать</span>
+												</button>
+											</div>
+										</div>
+										<ul class="compare-descr">
+											<li class="compare-descr__item">
+												<span class="green-color">В наличии</span>
+											</li>
+											<li class="compare-descr__item">
+												<span class="accent-color">Завтра</span>
+											</li>
+											<li class="compare-descr__item">Завтра</li>
+										</ul>
+										<ul class="compare-descr">
+											<li class="compare-descr__item">35 А</li>
+											<li class="compare-descr__item">42 В </li>
+											<li class="compare-descr__item">40 - 200 А</li>
+											<li class="compare-descr__item">F</li>
+											<li class="compare-descr__item">IP21</li>
+											<li class="compare-descr__item">5.6 кВт</li>
+											<li class="compare-descr__item">220 В</li>
+											<li class="compare-descr__item">15 кг</li>
+											<li class="compare-descr__item">482×197×466 мм</li>
+											<li class="compare-descr__item">
+												<span class="accent-color">24 месяца</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="swiper-slide swiper-slide__desc">
+									<div class="compareSwiper__slide">
+										<div class="compare-card compare__card">
+											<div class="num-of-slide">
+												<span class="current-slide">0</span>/<span class="total-slides">0</span>
+											</div>
+											<div class="compare-card__img">
+												<img src="./img/main/compare/01.png" alt="01">
+											</div>
+											<h4 class="compare-card__title">Сварочный полуавтомат AuroraPRO Overman 200</h4>
+											<p class="compare-card__cost">42 300 р</p>
+											<div class="compare-card__btns">
+												<button class="btn-buy compare-card__btn">
+													<span class="btn__active-text">Купить</span>
+													<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
+												</button>
+												<button class="btn-click compare-card__btn">
+													<span>Убрать</span>
+												</button>
+											</div>
+										</div>
+										<ul class="compare-descr">
+											<li class="compare-descr__item">
+												<span class="green-color">В наличии</span>
+											</li>
+											<li class="compare-descr__item">
+												<span class="accent-color">Завтра</span>
+											</li>
+											<li class="compare-descr__item">Завтра</li>
+										</ul>
+										<ul class="compare-descr">
+											<li class="compare-descr__item">35 А</li>
+											<li class="compare-descr__item">42 В </li>
+											<li class="compare-descr__item">40 - 200 А</li>
+											<li class="compare-descr__item">F</li>
+											<li class="compare-descr__item">IP21</li>
+											<li class="compare-descr__item">5.6 кВт</li>
+											<li class="compare-descr__item">220 В</li>
+											<li class="compare-descr__item">15 кг</li>
+											<li class="compare-descr__item">482×197×466 мм</li>
+											<li class="compare-descr__item">
+												<span class="accent-color">24 месяца</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="swiper-slide swiper-slide__desc">
+									<div class="compareSwiper__slide">
+										<div class="compare-card compare__card">
+											<div class="num-of-slide">
+												<span class="current-slide">0</span>/<span class="total-slides">0</span>
+											</div>
+											<div class="compare-card__img">
+												<img src="./img/main/compare/01.png" alt="01">
+											</div>
+											<h4 class="compare-card__title">Сварочный полуавтомат AuroraPRO Overman 200</h4>
+											<p class="compare-card__cost">42 300 р</p>
+											<div class="compare-card__btns">
+												<button class="btn-buy compare-card__btn">
+													<span class="btn__active-text">Купить</span>
+													<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
+												</button>
+												<button class="btn-click compare-card__btn">
+													<span>Убрать</span>
+												</button>
+											</div>
+										</div>
+										<ul class="compare-descr">
+											<li class="compare-descr__item">
+												<span class="green-color">В наличии</span>
+											</li>
+											<li class="compare-descr__item">
+												<span class="accent-color">Завтра</span>
+											</li>
+											<li class="compare-descr__item">Завтра</li>
+										</ul>
+										<ul class="compare-descr">
+											<li class="compare-descr__item">35 А</li>
+											<li class="compare-descr__item">42 В </li>
+											<li class="compare-descr__item">40 - 200 А</li>
+											<li class="compare-descr__item">F</li>
+											<li class="compare-descr__item">IP21</li>
+											<li class="compare-descr__item">5.6 кВт</li>
+											<li class="compare-descr__item">220 В</li>
+											<li class="compare-descr__item">15 кг</li>
+											<li class="compare-descr__item">482×197×466 мм</li>
+											<li class="compare-descr__item">
+												<span class="accent-color">24 месяца</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="swiper-slide swiper-slide__desc">
+									<div class="compareSwiper__slide">
+										<div class="compare-card compare__card">
+											<div class="num-of-slide">
+												<span class="current-slide">0</span>/<span class="total-slides">0</span>
+											</div>
+											<div class="compare-card__img">
+												<img src="./img/main/compare/01.png" alt="01">
+											</div>
+											<h4 class="compare-card__title">Сварочный полуавтомат AuroraPRO Overman 200</h4>
+											<p class="compare-card__cost">42 300 р</p>
+											<div class="compare-card__btns">
+												<button class="btn-buy compare-card__btn">
+													<span class="btn__active-text">Купить</span>
+													<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
+												</button>
+												<button class="btn-click compare-card__btn">
+													<span>Убрать</span>
+												</button>
+											</div>
+										</div>
+										<ul class="compare-descr">
+											<li class="compare-descr__item">
+												<span class="green-color">В наличии</span>
+											</li>
+											<li class="compare-descr__item">
+												<span class="accent-color">Завтра</span>
+											</li>
+											<li class="compare-descr__item">Завтра</li>
+										</ul>
+										<ul class="compare-descr">
+											<li class="compare-descr__item">35 А</li>
+											<li class="compare-descr__item">42 В </li>
+											<li class="compare-descr__item">40 - 200 А</li>
+											<li class="compare-descr__item">F</li>
+											<li class="compare-descr__item">IP21</li>
+											<li class="compare-descr__item">5.6 кВт</li>
+											<li class="compare-descr__item">220 В</li>
+											<li class="compare-descr__item">15 кг</li>
+											<li class="compare-descr__item">482×197×466 мм</li>
+											<li class="compare-descr__item">
+												<span class="accent-color">24 месяца</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="swiper-slide swiper-slide__desc">
+									<div class="compareSwiper__slide">
+										<div class="compare-card compare__card">
+											<div class="num-of-slide">
+												<span class="current-slide">0</span>/<span class="total-slides">0</span>
+											</div>
+											<div class="compare-card__img">
+												<img src="./img/main/compare/01.png" alt="01">
+											</div>
+											<h4 class="compare-card__title">Сварочный полуавтомат AuroraPRO Overman 200</h4>
+											<p class="compare-card__cost">42 300 р</p>
+											<div class="compare-card__btns">
+												<button class="btn-buy compare-card__btn">
+													<span class="btn__active-text">Купить</span>
+													<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
+												</button>
+												<button class="btn-click compare-card__btn">
+													<span>Убрать</span>
+												</button>
+											</div>
+										</div>
+										<ul class="compare-descr">
+											<li class="compare-descr__item">
+												<span class="green-color">В наличии</span>
+											</li>
+											<li class="compare-descr__item">
+												<span class="accent-color">Завтра</span>
+											</li>
+											<li class="compare-descr__item">Завтра</li>
+										</ul>
+										<ul class="compare-descr">
+											<li class="compare-descr__item">35 А</li>
+											<li class="compare-descr__item">42 В </li>
+											<li class="compare-descr__item">40 - 200 А</li>
+											<li class="compare-descr__item">F</li>
+											<li class="compare-descr__item">IP21</li>
+											<li class="compare-descr__item">5.6 кВт</li>
+											<li class="compare-descr__item">220 В</li>
+											<li class="compare-descr__item">15 кг</li>
+											<li class="compare-descr__item">482×197×466 мм</li>
+											<li class="compare-descr__item">
+												<span class="accent-color">24 месяца</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+				<div class="compare__mob-row">
+					<div class="dropdown compare__mob-drop">
+						<button class="compare__drop">
+							Сварочные аппараты
+						</button>
+						<ul class="compare__drop-list">
+							<li class="compare__drop-item">Сварочные аппараты</li>
+							<li class="compare__drop-item">Компрессоры</li>
+							<li class="compare__drop-item">Культиваторы</li>
+						</ul>
+					</div>
+					<div class="compareSwiper-wrapper">
+						<div class="swiper compareSwiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide swiper-slide__mob">
+									<div class="compareSwiper__slide">
+										<div class="compare-card compare__card">
+											<div class="num-of-slide">
+												<span class="current-slide">0</span>/<span class="total-slides">0</span>
+											</div>
+											<div class="compare-card__img">
+												<img src="./img/main/compare/01.png" alt="01">
+											</div>
+											<h4 class="compare-card__title">Сварочный полуавтомат AuroraPRO Overman 200</h4>
+											<p class="compare-card__cost">42 300 р</p>
+											<div class="compare-card__btns">
+												<button class="btn-buy compare-card__btn">
+													<span class="btn__active-text">Купить</span>
+													<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
+												</button>
+												<button class="btn-click compare-card__btn">
+													<span>Убрать</span>
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide swiper-slide__mob">
+									<div class="compareSwiper__slide">
+										<div class="compare-card compare__card">
+											<div class="num-of-slide">
+												<span class="current-slide">0</span>/<span class="total-slides">0</span>
+											</div>
+											<div class="compare-card__img">
+												<img src="./img/main/compare/01.png" alt="01">
+											</div>
+											<h4 class="compare-card__title">Сварочный полуавтомат AuroraPRO Overman 200</h4>
+											<p class="compare-card__cost">42 300 р</p>
+											<div class="compare-card__btns">
+												<button class="btn-buy compare-card__btn">
+													<span class="btn__active-text">Купить</span>
+													<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
+												</button>
+												<button class="btn-click compare-card__btn">
+													<span>Убрать</span>
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide swiper-slide__mob">
+									<div class="compareSwiper__slide">
+										<div class="compare-card compare__card">
+											<div class="num-of-slide">
+												<span class="current-slide">0</span>/<span class="total-slides">0</span>
+											</div>
+											<div class="compare-card__img">
+												<img src="./img/main/compare/01.png" alt="01">
+											</div>
+											<h4 class="compare-card__title">Сварочный полуавтомат AuroraPRO Overman 200</h4>
+											<p class="compare-card__cost">42 300 р</p>
+											<div class="compare-card__btns">
+												<button class="btn-buy compare-card__btn">
+													<span class="btn__active-text">Купить</span>
+													<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
+												</button>
+												<button class="btn-click compare-card__btn">
+													<span>Убрать</span>
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide swiper-slide__mob">
+									<div class="compareSwiper__slide">
+										<div class="compare-card compare__card">
+											<div class="num-of-slide">
+												<span class="current-slide">0</span>/<span class="total-slides">0</span>
+											</div>
+											<div class="compare-card__img">
+												<img src="./img/main/compare/01.png" alt="01">
+											</div>
+											<h4 class="compare-card__title">Сварочный полуавтомат AuroraPRO Overman 200</h4>
+											<p class="compare-card__cost">42 300 р</p>
+											<div class="compare-card__btns">
+												<button class="btn-buy compare-card__btn">
+													<span class="btn__active-text">Купить</span>
+													<span class="btn__hide-text"><span class="btn__hide-grad">В корзине</span></span>
+												</button>
+												<button class="btn-click compare-card__btn">
+													<span>Убрать</span>
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="compare__radios compare__radios-mob">
+						<label class="radio-btn active">
+							<span class="radio-btn__type">
+								Все характеристики
+							</span>
+							<input type="radio" name="radio-pay-2" class="radio-real" checked>
+							<span class="radio-custom"></span>
+						</label>
+						<label class="radio-btn">
+							<span class="radio-btn__type">
+								Различия
+							</span>
+							<input type="radio" name="radio-pay-2" class="radio-real">
+							<span class="radio-custom"></span>
+						</label>
 					</div>
 
-					<div class="contacts__info">
-						<ul class="contacts__list">
-							<li class="contacts__list-item">
-								<span class="contacts__list-type">Тел:</span>
-								<a href="tel:+74994309942" class="contacts__list-link"> +7 (499) 430-99-42</a>
-							</li>
-							<li class="contacts__list-item">
-								<span class="contacts__list-type">E-mail:</span>
-								<a href="mailto:info@market-aurora.ru" class="contacts__list-link">
-									info@market-aurora.ru
-								</a>
-							</li>
-							<li class="contacts__list-item">
-								<span class="contacts__list-type">Режим работы:</span>
-								<a href="#!" class="contacts__list-link">
-									Пн-Пт: 09.00 - 19.00, Сб,Вс: 10.00 -
-									17.00
-								</a>
-							</li>
-							<li class="contacts__list-item">
-								<span class="contacts__list-type">Адрес:</span>
-								<a href="https://yandex.ru/maps/-/CCU1IYv-wD" target="_blank" class="contacts__list-link">
-									г. Москва, Востряковский проезд 10б строение
-									8
-								</a>
-							</li>
-						</ul>
-						<a href="https://yandex.ru/maps/-/CCU1IYv-wD" target="_blank" class="btn contacts__btn">
-							<span>Посмотреть на карте</span>
-						</a>
-					</div>
-				</div>
-				<div class="contacts__adding-info">
-					<p>
-						ООО "Партс" ИНН 7725457326, ОГРН 1187746269523
-					</p>
-					<p>
-						Официальный дилер ГК Аврора<br class="br">
-						Общество с Ограниченной Ответственностью "НСК Групп" ИНН 9724025662 КПП 772401001 ОГРН 1207700395011
-					</p>
-				</div>
-				<div class="contacts__sertificates">
-					<div class="contacts__sertificates-img">
-						<img src="./img/main/contacts/01.jpg" alt="01">
-					</div>
-					<div class="contacts__sertificates-img">
-						<img src="./img/main/contacts/02.jpg" alt="02">
-					</div>
-					<div class="contacts__sertificates-img">
-						<img src="./img/main/contacts/03.jpg" alt="03">
+					<div class="swiper compareSwiperDescr">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="compare__mob-container">
+									<div class="compare__mob-box">
+										<h3 class="compare__mob-title">Наличие и способы получения</h3>
+										<ul class="compare__mob-list">
+											<li class="compare__mob-item">
+												<h4 class="compare__mob-subtitle">Наличие товара</h4>
+												<ul class="compare__mob-sublist">
+													<li class="compare__mob-subitem">
+														<span class="green-color">В наличии</span>
+													</li>
+													<li class="compare__mob-subitem">
+														<span class="gray-color">Нет в наличии</span>
+													</li>
+												</ul>
+											</li>
+											<li class="compare__mob-item">
+												<h4 class="compare__mob-subtitle">Доставка</h4>
+												<ul class="compare__mob-sublist">
+													<li class="compare__mob-subitem">
+														<span class="accent-color">Завтра</span>
+													</li>
+													<li class="compare__mob-subitem">Послезавтра</li>
+												</ul>
+											</li>
+											<li class="compare__mob-item">
+												<h4 class="compare__mob-subtitle">Самовывоз</h4>
+												<ul class="compare__mob-sublist">
+													<li class="compare__mob-subitem">
+														<span class="accent-color">Сегодня</span>
+													</li>
+													<li class="compare__mob-subitem">Завтра</li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+									<div class="compare__mob-box">
+										<h3 class="compare__mob-title">Характеристики</h3>
+										<ul class="compare__mob-list">
+											<li class="compare__mob-item">
+												<h4 class="compare__mob-subtitle">Потребляемый ток</h4>
+												<ul class="compare__mob-sublist">
+													<li class="compare__mob-subitem">
+														<span class="accent-color">35 А</span>
+													</li>
+													<li class="compare__mob-subitem">
+														30 А
+													</li>
+												</ul>
+											</li>
+											<li class="compare__mob-item">
+												<h4 class="compare__mob-subtitle">Напряжение холостого хода</h4>
+												<ul class="compare__mob-sublist">
+													<li class="compare__mob-subitem">
+														36 В
+													</li>
+													<li class="compare__mob-subitem">
+														<span class="accent-color">42 В</span>
+													</li>
+												</ul>
+											</li>
+											<li class="compare__mob-item">
+												<h4 class="compare__mob-subtitle">Сварочный ток</h4>
+												<ul class="compare__mob-sublist">
+													<li class="compare__mob-subitem">
+														<span class="accent-color">50 - 220 А</span>
+													</li>
+													<li class="compare__mob-subitem">40 - 200 А</li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="compare__mob-container">
+									<div class="compare__mob-box">
+										<h3 class="compare__mob-title">Наличие и способы получения</h3>
+										<ul class="compare__mob-list">
+											<li class="compare__mob-item">
+												<h4 class="compare__mob-subtitle">Наличие товара</h4>
+												<ul class="compare__mob-sublist">
+													<li class="compare__mob-subitem">
+														<span class="green-color">В наличии</span>
+													</li>
+													<li class="compare__mob-subitem">
+														<span class="gray-color">Нет в наличии</span>
+													</li>
+												</ul>
+											</li>
+											<li class="compare__mob-item">
+												<h4 class="compare__mob-subtitle">Доставка</h4>
+												<ul class="compare__mob-sublist">
+													<li class="compare__mob-subitem">
+														<span class="accent-color">Завтра</span>
+													</li>
+													<li class="compare__mob-subitem">Послезавтра</li>
+												</ul>
+											</li>
+											<li class="compare__mob-item">
+												<h4 class="compare__mob-subtitle">Самовывоз</h4>
+												<ul class="compare__mob-sublist">
+													<li class="compare__mob-subitem">
+														<span class="accent-color">Сегодня</span>
+													</li>
+													<li class="compare__mob-subitem">Завтра</li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+									<div class="compare__mob-box">
+										<h3 class="compare__mob-title">Характеристики</h3>
+										<ul class="compare__mob-list">
+											<li class="compare__mob-item">
+												<h4 class="compare__mob-subtitle">Потребляемый ток</h4>
+												<ul class="compare__mob-sublist">
+													<li class="compare__mob-subitem">
+														<span class="accent-color">35 А</span>
+													</li>
+													<li class="compare__mob-subitem">
+														30 А
+													</li>
+												</ul>
+											</li>
+											<li class="compare__mob-item">
+												<h4 class="compare__mob-subtitle">Напряжение холостого хода</h4>
+												<ul class="compare__mob-sublist">
+													<li class="compare__mob-subitem">
+														36 В
+													</li>
+													<li class="compare__mob-subitem">
+														<span class="accent-color">42 В</span>
+													</li>
+												</ul>
+											</li>
+											<li class="compare__mob-item">
+												<h4 class="compare__mob-subtitle">Сварочный ток</h4>
+												<ul class="compare__mob-sublist">
+													<li class="compare__mob-subitem">
+														<span class="accent-color">50 - 220 А</span>
+													</li>
+													<li class="compare__mob-subitem">40 - 200 А</li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -972,10 +1546,8 @@
 	<script src="./libs/jquery/jquery-3.7.0.min.js"></script>
 	<!-- Owl-carousel -->
 	<script src="./libs/owl-carousel/owl.carousel.min.js"></script>
-	<!-- jQuery Validate -->
-	<script src="./libs/jquery-validate/jquery.validate.min.js"></script>
-	<!-- international Input -->
-	<script src="./libs/intelinput/js/intlTelInput.js"></script>
+	<!-- Swiper -->
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
 	<!-- Main js -->
 	<script src="./js/main.js"></script>
