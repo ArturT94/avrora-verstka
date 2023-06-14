@@ -5,15 +5,19 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>Оплата</title>
+	<title>Авторизация</title>
 	<meta name="description" content="Aurora, Офицальный дилер Aurora">
 	<meta name="keywords" content="Офицальный дилер Aurora">
 
 	<!-- Styles -->
 	<link rel="stylesheet" href="./css/main.css">
 
-	<!-- InterNational Input -->
+	<!-- InterNational Input-->
 	<link rel="stylesheet" href="./libs/intelinput/css/intlTelInput.css">
+
+	<!-- Air DatePicker-->
+	<link rel="stylesheet" href="./libs/air-datepicker/air-datepicker.css">
+
 
 
 	<!-- Favicons -->
@@ -473,100 +477,136 @@
 		</div>
 	</div>
 	<main class="main">
-		<nav class="page-nav page-nav--payment">
+		<section class="authorization-section">
 			<div class="container">
-				<ul class="page-nav__list">
-					<li class="page-nav__item">
-						<a href="./index.html">Главная</a>
-					</li>
-					<li class="page-nav__item">
-						<a href="./contacts.html">Оплата</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
-		<section class="payment">
-			<div class="container">
-				<h2 class="h2 payment__title">Оплата</h2>
-				<div class="payment__row">
-					<div class="payment__descr">
-						<h4 class="payment__descr-title">
-							Оплата товаров в интернет-магазине “Market-Aurora.ru” может
-							осуществляться наличным и безналичным расчетом по Вашему желанию.
-						</h4>
-						<p class="payment__descr-text">
-							Для осуществления покупки Вам нужно выбрать необходимый Вам товар или перечень товаров, перейти к
-							корзине и подтвердить заказ. Оператор интернет-магазина свяжется с Вами и уточнит удобное для Вас
-							время и место доставки товара.
-						</p>
-					</div>
-					<div class="payment__descr">
-						<h4 class="payment__descr-title">
-							Оплата наличными средствами
-						</h4>
-						<p class="payment__descr-text">
-							Оплата наличными осуществляется представителю интернет-магазина “Market-Aurora.ru” в момент
-							бесплатной доставки любого товара (от сварочного аппарата до бензинового генератора) по указанному
-							Вами адресу. <span class="accent-color"> Документы об оплате с печатью являются
-								обязательными документами для осуществления
-								покупки за наличные средства.</span>
-						</p>
-						<p class="payment__descr-text">
-							При оплате наличными средствами <span class="accent-color"> всегда требуйте от представителя
-								интернет-магазина (курьера)
-								документы на покупку (с печатью интернет-магазина “Market-Aurora.ru”)</span> – это документы,
-							которые
-							подтверждают покупку товара именно в интернет-магазине “Market-Aurora.ru“.
-						</p>
-					</div>
-					<div class="payment__descr">
-						<h4 class="payment__descr-title">
-							Банковской картой
-						</h4>
-						<p class="payment__descr-text">
-							Для выбора оплаты товара с помощью банковской карты на соответствующей странице необходимо нажать
-							кнопку Оплата заказа банковской картой. <span class="accent-color"> Оплата происходит через ПАО
-								СБЕРБАНК с использованием
-								банковских карт следующих платёжных систем: МИР VISA Mastercard Worldwide JCB</span>
-						</p>
-						<p class="payment__descr-text">
-							Для оплаты (ввода реквизитов Вашей карты) Вы будете перенаправлены на платёжный шлюз ПАО СБЕРБАНК.
-							Соединение с платёжным шлюзом и передача информации осуществляется в защищённом режиме с
-							использованием протокола шифрования SSL. В случае если Ваш банк поддерживает технологию безопасного
-							проведения интернет-платежей Verified By Visa, MasterCard SecureCode, MIR Accept, J-Secure, для
-							проведения платежа также может потребоваться ввод специального пароля.
-						</p>
-						<p class="payment__descr-text">
-							Настоящий сайт поддерживает 256-битное шифрование. Конфиденциальность сообщаемой персональной
-							информации обеспечивается ПАО СБЕРБАНК. Введённая информация не будет предоставлена третьим лицам
-							за исключением случаев, предусмотренных законодательством РФ. Проведение платежей по банковским
-							картам осуществляется в строгом соответствии с требованиями платёжных систем МИР, Visa Int.,
-							MasterCard Europe Sprl, JCB.
-						</p>
-					</div>
-					<div class="payment__descr">
-						<h4 class="payment__descr-title">
-							Оплата безналичными средствами
-						</h4>
-						<p class="payment__descr-text">
-							Безналичный расчет за товары покупаемые в интернет-магазине “Market-Aurora.ru” осуществляется на
-							расчетный счет интернет-магазина исключительно согласно счет-договора выставленным оператором
-							интернет-магазина.
-						</p>
-					</div>
-					<div class="payment__descr">
-						<h4 class="payment__descr-title">
-							Возврат товара
-						</h4>
-						<p class="payment__descr-text">
-							Срок возврата товара надлежащего качества составляет 14 дней с момента получения товара.
-							Возврат переведённых средств, производится на ваш банковский счёт в течение 5-30 рабочих дней (срок
-							зависит от банка, который выдал вашу банковскую карту).
-						</p>
-					</div>
-					<h4 class="payment__descr-title">
-						С уважением, Интернет-магазин “Market-Aurora.ru"
-					</h4>
+				<div class="authorization__cross">
+					<svg>
+						<path
+							d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" />
+					</svg>
+				</div>
+				<h2 class="password-change__title">Авторизация</h2>
+				<div class="authorization__options active">
+					<span class="authorization__login login-tel active" id="login-tel">
+						Вход по номеру телефона
+					</span>
+					<span class="authorization__login login-email" id="login-email">
+						Вход по email
+					</span>
+				</div>
+				<div class="authorization__form-wrapper">
+
+					<form action="#!" class="authorization__form-tel active">
+						<label class="authorization__label-input">
+							<span class="authorization__input-title">Номер телефона</span>
+							<span class="authorization__input-wrapper">
+								<input type="tel" name="tel" class="authorization__input authorization__input-tel"
+									id="authorizationTel">
+							</span>
+						</label>
+						<label class="authorization__label-checkox">
+							<input type="checkbox" class="real-checkbox">
+							<span class="custom-checkbox"></span>
+							<span class="authorization__checkbox-name">Запомнить меня </span>
+						</label>
+						<span class="authorization__hint">
+							обязательные поля
+						</span>
+						<span class="authorization__btns">
+							<button class="btn-click authorization__btn">
+								<span>Выслать код</span>
+							</button>
+							<a href="./registration.html" class="btn authorization__btn">
+								<span>Регистрация</span>
+							</a>
+						</span>
+					</form>
+					<form action="#!" class="authorization__form-email">
+						<span class="authorization__label-inputs">
+							<label class="authorization__label-input">
+								<span class="authorization__input-title">E-mail</span>
+								<span class="authorization__input-wrapper authorization__input-wrapper-email">
+									<input type="email" name="email" class="authorization__input authorization__input-email"
+										placeholder="pochta@mail.ru">
+									<span class="authorization__input-svg">
+										<svg>
+											<path fill-rule="evenodd" clip-rule="evenodd"
+												d="M12 13.1316C15.315 13.1316 18 10.3053 18 6.81579C18 3.32632 15.315 0.5 12 0.5C8.685 0.5 6 3.32632 6 6.81579C6 10.3053 8.685 13.1316 12 13.1316ZM12 15.0263C7.995 15.0263 0 17.1421 0 21.3421V22.9211C0 23.7895 0.675 24.5 1.5 24.5H22.5C23.325 24.5 24 23.7895 24 22.9211V21.3421C24 17.1421 16.005 15.0263 12 15.0263Z" />
+										</svg>
+									</span>
+								</span>
+							</label>
+							<label class="authorization__label-input">
+								<span class="authorization__input-title">Пароль</span>
+								<span class="authorization__input-wrapper">
+									<input type="password" name="password"
+										class="authorization__input authorization__input-password"
+										placeholder="*****************">
+								</span>
+							</label>
+							<div class="authorization__error">Неправильный логин или пароль</div>
+						</span>
+
+						<span class="authorization__row">
+							<span class="authorization__box">
+								<label class="authorization__label-checkox">
+									<input type="checkbox" class="real-checkbox">
+									<span class="custom-checkbox"></span>
+									<span class="authorization__checkbox-name">Запомнить меня </span>
+								</label>
+								<span class="authorization__hint">
+									обязательные поля
+								</span>
+							</span>
+							<a href="./restore.html" class="authorization__link">
+								<span class="accent-color">
+									Забыли пароль?
+								</span>
+							</a>
+						</span>
+						<span class="authorization__btns">
+							<button class="btn-click authorization__btn" data-auth-btn>
+								<span>Выслать код</span>
+							</button>
+							<a href="./registration.html" class="btn authorization__btn">
+								<span>Регистрация</span>
+							</a>
+						</span>
+					</form>
+					<form action="#!" class="authorization__succes-tel">
+						<div class="authorization__succes-message succes-message">На Ваш номер было выслано СМС с кодом
+							подтверждения</div>
+						<label class="authorization__label-input">
+							<span class="authorization__input-title">Код подтверждения из СМС</span>
+							<span class="authorization__input-wrapper">
+								<input type="number" name="numOfMessage" class="authorization__input authorization__input-prove"
+									placeholder="3123123">
+							</span>
+						</label>
+						<span class="authorization__hint">
+							обязательные поля
+						</span>
+						<span class="authorization__btns">
+							<button class="btn authorization__btn">
+								<span>Вход</span>
+							</button>
+							<button class="authorization__btn btn-grad">
+								<span>Отправить код повторно</span>
+							</button>
+						</span>
+					</form>
+					<form action="#!" class="authorization__succes-email">
+						<div class="authorization__succes-message succes-message">На Вашу почту отправлено ссылка для
+							подтверждения</div>
+						<span class="authorization__btns">
+							<button class="btn authorization__btn">
+								<span>Вход</span>
+							</button>
+							<button class="authorization__btn btn-grad">
+								<span>Отправить повторно</span>
+							</button>
+						</span>
+					</form>
 				</div>
 			</div>
 		</section>
@@ -963,140 +1003,6 @@
 		</ul>
 	</div>
 
-	<div class="authorization-wrapper">
-		<div class="authorization">
-			<div class="authorization__content">
-				<div class="authorization__cross">
-					<svg>
-						<path
-							d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" />
-					</svg>
-				</div>
-				<h2 class="authorization__title">Авторизация</h2>
-				<div class="authorization__options active">
-					<span class="authorization__login login-tel active" id="login-tel">
-						Вход по номеру телефона
-					</span>
-					<span class="authorization__login login-email" id="login-email">
-						Вход по email
-					</span>
-				</div>
-				<div class="authorization__form-wrapper">
-					<form action="#!" class="authorization__form-tel active">
-						<label class="authorization__label-input">
-							<span class="authorization__input-title">Номер телефона</span>
-							<span class="authorization__input-wrapper">
-								<input type="tel" name="tel" class="authorization__input authorization__input-tel"
-									id="authorizationTel">
-							</span>
-						</label>
-						<label class="authorization__label-checkox">
-							<input type="checkbox" class="real-checkbox">
-							<span class="custom-checkbox"></span>
-							<span class="authorization__checkbox-name">Запомнить меня </span>
-						</label>
-						<span class="authorization__hint">
-							обязательные поля
-						</span>
-						<span class="authorization__btns">
-							<button class="btn-click authorization__btn">
-								<span>Выслать код</span>
-							</button>
-							<a href="./registration.html" class="btn authorization__btn">
-								<span>Регистрация</span>
-							</a>
-						</span>
-					</form>
-					<form action="#!" class="authorization__form-email">
-						<span class="authorization__label-inputs">
-							<label class="authorization__label-input">
-								<span class="authorization__input-title">E-mail</span>
-								<span class="authorization__input-wrapper authorization__input-wrapper-email">
-									<input type="email" name="email" class="authorization__input authorization__input-email"
-										placeholder="pochta@mail.ru">
-									<span class="authorization__input-svg">
-										<svg>
-											<path fill-rule="evenodd" clip-rule="evenodd"
-												d="M12 13.1316C15.315 13.1316 18 10.3053 18 6.81579C18 3.32632 15.315 0.5 12 0.5C8.685 0.5 6 3.32632 6 6.81579C6 10.3053 8.685 13.1316 12 13.1316ZM12 15.0263C7.995 15.0263 0 17.1421 0 21.3421V22.9211C0 23.7895 0.675 24.5 1.5 24.5H22.5C23.325 24.5 24 23.7895 24 22.9211V21.3421C24 17.1421 16.005 15.0263 12 15.0263Z" />
-										</svg>
-									</span>
-								</span>
-							</label>
-							<label class="authorization__label-input">
-								<span class="authorization__input-title">Пароль</span>
-								<span class="authorization__input-wrapper">
-									<input type="password" name="password"
-										class="authorization__input authorization__input-password"
-										placeholder="*****************">
-								</span>
-							</label>
-							<div class="authorization__error">Неправильный логин или пароль</div>
-						</span>
-
-						<span class="authorization__row">
-							<span class="authorization__box">
-								<label class="authorization__label-checkox">
-									<input type="checkbox" class="real-checkbox">
-									<span class="custom-checkbox"></span>
-									<span class="authorization__checkbox-name">Запомнить меня </span>
-								</label>
-								<span class="authorization__hint">
-									обязательные поля
-								</span>
-							</span>
-							<a href="./restore.html" class="authorization__link">
-								<span class="accent-color">
-									Забыли пароль?
-								</span>
-							</a>
-						</span>
-						<span class="authorization__btns">
-							<button class="btn-click authorization__btn" data-auth-btn>
-								<span>Выслать код</span>
-							</button>
-							<a href="./registration.html" class="btn authorization__btn">
-								<span>Регистрация</span>
-							</a>
-						</span>
-					</form>
-					<form action="#!" class="authorization__succes-tel">
-						<div class="authorization__succes-message succes-message">На Ваш номер было выслано СМС с кодом
-							подтверждения</div>
-						<label class="authorization__label-input">
-							<span class="authorization__input-title">Код подтверждения из СМС</span>
-							<span class="authorization__input-wrapper">
-								<input type="number" name="numOfMessage" class="authorization__input authorization__input-prove"
-									placeholder="3123123">
-							</span>
-						</label>
-						<span class="authorization__hint">
-							обязательные поля
-						</span>
-						<span class="authorization__btns">
-							<button class="btn authorization__btn">
-								<span>Вход</span>
-							</button>
-							<button class="authorization__btn btn-grad">
-								<span>Отправить код повторно</span>
-							</button>
-						</span>
-					</form>
-					<form action="#!" class="authorization__succes-email">
-						<div class="authorization__succes-message succes-message">На Вашу почту отправлено ссылка для
-							подтверждения</div>
-						<span class="authorization__btns">
-							<button class="btn authorization__btn">
-								<span>Вход</span>
-							</button>
-							<button class="authorization__btn btn-grad">
-								<span>Отправить повторно</span>
-							</button>
-						</span>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
 
 	<div class="overlay"></div>
 

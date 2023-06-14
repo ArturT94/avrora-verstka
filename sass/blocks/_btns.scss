@@ -694,3 +694,43 @@
       background-color: $dark-green;
    }
 }
+
+.btn-grad {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 40px;
+   padding: 0 3px;
+   border-radius: 6px;
+
+   font-weight: 500;
+   font-size: 16px;
+   background-color: transparent;
+   @include transition;
+
+   span {
+      background: $gradient-color;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      @include transition;
+      z-index: 2;
+   }
+
+   &:hover,
+   &:focus {
+      span {
+         background: unset;
+         -webkit-background-clip: unset;
+         -webkit-text-fill-color: unset;
+         background-clip: unset;
+         color: $white-color;
+      }
+      background-color: $light-blue;
+   }
+
+   &:active {
+      background-color: $dark-blur;
+   }
+}

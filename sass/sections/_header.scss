@@ -140,8 +140,6 @@
       }
    }
 }
-.header__user-item--profile {
-}
 .header__user-item--basket {
    position: relative;
 
@@ -173,4 +171,19 @@
 }
 
 .header__user-item--like {
+}
+
+.user-profile {
+   display: none;
+   &.active {
+      display: flex;
+   }
+}
+
+.user-login {
+   background-color: transparent;
+   display: none;
+   &.active {
+      display: flex;
+   }
 }

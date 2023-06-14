@@ -38,9 +38,12 @@
 @import "./blocks/accessories-card";
 @import "./blocks/review-card";
 @import "./blocks/review-card";
+@import "./blocks/input-label";
+@import "./blocks/success-popup";
 @import "./blocks/popup-modal";
 @import "./blocks/order";
 @import "./blocks/form-success";
+@import "./blocks/checkbox";
 @import "./blocks/order-count";
 @import "./blocks/counter";
 @import "./blocks/legal-face";
@@ -60,7 +63,8 @@
 @import "./blocks/adress-popup";
 @import "./blocks/personal-popup";
 @import "./blocks/subscribe-popup";
-@import "./blocks/order-drop";
+@import "./blocks/product-added";
+@import "./blocks/authorization-popup";
 
 // Sections
 @import "./sections/header";
@@ -93,3 +97,10 @@
 @import "./sections/compare";
 @import "./sections/history";
 @import "./sections/error-section";
+@import "./sections/security";
+@import "./sections/terms";
+@import "./sections/garanty";
+@import "./sections/registration";
+@import "./sections/password-change";
+@import "./sections/restore";
+@import "./sections/authorization-section";

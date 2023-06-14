@@ -15,7 +15,6 @@ $(document).ready(function () {
          items: 1,
          dots: true,
          nav: false,
-         loop: true,
       });
    });
    // Проверка страницы сайта index
@@ -26,7 +25,584 @@ $(document).ready(function () {
          mapPopup.classList.add("active");
       });
    }
+
+   const body = document.body;
+   const overlay = document.querySelector(".overlay");
+
    // nav list
+
+   const logIn = document.querySelector(".user-login");
+   const authorizCross = document.querySelector(".authorization__cross");
+   const authorizationWrapper = document.querySelector(".authorization-wrapper");
+
+   logIn.addEventListener("click", function () {
+      overlay.classList.add("active");
+      authorizationWrapper.classList.add("active");
+   });
+
+   authorizCross.addEventListener("click", function () {
+      overlay.classList.remove("active");
+      authorizationWrapper.classList.remove("active");
+   });
+
+   overlay.addEventListener("click", function () {
+      overlay.classList.remove("active");
+      authorizationWrapper.classList.remove("active");
+   });
+
+   // Input mask
+   const authorizationTel = document.querySelector("#authorizationTel");
+
+   intlTelInput(authorizationTel, {
+      initialCountry: "auto",
+      geoIpLookup: function (success, failure) {
+         $.get("https://ipinfo.io", function () {}, "jsonp").always(function (resp) {
+            let countryCode = resp && resp.country ? resp.country : "";
+            success(countryCode);
+         });
+      },
+      // utilsScript: "../libs/intelinput/js/utils.js",
+   });
+
+   //FORM Tel VALIDATE
+   $(".authorization__form-tel").validate({
+      rules: {
+         tel: {
+            required: true,
+         },
+      },
+      messages: {
+         tel: {
+            required: "",
+         },
+      },
+      submitHandler: function (form) {
+         successShowMessage();
+      },
+   });
+
+   function successShowMessage() {}
+   //FORM Email VALIDATE
+   $(".authorization__form-email").validate({
+      rules: {
+         email: {
+            required: true,
+            email: true,
+         },
+         password: {
+            required: true,
+         },
+      },
+      messages: {
+         email: {
+            required: "",
+         },
+         password: {
+            required: "",
+         },
+      },
+   });
+
+   const formAuthorTel = document.querySelector(".authorization__form-tel");
+   const formAuthorSuccesTel = document.querySelector(".authorization__succes-tel");
+   const formAuthorSuccesEmail = document.querySelector(".authorization__succes-email");
+   const authorOptions = document.querySelector(".authorization__options");
+
+   formAuthorTel.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const authorInputTel = document.querySelector("#authorizationTel");
+
+      const authorAllInputs = formAuthorTel.querySelectorAll(".authorization__input");
+      authorAllInputs.forEach(function (input) {
+         input.classList.remove("active");
+      });
+      if (!authorInputTel.value) {
+         authorAllInputs.forEach(function (input) {
+            input.classList.add("active");
+            input.addEventListener("input", function () {
+               input.classList.remove("active");
+            });
+         });
+      } else {
+         authorAllInputs.forEach(function (input) {
+            input.classList.remove("active");
+         });
+         authorOptions.classList.remove("active");
+         formAuthorTel.classList.remove("active");
+         formAuthorSuccesTel.classList.add("active");
+         // formAuthorTel.submit();
+      }
+   });
+
+   const formAuthorEmail = document.querySelector(".authorization__form-email");
+   formAuthorEmail.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const authorInputEmail = document.querySelector(".authorization__input-email");
+      const authorInputPassword = document.querySelector(".authorization__input-password");
+      const authorizationError = formAuthorEmail.querySelector(".authorization__error");
+      const authorAllInputs = formAuthorEmail.querySelectorAll(".authorization__input");
+
+      authorAllInputs.forEach(function (input) {
+         input.classList.remove("active");
+      });
+      authorizationError.classList.remove("active");
+
+      if (!(authorInputEmail.value && authorInputPassword.value)) {
+         authorizationError.classList.add("active");
+         authorAllInputs.forEach(function (input) {
+            input.classList.add("active");
+            input.addEventListener("input", function () {
+               input.classList.remove("active");
+            });
+         });
+      } else {
+         formAuthorEmail.classList.remove("active");
+         authorizationError.classList.remove("active");
+         authorOptions.classList.remove("active");
+         formAuthorSuccesEmail.classList.add("active");
+         // formAuthorEmail.submit();
+      }
+   });
+
+   formAuthorSuccesTel.addEventListener("submit", function (e) {
+      e.preventDefault();
+   });
+   formAuthorSuccesEmail.addEventListener("submit", function (e) {
+      e.preventDefault();
+   });
+
+   // Options form
+   const logTel = document.querySelector("#login-tel");
+   const logEmail = document.querySelector("#login-email");
+   const authorFormTel = document.querySelector(".authorization__form-tel");
+   const authorFormEmail = document.querySelector(".authorization__form-email");
+
+   logTel.addEventListener("click", function () {
+      logEmail.classList.remove("active");
+      logTel.classList.add("active");
+      authorFormEmail.classList.remove("active");
+      authorFormTel.classList.add("active");
+   });
+   logEmail.addEventListener("click", function () {
+      logTel.classList.remove("active");
+      logEmail.classList.add("active");
+      authorFormTel.classList.remove("active");
+      authorFormEmail.classList.add("active");
+   });
+
+   if (window.location.toString().indexOf("registration.html") > 0) {
+      // registration tel mask
+      const regisTel = document.querySelector("#regisTel");
+
+      intlTelInput(regisTel, {
+         initialCountry: "auto",
+         geoIpLookup: function (success, failure) {
+            $.get("https://ipinfo.io", function () {}, "jsonp").always(function (resp) {
+               let countryCode = resp && resp.country ? resp.country : "";
+               success(countryCode);
+            });
+         },
+         // utilsScript: "../libs/intelinput/js/utils.js",
+      });
+
+      //FORM Registration Blank VALIDATE
+      $("#registrationFormBlank").validate({
+         rules: {
+            name: {
+               required: true,
+            },
+            email: {
+               required: true,
+            },
+            tel: {
+               required: true,
+            },
+            password: {
+               required: true,
+            },
+            passwordProve: {
+               required: true,
+            },
+            isagree: {
+               required: true,
+            },
+         },
+         messages: {
+            name: {
+               required: "*",
+            },
+            email: {
+               required: "*",
+            },
+            tel: {
+               required: "*",
+            },
+            password: {
+               required: "*",
+            },
+            passwordProve: {
+               required: "*",
+            },
+            isagree: {
+               required: "*",
+            },
+         },
+         submitHandler: function (form) {
+            sendingFormSMSSubmit();
+         },
+      });
+
+      function sendingFormSMSSubmit() {
+         const registrationFormBlank = document.querySelector("#registrationFormBlank");
+         const registrationFormSucces = document.querySelector("#registrationFormSucces");
+
+         registrationFormBlank.classList.remove("active");
+         registrationFormSucces.classList.add("active");
+         const finalRegisterBtn = document.querySelector("[data-final-register]");
+         const finalResentrBtn = document.querySelector("[data-resent-btn]");
+         const smsInput = document.querySelector("#smsInput");
+
+         registrationFormSucces.addEventListener("submit", function (e) {
+            e.preventDefault();
+         });
+
+         finalRegisterBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const inputLabelError = document.querySelector(".input-label__error");
+
+            inputLabelError.classList.remove("active");
+
+            if (!smsInput.value) {
+               inputLabelError.classList.add("active");
+
+               smsInput.addEventListener("input", function () {
+                  inputLabelError.classList.remove("active");
+               });
+            } else {
+               const succesPopup = document.querySelector(".succes-popup");
+               const btnSuccesPopupClose = document.querySelector("[data-close-btn]");
+               overlay.classList.add("active");
+               succesPopup.classList.add("active");
+
+               overlay.addEventListener("click", function () {
+                  overlay.classList.remove("active");
+                  succesPopup.classList.remove("active");
+               });
+               btnSuccesPopupClose.addEventListener("click", function () {
+                  overlay.classList.remove("active");
+                  succesPopup.classList.remove("active");
+               });
+            }
+         });
+
+         finalResentrBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+         });
+      }
+   }
+
+   if (window.location.toString().indexOf("password.html") > 0) {
+      //FORM Tel VALIDATE
+      $("#passwordChangeForm").validate({
+         rules: {
+            oldPassword: {
+               required: true,
+            },
+            newPassword: {
+               required: true,
+            },
+            provePassword: {
+               required: true,
+            },
+         },
+         messages: {
+            oldPassword: {
+               required: "*",
+            },
+            newPassword: {
+               required: "*",
+            },
+            provePassword: {
+               required: "*",
+            },
+         },
+         submitHandler: function (form) {
+            form.submit();
+         },
+      });
+   }
+
+   if (window.location.toString().indexOf("restore.html") > 0) {
+      const restoreTel = document.querySelector("#restoreTel");
+
+      const restoreOptionTel = document.querySelector(".restore__option-tel");
+      const restoreOptionEmail = document.querySelector(".restore__option-email");
+      const restoreFormTel = document.querySelector("#restoreFormTel");
+      const restoreFormEmail = document.querySelector("#restoreFormEmail");
+
+      //FORM Tel VALIDATE
+      $("#restoreFormTel").validate({
+         rules: {
+            tel: {
+               required: true,
+            },
+         },
+         messages: {
+            tel: {
+               required: "*",
+            },
+         },
+         submitHandler: function (form) {
+            restorePasswordSubmit();
+         },
+      });
+      //FORM Tel VALIDATE
+      $("#restoreFormEmail").validate({
+         rules: {
+            email: {
+               required: true,
+            },
+         },
+         messages: {
+            email: {
+               required: "*",
+            },
+         },
+         submitHandler: function (form) {
+            successEmailSubmit();
+         },
+      });
+
+      function successEmailSubmit() {
+         const succesPopup = document.querySelector(".succes-popup");
+         const btnSuccesPopupClose = document.querySelector("[data-close-btn]");
+         overlay.classList.add("active");
+         succesPopup.classList.add("active");
+
+         overlay.addEventListener("click", function () {
+            overlay.classList.remove("active");
+            succesPopup.classList.remove("active");
+         });
+         btnSuccesPopupClose.addEventListener("click", function () {
+            overlay.classList.remove("active");
+            succesPopup.classList.remove("active");
+         });
+      }
+      function restorePasswordSubmit() {
+         const restoreOptions = document.querySelector(".restore__options");
+         const restoreDescr = document.querySelector(".restore__descr");
+         const restoreForm = document.querySelectorAll(".restore__form");
+         const restoreFormPassword = document.querySelector(".restore__form-password");
+
+         restoreOptions.classList.add("none");
+         restoreDescr.classList.add("none");
+         restoreForm.forEach(function (restoreForm) {
+            restoreForm.classList.remove("active");
+         });
+         restoreFormPassword.classList.add("active");
+      }
+
+      //FORM Tel VALIDATE
+      $("#restoreFormPassword").validate({
+         rules: {
+            newPassword: {
+               required: true,
+            },
+            provePassword: {
+               required: true,
+            },
+         },
+         messages: {
+            newPassword: {
+               required: "*",
+            },
+            provePassword: {
+               required: "*",
+            },
+         },
+         submitHandler: function (form) {
+            successRestoreSubmit();
+         },
+      });
+
+      function successRestoreSubmit() {
+         const restoreContent = document.querySelector(".restore__content");
+         const restoreSuccess = document.querySelector(".restore__success");
+         restoreContent.classList.add("none");
+         restoreSuccess.classList.add("active");
+      }
+
+      // Restore Options
+      restoreOptionTel.addEventListener("click", function () {
+         restoreOptionEmail.classList.remove("active");
+         restoreFormEmail.classList.remove("active");
+         restoreOptionTel.classList.add("active");
+         restoreFormTel.classList.add("active");
+      });
+      restoreOptionEmail.addEventListener("click", function () {
+         restoreOptionTel.classList.remove("active");
+         restoreFormTel.classList.remove("active");
+         restoreOptionEmail.classList.add("active");
+         restoreFormEmail.classList.add("active");
+      });
+
+      intlTelInput(restoreTel, {
+         initialCountry: "auto",
+         geoIpLookup: function (success, failure) {
+            $.get("https://ipinfo.io", function () {}, "jsonp").always(function (resp) {
+               let countryCode = resp && resp.country ? resp.country : "";
+               success(countryCode);
+            });
+         },
+         // utilsScript: "../libs/intelinput/js/utils.js",
+      });
+   }
+
+   if (window.location.toString().indexOf("authorization.html") > 0) {
+      // Input mask
+      const authorizationTel = document.querySelector("#authorizationTel");
+
+      intlTelInput(authorizationTel, {
+         initialCountry: "auto",
+         geoIpLookup: function (success, failure) {
+            $.get("https://ipinfo.io", function () {}, "jsonp").always(function (resp) {
+               let countryCode = resp && resp.country ? resp.country : "";
+               success(countryCode);
+            });
+         },
+         // utilsScript: "../libs/intelinput/js/utils.js",
+      });
+
+      //FORM Tel VALIDATE
+      $(".authorization__form-tel").validate({
+         rules: {
+            tel: {
+               required: true,
+            },
+         },
+         messages: {
+            tel: {
+               required: "",
+            },
+         },
+         submitHandler: function (form) {
+            successShowMessage();
+         },
+      });
+
+      function successShowMessage() {}
+      //FORM Email VALIDATE
+      $(".authorization__form-email").validate({
+         rules: {
+            email: {
+               required: true,
+               email: true,
+            },
+            password: {
+               required: true,
+            },
+         },
+         messages: {
+            email: {
+               required: "",
+            },
+            password: {
+               required: "",
+            },
+         },
+      });
+
+      const formAuthorTel = document.querySelector(".authorization__form-tel");
+      const formAuthorSuccesTel = document.querySelector(".authorization__succes-tel");
+      const formAuthorSuccesEmail = document.querySelector(".authorization__succes-email");
+      const authorOptions = document.querySelector(".authorization__options");
+
+      formAuthorTel.addEventListener("submit", function (e) {
+         e.preventDefault();
+         const authorInputTel = document.querySelector("#authorizationTel");
+
+         const authorAllInputs = formAuthorTel.querySelectorAll(".authorization__input");
+         authorAllInputs.forEach(function (input) {
+            input.classList.remove("active");
+         });
+         if (!authorInputTel.value) {
+            authorAllInputs.forEach(function (input) {
+               input.classList.add("active");
+               input.addEventListener("input", function () {
+                  input.classList.remove("active");
+               });
+            });
+         } else {
+            authorAllInputs.forEach(function (input) {
+               input.classList.remove("active");
+            });
+            authorOptions.classList.remove("active");
+            formAuthorTel.classList.remove("active");
+            formAuthorSuccesTel.classList.add("active");
+            // formAuthorTel.submit();
+         }
+      });
+
+      const formAuthorEmail = document.querySelector(".authorization__form-email");
+      formAuthorEmail.addEventListener("submit", function (e) {
+         e.preventDefault();
+
+         const authorInputEmail = document.querySelector(".authorization__input-email");
+         const authorInputPassword = document.querySelector(".authorization__input-password");
+         const authorizationError = formAuthorEmail.querySelector(".authorization__error");
+         const authorAllInputs = formAuthorEmail.querySelectorAll(".authorization__input");
+
+         authorAllInputs.forEach(function (input) {
+            input.classList.remove("active");
+         });
+         authorizationError.classList.remove("active");
+
+         if (!(authorInputEmail.value && authorInputPassword.value)) {
+            authorizationError.classList.add("active");
+            authorAllInputs.forEach(function (input) {
+               input.classList.add("active");
+               input.addEventListener("input", function () {
+                  input.classList.remove("active");
+               });
+            });
+         } else {
+            formAuthorEmail.classList.remove("active");
+            authorizationError.classList.remove("active");
+            authorOptions.classList.remove("active");
+            formAuthorSuccesEmail.classList.add("active");
+            // formAuthorEmail.submit();
+         }
+      });
+
+      formAuthorSuccesTel.addEventListener("submit", function (e) {
+         e.preventDefault();
+      });
+      formAuthorSuccesEmail.addEventListener("submit", function (e) {
+         e.preventDefault();
+      });
+
+      // Options form
+      const logTel = document.querySelector("#login-tel");
+      const logEmail = document.querySelector("#login-email");
+      const authorFormTel = document.querySelector(".authorization__form-tel");
+      const authorFormEmail = document.querySelector(".authorization__form-email");
+
+      logTel.addEventListener("click", function () {
+         logEmail.classList.remove("active");
+         logTel.classList.add("active");
+         authorFormEmail.classList.remove("active");
+         authorFormTel.classList.add("active");
+      });
+      logEmail.addEventListener("click", function () {
+         logTel.classList.remove("active");
+         logEmail.classList.add("active");
+         authorFormTel.classList.remove("active");
+         authorFormEmail.classList.add("active");
+      });
+   }
 
    const dataNav = document.querySelectorAll("[data-nav]");
    const subSecListDatas = document.querySelectorAll("[data-nav-content]");
@@ -57,6 +633,26 @@ $(document).ready(function () {
    btnBuy.forEach(function (item) {
       item.addEventListener("click", function () {
          item.classList.toggle("active");
+         if (item.classList.contains("active")) {
+            const productAdded = document.querySelector(".product-added");
+            const productContBtn = document.querySelector("[data-cont-btn]");
+
+            overlay.classList.add("active");
+            productAdded.classList.add("active");
+
+            productContBtn.addEventListener("click", function () {
+               overlay.classList.remove("active");
+               productAdded.classList.remove("active");
+            });
+
+            overlay.addEventListener("click", function () {
+               overlay.classList.remove("active");
+               productAdded.classList.remove("active");
+            });
+         } else {
+            overlay.classList.remove("active");
+            productAdded.classList.remove("active");
+         }
       });
    });
 
@@ -124,8 +720,6 @@ $(document).ready(function () {
    const mobNavProfItem = document.querySelectorAll(".mob-nav__profile-item a");
 
    // Main
-   const body = document.body;
-   const overlay = document.querySelector(".overlay");
 
    burgerOpen.addEventListener("click", function () {
       mobNav.classList.add("active");

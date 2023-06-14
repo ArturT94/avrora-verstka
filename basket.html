@@ -17,6 +17,8 @@
 	<link rel="stylesheet" href="./libs/owl-carousel/assets/owl.carousel.min.css">
 	<link rel="stylesheet" href="./libs/owl-carousel/assets/owl.theme.default.min.css">
 
+	<!-- InterNational Input -->
+	<link rel="stylesheet" href="./libs/intelinput/css/intlTelInput.css">
 
 	<!-- Favicons -->
 	<link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.png">
@@ -44,14 +46,21 @@
 					<button class="header__btn btn"><span>Поиск</span></button>
 				</form>
 				<div class="header__user">
-					<a href="#!" class="header__user-item header__user-item--profile">
+					<a href="./profile.html" class="header__user-item user-profile">
+						<svg>
+							<path
+								d="M20.6 23H4.4C4.16131 23 3.93239 22.9034 3.7636 22.7315C3.59482 22.5596 3.5 22.3264 3.5 22.0833V21.174C3.50259 19.757 3.96819 18.3812 4.82339 17.2635C5.6786 16.1458 6.87474 15.3499 8.2232 15.0012C8.41441 14.9534 8.58463 14.8424 8.70714 14.6854C8.82964 14.5285 8.89748 14.3345 8.9 14.134V13.2118L7.8947 12.1888C7.64288 11.937 7.44289 11.6366 7.30644 11.3051C7.16998 10.9736 7.0998 10.6178 7.1 10.2583V6.46517C7.1165 5.04885 7.66539 3.69285 8.63373 2.67623C9.60207 1.65961 10.9162 1.05971 12.3056 1C13.0393 0.999041 13.766 1.14528 14.4443 1.43037C15.1225 1.71547 15.739 2.13383 16.2585 2.66158C16.7779 3.18932 17.1903 3.81612 17.4719 4.50617C17.7536 5.19623 17.8991 5.93603 17.9 6.68334V10.2583C17.8997 10.6203 17.8283 10.9786 17.69 11.312C17.5516 11.6455 17.3492 11.9473 17.0945 12.1998L16.1 13.2118V14.134C16.1026 14.3346 16.1705 14.5287 16.2932 14.6857C16.4159 14.8426 16.5863 14.9536 16.7777 15.0012C18.1259 15.3502 19.3218 16.1462 20.1768 17.2639C21.0318 18.3815 21.4973 19.7572 21.5 21.174V22.0833C21.5 22.3264 21.4052 22.5596 21.2364 22.7315C21.0676 22.9034 20.8387 23 20.6 23ZM5.3 21.1667H19.7C19.6958 20.1579 19.3624 19.1792 18.7522 18.3847C18.142 17.5901 17.2897 17.0248 16.3295 16.7777C15.7513 16.6286 15.2381 16.2881 14.8707 15.8095C14.5033 15.3309 14.3025 14.7415 14.3 14.134V12.8323C14.3001 12.5892 14.3949 12.3561 14.5637 12.1843L15.8327 10.8927C15.9169 10.8107 15.984 10.7123 16.0299 10.6033C16.0758 10.4943 16.0997 10.377 16.1 10.2583V6.68334C16.1015 5.67034 15.7104 4.69768 15.0117 3.97676C14.313 3.25584 13.3631 2.84493 12.3686 2.83334C11.4438 2.87107 10.5684 3.26882 9.92303 3.94456C9.27766 4.62031 8.91148 5.52253 8.9 6.46517V10.2583C8.89981 10.3744 8.92241 10.4893 8.96646 10.5964C9.0105 10.7034 9.07512 10.8004 9.1565 10.8817L10.4363 12.1833C10.6051 12.3552 10.6999 12.5883 10.7 12.8314V14.1331C10.6975 14.7405 10.4969 15.3298 10.1297 15.8083C9.76245 16.2869 9.24947 16.6276 8.6714 16.7768C7.71084 17.0237 6.85823 17.5891 6.24786 18.3839C5.63748 19.1786 5.30402 20.1576 5.3 21.1667Z" />
+						</svg>
+						<span>Профиль</span>
+					</a>
+					<button class="header__user-item user-login active">
 						<svg>
 							<path
 								d="M20.6 23H4.4C4.16131 23 3.93239 22.9034 3.7636 22.7315C3.59482 22.5596 3.5 22.3264 3.5 22.0833V21.174C3.50259 19.757 3.96819 18.3812 4.82339 17.2635C5.6786 16.1458 6.87474 15.3499 8.2232 15.0012C8.41441 14.9534 8.58463 14.8424 8.70714 14.6854C8.82964 14.5285 8.89748 14.3345 8.9 14.134V13.2118L7.8947 12.1888C7.64288 11.937 7.44289 11.6366 7.30644 11.3051C7.16998 10.9736 7.0998 10.6178 7.1 10.2583V6.46517C7.1165 5.04885 7.66539 3.69285 8.63373 2.67623C9.60207 1.65961 10.9162 1.05971 12.3056 1C13.0393 0.999041 13.766 1.14528 14.4443 1.43037C15.1225 1.71547 15.739 2.13383 16.2585 2.66158C16.7779 3.18932 17.1903 3.81612 17.4719 4.50617C17.7536 5.19623 17.8991 5.93603 17.9 6.68334V10.2583C17.8997 10.6203 17.8283 10.9786 17.69 11.312C17.5516 11.6455 17.3492 11.9473 17.0945 12.1998L16.1 13.2118V14.134C16.1026 14.3346 16.1705 14.5287 16.2932 14.6857C16.4159 14.8426 16.5863 14.9536 16.7777 15.0012C18.1259 15.3502 19.3218 16.1462 20.1768 17.2639C21.0318 18.3815 21.4973 19.7572 21.5 21.174V22.0833C21.5 22.3264 21.4052 22.5596 21.2364 22.7315C21.0676 22.9034 20.8387 23 20.6 23ZM5.3 21.1667H19.7C19.6958 20.1579 19.3624 19.1792 18.7522 18.3847C18.142 17.5901 17.2897 17.0248 16.3295 16.7777C15.7513 16.6286 15.2381 16.2881 14.8707 15.8095C14.5033 15.3309 14.3025 14.7415 14.3 14.134V12.8323C14.3001 12.5892 14.3949 12.3561 14.5637 12.1843L15.8327 10.8927C15.9169 10.8107 15.984 10.7123 16.0299 10.6033C16.0758 10.4943 16.0997 10.377 16.1 10.2583V6.68334C16.1015 5.67034 15.7104 4.69768 15.0117 3.97676C14.313 3.25584 13.3631 2.84493 12.3686 2.83334C11.4438 2.87107 10.5684 3.26882 9.92303 3.94456C9.27766 4.62031 8.91148 5.52253 8.9 6.46517V10.2583C8.89981 10.3744 8.92241 10.4893 8.96646 10.5964C9.0105 10.7034 9.07512 10.8004 9.1565 10.8817L10.4363 12.1833C10.6051 12.3552 10.6999 12.5883 10.7 12.8314V14.1331C10.6975 14.7405 10.4969 15.3298 10.1297 15.8083C9.76245 16.2869 9.24947 16.6276 8.6714 16.7768C7.71084 17.0237 6.85823 17.5891 6.24786 18.3839C5.63748 19.1786 5.30402 20.1576 5.3 21.1667Z" />
 						</svg>
 						<span>Войти</span>
-					</a>
-					<a href="#!" class="header__user-item header__user-item--basket">
+					</button>
+					<a href="./basket.html" class="header__user-item header__user-item--basket">
 						<svg>
 							<path
 								d="M10.75 22.5C11.7165 22.5 12.5 21.7165 12.5 20.75C12.5 19.7835 11.7165 19 10.75 19C9.7835 19 9 19.7835 9 20.75C9 21.7165 9.7835 22.5 10.75 22.5Z" />
@@ -63,6 +72,8 @@
 								d="M12.25 13C12.25 12.5858 12.5858 12.25 13 12.25H21C21.4142 12.25 21.75 12.5858 21.75 13C21.75 13.4142 21.4142 13.75 21 13.75H13C12.5858 13.75 12.25 13.4142 12.25 13Z" />
 						</svg>
 						<span>Корзина</span>
+						<span class="header__user-item--count">3</span>
+
 					</a>
 					<a href="./favorites.html" class="header__user-item header__user-item--like">
 						<svg>
@@ -919,7 +930,7 @@
 								<a href="./favorites.html">Моё избранное</a>
 							</li>
 							<li class="footer__item">
-								<a href="#!">Рассылка новостей</a>
+								<a href="./all-news.html">Рассылка новостей</a>
 							</li>
 						</ul>
 						<ul class="footer__list">
@@ -930,7 +941,7 @@
 								<a href="./history.html">История бренда</a>
 							</li>
 							<li class="footer__item">
-								<a href="#!">Гарантийное обслуживание</a>
+								<a href="./garanty.html">Гарантийное обслуживание</a>
 							</li>
 							<li class="footer__item">
 								<a href="./payment.html">Оплата</a>
@@ -949,13 +960,13 @@
 						<a href="./returns.html">Возврат товара</a>
 					</li>
 					<li class="footer__item">
-						<a href="#!">Связаться с нами</a>
+						<a href="./contacts.html">Связаться с нами</a>
 					</li>
 					<li class="footer__item">
-						<a href="#!">Политика безопасности</a>
+						<a href="./security.html">Политика безопасности</a>
 					</li>
 					<li class="footer__item">
-						<a href="#!">Условия соглашения</a>
+						<a href="./terms.html">Условия соглашения</a>
 					</li>
 				</ul>
 
@@ -973,7 +984,7 @@
 								<a href="./history.html">История бренда</a>
 							</li>
 							<li class="footer__mob-sub-item">
-								<a href="#!">Гарантийное обслуживание</a>
+								<a href="./garanty.html">Гарантийное обслуживание</a>
 							</li>
 							<li class="footer__mob-sub-item">
 								<a href="./payment.html">Оплата</a>
@@ -1002,7 +1013,7 @@
 								<a href="./favorites.html">Моё избранное</a>
 							</li>
 							<li class="footer__mob-sub-item">
-								<a href="#!">Рассылка новостей</a>
+								<a href="./all-news.html">Рассылка новостей</a>
 							</li>
 						</ul>
 					</li>
@@ -1019,13 +1030,13 @@
 								<a href="./returns.html">Возврат товара</a>
 							</li>
 							<li class="footer__mob-sub-item">
-								<a href="#!">Связаться с нами</a>
+								<a href="./contacts.html">Связаться с нами</a>
 							</li>
 							<li class="footer__mob-sub-item">
-								<a href="#!">Политика безопасности</a>
+								<a href="./security.html">Политика безопасности</a>
 							</li>
 							<li class="footer__mob-sub-item">
-								<a href="#!">Условия соглашения</a>
+								<a href="./terms.html">Условия соглашения</a>
 							</li>
 						</ul>
 					</li>
@@ -1225,7 +1236,7 @@
 		</ul>
 		<ul class="mob-nav__profile">
 			<li class="mob-nav__profile-item">
-				<a href="#!">
+				<a href="./authorization.html">
 					<span class="mob-nav__profile-img">
 						<svg>
 							<path
@@ -1265,7 +1276,7 @@
 				</a>
 			</li>
 			<li class="mob-nav__profile-item">
-				<a href="#!">
+				<a href="./compare.html">
 					<span class="mob-nav__profile-img">
 						<svg>
 							<path fill-rule="evenodd" clip-rule="evenodd"
@@ -1288,6 +1299,168 @@
 		</ul>
 	</div>
 
+	<div class="product-added">
+		<div class="product-added__content">
+			<div class="product-added__row">
+				<div class="product-added__img">
+					<img src="./img/icons/product-success.svg" alt="">
+				</div>
+				<div class="product-added__heading">
+					<h3 class="product-added__title">Товар добавлен в корзину!</h3>
+					<h4 class="product-added__subtitle">
+						Продолжайте покупки или перейдите в корзину для оформления заказа
+					</h4>
+				</div>
+			</div>
+			<div class="product-added__btns">
+				<button class="btn-click product-added__btn" data-cont-btn>
+					<span>Продолжить покупки</span>
+				</button>
+				<a href="./basket.html" class="btn product-added__btn">
+					<span>Перейти в корзину</span>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="authorization-wrapper">
+		<div class="authorization">
+			<div class="authorization__content">
+				<div class="authorization__cross">
+					<svg>
+						<path
+							d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" />
+					</svg>
+				</div>
+				<h2 class="authorization__title">Авторизация</h2>
+				<div class="authorization__options active">
+					<span class="authorization__login login-tel active" id="login-tel">
+						Вход по номеру телефона
+					</span>
+					<span class="authorization__login login-email" id="login-email">
+						Вход по email
+					</span>
+				</div>
+				<div class="authorization__form-wrapper">
+					<form action="#!" class="authorization__form-tel active">
+						<label class="authorization__label-input">
+							<span class="authorization__input-title">Номер телефона</span>
+							<span class="authorization__input-wrapper">
+								<input type="tel" name="tel" class="authorization__input authorization__input-tel"
+									id="authorizationTel">
+							</span>
+						</label>
+						<label class="authorization__label-checkox">
+							<input type="checkbox" class="real-checkbox">
+							<span class="custom-checkbox"></span>
+							<span class="authorization__checkbox-name">Запомнить меня </span>
+						</label>
+						<span class="authorization__hint">
+							обязательные поля
+						</span>
+						<span class="authorization__btns">
+							<button class="btn-click authorization__btn">
+								<span>Выслать код</span>
+							</button>
+							<a href="./registration.html" class="btn authorization__btn">
+								<span>Регистрация</span>
+							</a>
+						</span>
+					</form>
+					<form action="#!" class="authorization__form-email">
+						<span class="authorization__label-inputs">
+							<label class="authorization__label-input">
+								<span class="authorization__input-title">E-mail</span>
+								<span class="authorization__input-wrapper authorization__input-wrapper-email">
+									<input type="email" name="email" class="authorization__input authorization__input-email"
+										placeholder="pochta@mail.ru">
+									<span class="authorization__input-svg">
+										<svg>
+											<path fill-rule="evenodd" clip-rule="evenodd"
+												d="M12 13.1316C15.315 13.1316 18 10.3053 18 6.81579C18 3.32632 15.315 0.5 12 0.5C8.685 0.5 6 3.32632 6 6.81579C6 10.3053 8.685 13.1316 12 13.1316ZM12 15.0263C7.995 15.0263 0 17.1421 0 21.3421V22.9211C0 23.7895 0.675 24.5 1.5 24.5H22.5C23.325 24.5 24 23.7895 24 22.9211V21.3421C24 17.1421 16.005 15.0263 12 15.0263Z" />
+										</svg>
+									</span>
+								</span>
+							</label>
+							<label class="authorization__label-input">
+								<span class="authorization__input-title">Пароль</span>
+								<span class="authorization__input-wrapper">
+									<input type="password" name="password"
+										class="authorization__input authorization__input-password"
+										placeholder="*****************">
+								</span>
+							</label>
+							<div class="authorization__error">Неправильный логин или пароль</div>
+						</span>
+
+						<span class="authorization__row">
+							<span class="authorization__box">
+								<label class="authorization__label-checkox">
+									<input type="checkbox" class="real-checkbox">
+									<span class="custom-checkbox"></span>
+									<span class="authorization__checkbox-name">Запомнить меня </span>
+								</label>
+								<span class="authorization__hint">
+									обязательные поля
+								</span>
+							</span>
+							<a href="./restore.html" class="authorization__link">
+								<span class="accent-color">
+									Забыли пароль?
+								</span>
+							</a>
+						</span>
+						<span class="authorization__btns">
+							<button class="btn-click authorization__btn" data-auth-btn>
+								<span>Выслать код</span>
+							</button>
+							<a href="./registration.html" class="btn authorization__btn">
+								<span>Регистрация</span>
+							</a>
+						</span>
+					</form>
+					<form action="#!" class="authorization__succes-tel">
+						<div class="authorization__succes-message succes-message">На Ваш номер было выслано СМС с кодом
+							подтверждения</div>
+						<label class="authorization__label-input">
+							<span class="authorization__input-title">Код подтверждения из СМС</span>
+							<span class="authorization__input-wrapper">
+								<input type="number" name="numOfMessage" class="authorization__input authorization__input-prove"
+									placeholder="3123123">
+							</span>
+						</label>
+						<span class="authorization__hint">
+							обязательные поля
+						</span>
+						<span class="authorization__btns">
+							<button class="btn authorization__btn">
+								<span>Вход</span>
+							</button>
+							<button class="authorization__btn btn-grad">
+								<span>Отправить код повторно</span>
+							</button>
+						</span>
+					</form>
+					<form action="#!" class="authorization__succes-email">
+						<div class="authorization__succes-message succes-message">На Вашу почту отправлено ссылка для
+							подтверждения</div>
+						<span class="authorization__btns">
+							<button class="btn authorization__btn">
+								<span>Вход</span>
+							</button>
+							<button class="authorization__btn btn-grad">
+								<span>Отправить повторно</span>
+							</button>
+						</span>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="overlay"></div>
+
+
 
 	<!-- JQuery -->
 	<script src="./libs/jquery/jquery-3.7.0.min.js"></script>
@@ -1296,6 +1469,12 @@
 
 	<script src="https://api-maps.yandex.ru/2.1/?apikey=4773cd47-f0b3-4877-a98d-075d60a7011a&lang=ru_RU">
 	</script>
+
+	<!-- jQuery Validate -->
+	<script src="./libs/jquery-validate/jquery.validate.min.js"></script>
+
+	<!-- international Input -->
+	<script src="./libs/intelinput/js/intlTelInput.js"></script>
 
 	<!-- Main js -->
 	<script src="./js/main.js"></script>
