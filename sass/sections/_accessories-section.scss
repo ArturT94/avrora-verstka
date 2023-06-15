@@ -12,6 +12,22 @@
       border: unset;
       padding: unset;
    }
+
+   .container {
+      .authorization {
+         display: none !important;
+         position: absolute;
+         top: -999999px;
+         opacity: 0;
+         z-index: -99;
+         visibility: hidden;
+         width: 0;
+         height: 0;
+         font-size: 0;
+         padding: 0;
+         margin: 0;
+      }
+   }
 }
 .accessories-section-title {
    margin-bottom: 16px;

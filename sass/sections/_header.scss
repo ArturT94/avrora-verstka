@@ -42,6 +42,10 @@
    height: 42px;
    margin-right: 103px;
 
+   img {
+      height: 100%;
+   }
+
    /* Tablet Small*/
    @media (max-width: 899px) {
       margin-right: 0;

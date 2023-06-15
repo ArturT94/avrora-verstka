@@ -264,6 +264,21 @@
       }
    }
 }
+
+.mob-nav__profile-login {
+   display: none !important;
+   &.active {
+      display: flex !important;
+   }
+}
+
+.mob-nav__profile-profile {
+   display: none !important;
+   &.active {
+      display: flex !important;
+   }
+}
+
 .mob-nav__profile-img {
    padding: 8px;
    svg {

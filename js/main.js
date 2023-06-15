@@ -17,14 +17,6 @@ $(document).ready(function () {
          nav: false,
       });
    });
-   // Проверка страницы сайта index
-   if (window.location.toString().indexOf("index.html") > 0) {
-      const mapCross = document.querySelector(".map__cross");
-      const mapPopup = document.querySelector(".map__contacts");
-      mapCross.addEventListener("click", function () {
-         mapPopup.classList.add("active");
-      });
-   }
 
    const body = document.body;
    const overlay = document.querySelector(".overlay");
@@ -168,8 +160,33 @@ $(document).ready(function () {
    formAuthorSuccesTel.addEventListener("submit", function (e) {
       e.preventDefault();
    });
+
    formAuthorSuccesEmail.addEventListener("submit", function (e) {
       e.preventDefault();
+   });
+
+   // Login Form
+   formAuthorSuccesTel.addEventListener("submit", function (e) {
+      e.preventDefault();
+   });
+   const loginBtn = document.querySelector(".login-btn");
+   loginBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const authorizationInputProve = document.querySelector(".authorization__input-prove");
+      const authorization = document.querySelector("[data-authorization]");
+      const userProfile = document.querySelector(".user-profile");
+      authorizationInputProve.classList.remove("active");
+
+      if (authorizationInputProve.value.length == 7) {
+         overlay.classList.remove("active");
+         authorization.classList.add("none");
+         logIn.classList.remove("active");
+         userProfile.classList.add("active");
+      } else {
+         authorizationInputProve.classList.add("active");
+      }
    });
 
    // Options form
@@ -516,7 +533,7 @@ $(document).ready(function () {
       });
 
       const formAuthorTel = document.querySelector(".authorization__form-tel");
-      const formAuthorSuccesTel = document.querySelector(".authorization__succes-tel");
+      const numOfMessage = document.querySelector(".authorization__succes-tel");
       const formAuthorSuccesEmail = document.querySelector(".authorization__succes-email");
       const authorOptions = document.querySelector(".authorization__options");
 
@@ -577,9 +594,32 @@ $(document).ready(function () {
          }
       });
 
+      // Login Form
       formAuthorSuccesTel.addEventListener("submit", function (e) {
          e.preventDefault();
       });
+      const loginBtn = document.querySelector(".login-btn");
+      loginBtn.addEventListener("click", function (e) {
+         e.preventDefault();
+         e.stopPropagation();
+
+         const authorizationInputProve = document.querySelector(".authorization__input-prove");
+         // const authorization = document.querySelector("[data-authorization]");
+         // const userProfile = document.querySelector(".user-profile");
+         const itemProfileLogin = document.querySelector(".mob-nav__profile-login");
+         const itemProfileProfile = document.querySelector(".mob-nav__profile-profile");
+
+         authorizationInputProve.classList.remove("active");
+
+         if (authorizationInputProve.value.length == 7) {
+            itemProfileLogin.classList.remove("active");
+            itemProfileProfile.classList.add("active");
+            location.href = "../index.html";
+         } else {
+            authorizationInputProve.classList.add("active");
+         }
+      });
+
       formAuthorSuccesEmail.addEventListener("submit", function (e) {
          e.preventDefault();
       });
@@ -633,10 +673,9 @@ $(document).ready(function () {
    btnBuy.forEach(function (item) {
       item.addEventListener("click", function () {
          item.classList.toggle("active");
+         const productAdded = document.querySelector(".product-added");
+         const productContBtn = document.querySelector("[data-cont-btn]");
          if (item.classList.contains("active")) {
-            const productAdded = document.querySelector(".product-added");
-            const productContBtn = document.querySelector("[data-cont-btn]");
-
             overlay.classList.add("active");
             productAdded.classList.add("active");
 
@@ -663,13 +702,6 @@ $(document).ready(function () {
          item.classList.toggle("active");
       });
    });
-
-   // Закрыть, Popup на яндекс карте
-   // Бургер
-   // const mobBurger = document.querySelector(".header-mob__burger");
-   // mobBurger.addEventListener("click", function () {
-   //    mobBurger.classList.toggle("active");
-   // });
 
    // Форма поиска
    const mobSearch = document.querySelector(".header-mob__round");
@@ -1049,6 +1081,15 @@ $(document).ready(function () {
          });
       });
 
+      // Comparison
+
+      const comparison = document.querySelectorAll(".comparison");
+
+      comparison.forEach(function (item) {
+         item.addEventListener("click", function () {
+            item.classList.toggle("active");
+         });
+      });
       // Favorite
 
       const favorite = document.querySelectorAll(".favorite");
