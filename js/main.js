@@ -211,6 +211,54 @@ jQuery(function ($) {
          authorFormEmail.classList.add("active");
       });
 
+      if (window.location.toString().indexOf("index.html") > 0) {
+         // mostViewNext
+         const mostViewSlider = $("#most-view-slider");
+         mostViewSlider.owlCarousel({
+            dots: false,
+            nav: false,
+
+            responsive: {
+               0: {
+                  items: 4,
+                  margin: 10,
+               },
+               1199: {
+                  items: 5,
+                  margin: 20,
+               },
+            },
+         });
+
+         const mostViewNext = $("#mostViewNext");
+         mostViewNext.click(function () {
+            mostViewSlider.trigger("next.owl.carousel");
+         });
+
+         // arrivals-slider
+         const arrivalsSlider = $("#arrivals-slider");
+         arrivalsSlider.owlCarousel({
+            dots: true,
+            nav: false,
+
+            responsive: {
+               0: {
+                  items: 4,
+                  margin: 10,
+               },
+               1199: {
+                  items: 5,
+                  margin: 20,
+               },
+            },
+         });
+         const arrivalsNextBtn = $("#arrivalsNextBtn");
+
+         arrivalsNextBtn.click(function () {
+            arrivalsSlider.trigger("next.owl.carousel");
+         });
+      }
+
       if (window.location.toString().indexOf("registration.html") > 0) {
          // registration tel mask
          const regisTel = document.querySelector("#regisTel");
@@ -810,7 +858,7 @@ jQuery(function ($) {
                priceInput = filterSlider.querySelectorAll(".filter__field-row input"),
                progress = filterSlider.querySelector(".filter__progress");
 
-            let priceGap = 1000;
+            let priceGap = 9999;
 
             rangeInput.forEach((input) => {
                input.addEventListener("input", (e) => {
@@ -832,19 +880,19 @@ jQuery(function ($) {
                });
             });
 
-            // const minInput = document.querySelector(".filter__field-min");
-            // const maxInput = document.querySelector(".filter__field-max");
-            // const minRange = document.querySelector(".filter__range-min");
-            // const maxRange = document.querySelector(".filter__range-max");
-            // const progressLine = document.querySelector(".filter__progress");
-            // minInput.addEventListener("input", function () {
-            //    minRange.value = minInput.value;
-            //    progressLine.style.left = (+minRange.value / 999999) * 100 + "%";
-            // });
-            // maxInput.addEventListener("input", function () {
-            //    maxRange.value = maxInput.value;
-            //    progressLine.style.right = (+maxInput.value / 999999) * 100 + "%";
-            // });
+            const minInput = filterSlider.querySelector(".filter__field-min");
+            const maxInput = filterSlider.querySelector(".filter__field-max");
+            const minRange = filterSlider.querySelector(".filter__range-min");
+            const maxRange = filterSlider.querySelector(".filter__range-max");
+            const progressLine = filterSlider.querySelector(".filter__progress");
+            minInput.addEventListener("input", function () {
+               minRange.value = minInput.value;
+               progressLine.style.left = (+minRange.value / 999999) * 100 + "%";
+            });
+            maxInput.addEventListener("input", function () {
+               maxRange.value = maxInput.value;
+               progressLine.style.right = (+maxInput.value / 999999) * 100 + "%";
+            });
          });
 
          // Filter Catalog content
@@ -898,8 +946,14 @@ jQuery(function ($) {
                   });
                });
 
+               const notFoundCatalog = document.querySelector("[data-catalog-notfound]");
                const dropDownFilter = document.querySelector(".filter-var__sizes");
-               dropDownFilter.classList.toggle("active");
+
+               if (notFoundCatalog.classList.contains("active")) {
+                  dropDownFilter.classList.add("active");
+               } else {
+                  dropDownFilter.classList.remove("active");
+               }
             });
 
             document.addEventListener("click", function (e) {
@@ -914,6 +968,92 @@ jQuery(function ($) {
                   dropdownBtn.classList.remove("active");
                   dropdownList.classList.remove("active");
                }
+            });
+         });
+
+         const filterReset = document.querySelectorAll("[data-filter-reset]");
+         filterReset.forEach(function (filterReset) {
+            filterReset.addEventListener("click", function (e) {
+               e.stopPropagation();
+            });
+         });
+
+         const filter = document.querySelectorAll(".filter");
+
+         filter.forEach(function (filter) {
+            const filterStarsThree = filter.querySelector("[data-stars-three]");
+            const filterStarsTwo = filter.querySelector("[data-stars-two]");
+            const filterItems = filter.querySelectorAll(".filter__item");
+            const filterItemPrice = filter.querySelector(".filter__item-price");
+            const filterItemRating = filter.querySelector(".filter__item-rating");
+            const catalogFound = document.querySelector("[data-catalog-found]");
+            const catalogNotFound = document.querySelector("[data-catalog-notfound]");
+            const catalogContentWide = document.querySelector(".catalog__content-wide");
+            const catalogContentGrid = document.querySelector(".catalog__content-grid");
+            const catalogMob = document.querySelector(".catalog__mob");
+
+            filterStarsThree.addEventListener("click", function () {
+               filterItems.forEach(function (filterItem) {
+                  filterItem.style.cssText = `display: none`;
+               });
+               catalogNotFound.classList.remove("active");
+               catalogContentWide.classList.add("active");
+               catalogContentGrid.classList.remove("active");
+
+               filterItemPrice.style.cssText = `display: flex`;
+               filterItemRating.style.cssText = `display: flex`;
+               catalogFound.classList.add("active");
+
+               if ($(window).width() < 899) {
+                  const catalogFilterType = document.querySelector(".catalog__filter-type");
+                  const catalogMob = document.querySelector(".catalog__mob");
+                  catalogMob.classList.remove("none");
+                  catalogFilterType.classList.add("none");
+               }
+            });
+            filterStarsTwo.addEventListener("click", function () {
+               filterItems.forEach(function (filterItem) {
+                  filterItem.style.cssText = `display: none`;
+               });
+               catalogFound.classList.remove("active");
+               catalogNotFound.classList.add("active");
+               filterItemPrice.style.cssText = `display: flex`;
+               filterItemRating.style.cssText = `display: flex`;
+               catalogContentWide.classList.remove("active");
+               catalogContentGrid.classList.remove("active");
+
+               if ($(window).width() < 899) {
+                  const catalogMob = document.querySelector(".catalog__mob");
+                  const catalogFilterType = document.querySelector(".catalog__filter-type");
+                  catalogMob.classList.add("none");
+                  catalogFilterType.classList.add("none");
+               }
+            });
+
+            const filterResetPrice = filter.querySelector("[data-filter-reset-price]");
+            filterResetPrice.addEventListener("click", function () {
+               const filterProgress = filter.querySelector(".filter__progress");
+               const filterRangeMin = filter.querySelector(".filter__range-min");
+               const filterRangeMax = filter.querySelector(".filter__range-max");
+               const filterFieldMin = filter.querySelector(".filter__field-min");
+               const filterFieldMax = filter.querySelector(".filter__field-max");
+               filterProgress.style.cssText = `
+                  left: 25%;
+                  right: 35%;`;
+
+               filterRangeMin.value = "253504";
+               filterRangeMax.value = "650000";
+               filterFieldMin.value = "";
+               filterFieldMax.value = "";
+            });
+
+            const filterResetRating = filter.querySelector("[data-filter-reset-rating]");
+
+            filterResetRating.addEventListener("click", function () {
+               const filterRealCheckBox = filter.querySelectorAll(".filter__real-checkbox");
+               filterRealCheckBox.forEach(function (item) {
+                  item.checked = false;
+               });
             });
          });
 
@@ -1138,19 +1278,19 @@ jQuery(function ($) {
             });
          });
 
-         const ordertel = document.querySelector("#order-tel");
+         // const ordertel = document.querySelector("#order-tel");
          const actionTel = document.querySelector("#action-tel");
 
-         intlTelInput(ordertel, {
-            initialCountry: "auto",
-            geoIpLookup: function (success, failure) {
-               $.get("https://ipinfo.io", function () {}, "jsonp").always(function (resp) {
-                  let countryCode = resp && resp.country ? resp.country : "";
-                  success(countryCode);
-               });
-            },
-            // utilsScript: "../libs/intelinput/js/utils.js",
-         });
+         // intlTelInput(ordertel, {
+         //    initialCountry: "auto",
+         //    geoIpLookup: function (success, failure) {
+         //       $.get("https://ipinfo.io", function () {}, "jsonp").always(function (resp) {
+         //          let countryCode = resp && resp.country ? resp.country : "";
+         //          success(countryCode);
+         //       });
+         //    },
+         //    // utilsScript: "../libs/intelinput/js/utils.js",
+         // });
          intlTelInput(actionTel, {
             initialCountry: "auto",
             geoIpLookup: function (success, failure) {

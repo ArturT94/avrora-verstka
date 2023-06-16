@@ -25,26 +25,47 @@
    }
 }
 
-.arrivals__row {
-   display: flex;
-   flex-wrap: wrap;
-   column-gap: 20px;
-   row-gap: 30px;
+.arrivals__slider {
    position: relative;
+   max-width: 1160px;
+   // overflow: hidden;
+
+   & > .owl-theme .owl-nav.disabled + .owl-dots {
+      display: none;
+   }
 
    /* Tablet Small*/
    @media (max-width: 899px) {
+      display: none;
+   }
+}
+
+.arrivals__mob {
+   display: none;
+   /* Tablet Small*/
+   @media (max-width: 899px) {
+      display: flex;
       flex-direction: column;
       align-items: center;
-      row-gap: 25px;
-      margin-bottom: 34px;
+      row-gap: 12px;
+      margin-bottom: 24px;
    }
 
    /* Mobile*/
    @media (max-width: 599px) {
       row-gap: 8px;
-      margin-bottom: 24px;
    }
+}
+
+.arrivals__row {
+   display: flex;
+   flex-wrap: wrap;
+   column-gap: 20px;
+   row-gap: 30px;
+
+   // .owl-item {
+   //    width: unset !important;
+   // }
 }
 .card-small {
    max-width: 216px;
@@ -158,4 +179,8 @@
 .arrivals__btn {
    margin-left: auto;
    margin-right: auto;
+   /* Tablet Small*/
+   @media (max-width: 899px) {
+      width: 80%;
+   }
 }

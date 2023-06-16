@@ -19,12 +19,14 @@
    /* Tablet Small*/
    @media (max-width: 899px) {
       width: 390px;
+      margin-right: auto;
+      margin-left: auto;
       padding: 40px 10px 40px;
    }
 
    /* Mobile Small */
    @media (max-width: 409px) {
-      width: 100%;
+      width: 90%;
    }
 
    /* Mobile Small */

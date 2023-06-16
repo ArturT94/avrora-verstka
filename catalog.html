@@ -578,8 +578,11 @@
 						<div class="catalog__filter-type">
 							<p>Сварочные инверторы MMA</p>
 						</div>
-						<div class="catalog__found none">
+						<div class="catalog__found" data-catalog-found>
 							<p>По вашему запросу “Сварочный” найдено 160 товаров. </p>
+						</div>
+						<div class="catalog__found catalog__found--no" data-catalog-notfound>
+							<p>По вашему запросу “Сварочный” не найдено товаров. </p>
 						</div>
 					</div>
 				</div>
@@ -636,10 +639,10 @@
 									</li>
 								</ul>
 							</div>
-							<div class="filter__item active">
+							<div class="filter__item active filter__item-price">
 								<div class="filter__item-head">
 									<h2 class="filter__item-title">Цена</h2>
-									<div class="filter__item-row">
+									<div class="filter__item-row" data-filter-reset data-filter-reset-price>
 										<button class="filter__reset">Сброс</button>
 										<img src="./img/nav-icons/arrow-dropdown.svg" alt="arrow-dropdown">
 									</div>
@@ -664,13 +667,14 @@
 													placeholder="999999">
 											</div>
 										</div>
+										<button class="filter__slider-btn">Применить</button>
 									</li>
 								</ul>
 							</div>
-							<div class="filter__item active">
+							<div class="filter__item active filter__item-rating">
 								<div class="filter__item-head">
 									<h2 class="filter__item-title">Рейтинг</h2>
-									<div class="filter__item-row">
+									<div class="filter__item-row" data-filter-reset data-filter-reset-rating>
 										<button class="filter__reset">Сброс</button>
 										<img src="./img/nav-icons/arrow-dropdown.svg" alt="arrow-dropdown">
 									</div>
@@ -723,7 +727,7 @@
 										</label>
 									</li>
 									<li class="filter__sub-item">
-										<label class="filter__sub-rate">
+										<label class="filter__sub-rate" data-stars-three>
 											<input type="checkbox" class="filter__real-checkbox">
 											<span class="filter__custom-checkbox"></span>
 											<span class="filter__stars">
@@ -746,7 +750,7 @@
 										</label>
 									</li>
 									<li class="filter__sub-item">
-										<label class="filter__sub-rate">
+										<label class="filter__sub-rate" data-stars-two>
 											<input type="checkbox" class="filter__real-checkbox">
 											<span class="filter__custom-checkbox"></span>
 											<span class="filter__stars">
@@ -3334,10 +3338,10 @@
 						</li>
 					</ul>
 				</div>
-				<div class="filter__item">
+				<div class="filter__item filter__item-price">
 					<div class="filter__item-head">
 						<h2 class="filter__item-title">Цена</h2>
-						<div class="filter__item-row">
+						<div class="filter__item-row" data-filter-reset data-filter-reset-price>
 							<button class="filter__reset">Сброс</button>
 							<img src="./img/nav-icons/arrow-dropdown.svg" alt="arrow-dropdown">
 						</div>
@@ -3361,13 +3365,14 @@
 									<input type="number" class="filter__field-input filter__field-max" placeholder="999999">
 								</div>
 							</div>
+							<button class="filter__slider-btn">Применить</button>
 						</li>
 					</ul>
 				</div>
-				<div class="filter__item">
+				<div class="filter__item filter__item-rating">
 					<div class="filter__item-head">
 						<h2 class="filter__item-title">Рейтинг</h2>
-						<div class="filter__item-row">
+						<div class="filter__item-row" data-filter-reset data-filter-reset-rating>
 							<button class="filter__reset">Сброс</button>
 							<img src="./img/nav-icons/arrow-dropdown.svg" alt="arrow-dropdown">
 						</div>
@@ -3420,7 +3425,7 @@
 							</label>
 						</li>
 						<li class="filter__sub-item">
-							<label class="filter__sub-rate">
+							<label class="filter__sub-rate" data-stars-three>
 								<input type="checkbox" class="filter__real-checkbox">
 								<span class="filter__custom-checkbox"></span>
 								<span class="filter__stars">
@@ -3443,7 +3448,7 @@
 							</label>
 						</li>
 						<li class="filter__sub-item">
-							<label class="filter__sub-rate">
+							<label class="filter__sub-rate" data-stars-two>
 								<input type="checkbox" class="filter__real-checkbox">
 								<span class="filter__custom-checkbox"></span>
 								<span class="filter__stars">
