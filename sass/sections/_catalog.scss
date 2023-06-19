@@ -130,7 +130,10 @@
 }
 
 .catalog__found--no.active {
-   margin-bottom: 192px;
+   /* Tablet Small*/
+   @media (max-width: 899px) {
+      margin-bottom: 192px;
+   }
 }
 
 .catalog__filter-type {
